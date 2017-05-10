@@ -1,0 +1,32 @@
+package com.cassie.tankegame;
+
+import java.awt.Graphics;
+import java.awt.HeadlessException;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class test3 extends JFrame {
+	Mypanel5 mp =null;
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		test3 t3 = new test3();
+	}
+
+	public test3() 
+	{
+		mp = new Mypanel5();
+		
+		this.add(mp);
+		this.setSize(400,300);
+		this.setVisible(true);
+	}
+	
+}
+class Mypanel5 extends JPanel
+{
+	public void paint(Graphics g) {
+		super.paint(g);
+	}
+}

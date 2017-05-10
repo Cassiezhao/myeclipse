@@ -1,0 +1,62 @@
+package com.cassie.tankegame;
+/*
+ * 功能：让小球受到键盘的控制--上下左右移动
+ * */
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class test2 extends JFrame {
+	Mypanel4 mp = null;
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		test2 t2 = new test2();
+	}
+	public test2() 
+	{
+		mp = new Mypanel4();
+		
+		this.add(mp);
+		this.addKeyListener(mp);
+		
+		this.setSize(400,300);
+		this.setVisible(true);
+	}
+
+}
+
+//定义panel
+class Mypanel4 extends JPanel implements KeyListener
+{
+	public void paint(Graphics g) {
+		super.paint(g);
+		
+		g.fillOval(10, 10, 10, 10);
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+//		System.out.println("键被按下:"+e.getKeyChar());
+		if (e.getKeyChar() == KeyEvent.VK_DOWN) {
+			System.out.println("12");
+		}
+		
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

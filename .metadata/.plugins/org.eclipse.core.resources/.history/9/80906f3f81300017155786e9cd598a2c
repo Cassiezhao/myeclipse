@@ -1,0 +1,15 @@
+package com.cassie.jpanel;
+
+import javax.swing.JFrame;
+
+/*
+ * 功能：词霸
+ * */
+public class test5 extends JFrame {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

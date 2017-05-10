@@ -1,0 +1,12 @@
+package com.cassie.gui;
+/*
+ * 功能：gui界面开发
+ * */
+public class test1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

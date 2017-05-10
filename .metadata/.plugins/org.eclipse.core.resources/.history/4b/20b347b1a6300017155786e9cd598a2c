@@ -1,0 +1,17 @@
+package com.cassie.tankegame;
+import java.awt.*;
+import javax.swing.JPanel;
+
+public class test1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+//定义一个panel，用于绘图和显示绘图的区域
+class MyPanel extends JPanel
+{
+	
+}

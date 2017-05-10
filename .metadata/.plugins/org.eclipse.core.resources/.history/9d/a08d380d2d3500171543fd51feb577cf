@@ -1,0 +1,8 @@
+package com.cassie.tankegame2;
+
+public class EnemyTank {
+	public EnemyTank(int x ,int y)
+	{
+		super(x, y);
+	}
+}

@@ -1,0 +1,23 @@
+/*
+ * 功能：事件处理机制
+ * 
+ * */
+package com.cassie.tankegame;
+
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
+public class testevent extends JFrame{
+	Mypanel3 mp = null;
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+class Mypanel3 extends JPanel
+{
+	
+}

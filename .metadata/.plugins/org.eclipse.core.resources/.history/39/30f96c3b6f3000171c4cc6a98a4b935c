@@ -1,0 +1,13 @@
+package com.cassie.gui;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import java.awt.*;
+public class test4 extends JFrame{
+	JButton  [] jbs = new JButton()
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

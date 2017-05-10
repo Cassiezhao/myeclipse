@@ -1,0 +1,45 @@
+package com.cassie.jpanel;
+import java.awt.*;
+
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTabbedPane;
+import javax.swing.JTextField;
+
+public class test7 extends JFrame{
+	//北部区域
+	JLabel jbl1;
+	//南部区域
+	JButton jb1,jb2,jb3;
+	JPanel jp1;
+	//中部区域
+	JTabbedPane jtp;//选项卡窗格
+	JPanel jp2;
+	
+	JLabel jbl2,jbl3,jbl4,jbl5;
+	//号码文本框
+	JTextField jtf;
+	//密码
+	JPasswordField jpf;
+	//清除号码
+	JButton jb4;
+	JCheckBox jcb1,jcb2;
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	public test7()
+	{
+		jbl1 = new JLabel("QQ号码",JLabel.CENTER);
+		jbl2 = new JLabel("QQ密码",JLabel.CENTER);
+		jbl3 = new JLabel("忘记密码",JLabel.CENTER);
+		jbl4 = new JLabel("",JLabel.CENTER);
+		
+	}
+	
+}

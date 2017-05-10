@@ -1,0 +1,48 @@
+package com.cassie.tankegame;
+
+import javax.swing.JFrame;
+import java.awt.*;
+import javax.swing.*;
+/*
+ * 坦克大战V1.0
+ * 1、画坦克
+ * */
+public class tanke extends JFrame {
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	public tanke()
+	{
+		
+	}
+  
+}
+//我的面板
+class Mypanel extends JPanel{
+	//重写paint函数
+	public void paint(Graphics g){
+		super.paint(g);
+		
+	}
+}
+class Tank
+{
+	//表示坦克的横坐标
+	int x = 0;
+	//表示坦克的纵坐标
+	int y = 0;
+	
+	public Tank (int x,int y) 
+	{
+		this.x = x;
+		this.y = y;
+	}	
+}
+//我的坦克
+class Hero extends Tank{
+	public Hero( int x,int y) {
+		super(x, y);
+	}
+}

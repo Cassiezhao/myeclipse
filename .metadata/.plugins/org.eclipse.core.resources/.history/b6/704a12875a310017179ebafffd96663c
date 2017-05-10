@@ -1,0 +1,12 @@
+package com.cassie.tankegame;
+/*
+ * 功能：让小球受到键盘的控制--上下左右移动
+ * */
+public class test2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

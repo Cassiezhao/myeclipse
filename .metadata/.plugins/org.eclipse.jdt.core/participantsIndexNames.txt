@@ -1,0 +1,11 @@
+INDEX VERSION 1.127
+/Users/cassie/Desktop/myeclipse/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/696432188.index
+/struts/src
+/Users/cassie/Desktop/myeclipse/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2084098366.index
+/struts/src
+/Users/cassie/Desktop/myeclipse/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1712865101.index
+/ssh/src
+/Users/cassie/Desktop/myeclipse/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1323468658.index
+/struts2/src
+/Users/cassie/Desktop/myeclipse/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/787825367.index
+/Struts2-1/src

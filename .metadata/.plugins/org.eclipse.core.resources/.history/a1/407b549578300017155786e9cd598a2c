@@ -1,0 +1,29 @@
+package com.cassie.jpanel;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+import java.awt.*;
+public class test2 extends JFrame {
+	JPanel jp1,jp2,jp3;
+	JLabel Jlb1,jlb2;	
+	JButton jb1,jb2;	
+	JTextField jtf1;
+	JPasswordField jpf1;
+		
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	}
+	public test2() {
+		jp1 = new JPanel();
+		jp2 = new JPanel();
+		jp3 = new JPanel();
+		
+		
+	}
+}

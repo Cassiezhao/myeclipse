@@ -1,0 +1,18 @@
+package com.cassie.threadTest;
+//功能：通过继承Thread开发线程
+
+public class test1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		cat cat1 = new cat();
+	}
+
+}
+class cat extends Thread
+{
+	//重写run函数
+	public void run() {
+		System.out.println("hello world");
+	}
+}

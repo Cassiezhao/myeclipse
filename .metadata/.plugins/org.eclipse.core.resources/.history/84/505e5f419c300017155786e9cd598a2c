@@ -1,0 +1,17 @@
+package com.cassie.jpanel;
+import java.awt.*;
+
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+public class test8 extends JFrame{
+		
+	JMenu jm1;
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

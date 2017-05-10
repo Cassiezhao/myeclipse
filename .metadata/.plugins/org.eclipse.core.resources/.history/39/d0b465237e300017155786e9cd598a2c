@@ -1,0 +1,27 @@
+package com.cassie.jpanel;
+
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+
+/*
+ * JComboBox/JList/JscrollPane
+ * */
+public class test4 extends JFrame {
+	JPanel jp1,jp2;
+	JLabel jbl1,jbl2;
+	JComboBox jcb1Box;
+	JList jls1;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
