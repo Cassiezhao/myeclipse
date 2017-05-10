@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.cassie.jpanel.test2"/>
-<fullyQualifiedTypeName name="com.cassie.jpanel.test1"/>
-<fullyQualifiedTypeName name="com.cassie.jpanel.test4"/>
-<fullyQualifiedTypeName name="javax.swing.JList"/>
-<fullyQualifiedTypeName name="javax.swing.JSplitPane"/>
 <fullyQualifiedTypeName name="com.cassie.jpanel.test5"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="javax.swing.JComboBox"/>
@@ -59,5 +54,10 @@
 <fullyQualifiedTypeName name="java.awt.event.MouseListener"/>
 <fullyQualifiedTypeName name="java.awt.event.MouseMotionListener"/>
 <fullyQualifiedTypeName name="java.awt.event.WindowListener"/>
+<fullyQualifiedTypeName name="com.cassie.tankegame2.Tank"/>
+<fullyQualifiedTypeName name="java.util.Vector"/>
+<fullyQualifiedTypeName name="com.cassie.tankegame2.EnemyTank"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="com.cassie.threadTest.cat"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
 </qualifiedTypeNameHistroy>
