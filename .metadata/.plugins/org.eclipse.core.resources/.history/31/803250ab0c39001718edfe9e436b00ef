@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package com.cassie.notepad;
+
+import javax.swing.JFrame;
+
+/**
+ * @author cassie
+ * @fun notepad
+ */
+public class NotePad extends JFrame {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

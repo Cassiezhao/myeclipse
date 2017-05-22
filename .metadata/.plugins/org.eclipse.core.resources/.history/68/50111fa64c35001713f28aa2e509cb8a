@@ -1,0 +1,10 @@
+package com.cassie.threadTest;
+//功能：实现Runnale接口
+public class test2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

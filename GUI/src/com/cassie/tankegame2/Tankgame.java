@@ -10,8 +10,10 @@ package com.cassie.tankegame2;
 
 import javax.swing.JFrame;
 /*
-* 坦克大战V1.0
+* 坦克大战v1.0
+* 坦克大战v2.0
 * 1、画坦克
+* 2、可以上下左右移动
 * */
 public class Tankgame extends JFrame {
 	Mypanel mp;
@@ -24,6 +26,9 @@ public class Tankgame extends JFrame {
 	{
 		mp = new Mypanel();
 		this.add(mp);
+		//启动mp线程
+		Thread thread = new Thread(mp);
+		thread.start();
 		//注册监听
 		this.addKeyListener(mp);
 		this.setSize(400,400);

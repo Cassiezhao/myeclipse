@@ -1,0 +1,17 @@
+package com.cassie.tankegame4;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+
+import javax.swing.JPanel;
+
+public class MyStartPanel extends JPanel{
+	public void paint(Graphics g) {
+		super.paint(g);
+		g.fillRect(0, 0, 400, 400);
+		g.setColor(Color.yellow);
+		Font myFont = new Font("华文新魏",Font.BOLD,40);
+		g.drawString("stage : 1", 180, 200);
+	}
+}

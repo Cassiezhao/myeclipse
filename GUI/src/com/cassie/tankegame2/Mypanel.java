@@ -9,7 +9,7 @@ import java.util.Vector;
 import javax.swing.JPanel;
 
 //我的面板
-class Mypanel extends JPanel implements KeyListener
+class Mypanel extends JPanel implements KeyListener,Runnable
 {
 	//定义一个我的坦克
 	Hero hero = null;
@@ -29,7 +29,8 @@ class Mypanel extends JPanel implements KeyListener
 			ets.add(et);
 		}
 	}
-
+	
+	//画一个坦克
 	public void drawTank(int x,int y,Graphics g,int direct,int type) 
 	{
 		
@@ -103,13 +104,19 @@ class Mypanel extends JPanel implements KeyListener
 	}
 	
 	//重写paint函数
-	public void paint(Graphics g)
+	public void paint (Graphics g)
 	{	
 		super.paint(g);
 		
 		g.fillRect(0, 0, 400, 400);
 		//画出自己的坦克
 		this.drawTank(hero.getX(), hero.getY(), g, this.hero.direct, 0);		
+		
+		//画出子弹
+		if (hero.shot != null) {
+			g.fill3DRect(hero.shot.x-2, hero.shot.y - 2, 4, 4, false);
+		}
+		
 		//画出敌人的坦克
 		for (int i = 0; i < ets.size(); i++) 
 		{
@@ -150,6 +157,14 @@ class Mypanel extends JPanel implements KeyListener
 			this.hero.moveLeft();
 		}
 		
+		if(e.getKeyCode() == KeyEvent.VK_J)
+		{
+			//判断玩家是否按下j
+			//开火
+			this.hero.shotEnemy();
+			
+		}
+		
 		//必须重新绘制panel，调用repaint()函数
 		this.repaint();
 	}
@@ -158,6 +173,20 @@ class Mypanel extends JPanel implements KeyListener
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		while (true) {
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			this.repaint();
+		}
 	}
 }
 

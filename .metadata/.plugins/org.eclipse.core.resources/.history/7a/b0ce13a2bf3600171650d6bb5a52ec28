@@ -1,0 +1,33 @@
+/**
+ * 
+ */
+package com.cassie.iotest;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+/**
+ * @author cassie
+ * @fun： 图片拷贝
+ */
+public class test4 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		FileInputStream fis = null;
+		try {
+			fis = new FileInputStream("/Users/cassie/Desktop/myeclipse/GUI/src/6.jpg")ß;
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally {
+			
+		}
+	}
+
+}

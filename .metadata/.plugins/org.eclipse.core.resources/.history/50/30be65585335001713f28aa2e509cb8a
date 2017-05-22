@@ -1,0 +1,18 @@
+package com.cassie.tankegame2;
+
+public class Shot implements Runnable{
+	int x;
+	int y;
+	int direct;
+	public Shot(int x, int y,int direct) {
+		
+		this.x = x;
+		this.y = y;
+	}
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

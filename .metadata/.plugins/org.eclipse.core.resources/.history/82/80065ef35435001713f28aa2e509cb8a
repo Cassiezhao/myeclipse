@@ -1,0 +1,38 @@
+package com.cassie.tankegame2;
+
+public class Shot implements Runnable{
+	int x;
+	int y;
+	int direct;
+	public Shot(int x, int y,int direct) {
+		
+		this.x = x;
+		this.y = y;
+		this.direct = direct;
+	}
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		while (true) {
+			switch (direct) {
+			case 0:
+				   	//子弹向上
+					y-=2;
+					break;
+			case 1:
+					x+=2;
+					break;
+			case 2:
+					y+=2;
+					break;
+			case 3:
+					x-=2;
+					break;
+			}
+			//子弹何时死亡
+			
+		}
+	}
+	
+}
+

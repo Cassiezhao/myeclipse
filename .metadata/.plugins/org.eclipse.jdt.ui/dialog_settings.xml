@@ -25,8 +25,8 @@
 		<item value="652" key="DIALOG_WIDTH"/>
 		<item value="1|.SF NS Text|14.0|0|COCOA|1|.SFNSText" key="DIALOG_FONT_NAME"/>
 		<item value="742" key="DIALOG_HEIGHT"/>
-		<item value="354" key="DIALOG_X_ORIGIN"/>
-		<item value="0" key="DIALOG_Y_ORIGIN"/>
+		<item value="95" key="DIALOG_X_ORIGIN"/>
+		<item value="34" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="NewClassWizardPage">
 		<item value="false" key="create_constructor"/>

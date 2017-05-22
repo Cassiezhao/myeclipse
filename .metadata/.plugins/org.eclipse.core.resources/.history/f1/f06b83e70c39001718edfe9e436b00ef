@@ -1,0 +1,33 @@
+/**
+ * 
+ */
+package com.cassie.notepad;
+
+import javax.swing.JFrame;
+import javax.swing.JTextArea;
+
+/**
+ * @author cassie
+ * @fun notepad
+ */
+public class NotePad extends JFrame {
+
+	/**
+	 * @param args
+	 */
+	JTextArea jta = null;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	public NotePad()
+	{
+		//创建jta
+		jta = new JTextArea();
+		//放入到Jframe
+		this.add(jta);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setSize(400, 300);
+		this.setVisible(true);
+	}
+}

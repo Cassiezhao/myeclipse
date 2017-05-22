@@ -1,0 +1,20 @@
+/**
+ * 
+ */
+package com.cassie.iotest;
+
+/**
+ * @author cassie
+ *功能： 图片拷贝
+ */
+public class test4 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

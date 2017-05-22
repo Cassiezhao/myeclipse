@@ -1,0 +1,17 @@
+package com.cassie.iotest;
+
+import java.io.File;
+
+//功能：File类的基本用法
+public class test1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		File file = new File("/Users/cassie/Desktop/myeclipse/IO");
+		System.out.println("文件路径：" + file.getAbsolutePath());
+		System.out.println(file.length());
+		System.out.println("可读：" + file.canRead());
+		System.out.println("可写：" + file.canWrite());
+	}
+
+}

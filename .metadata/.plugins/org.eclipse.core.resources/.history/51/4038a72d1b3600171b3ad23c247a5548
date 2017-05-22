@@ -1,0 +1,6 @@
+package com.cassie.tankegame3;
+
+//炸弹类
+public class Bomb {
+
+}

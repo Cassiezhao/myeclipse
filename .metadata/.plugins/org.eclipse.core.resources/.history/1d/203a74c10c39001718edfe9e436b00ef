@@ -1,0 +1,29 @@
+/**
+ * 
+ */
+package com.cassie.notepad;
+
+import javax.swing.JFrame;
+import javax.swing.JTextArea;
+
+/**
+ * @author cassie
+ * @fun notepad
+ */
+public class NotePad extends JFrame {
+
+	/**
+	 * @param args
+	 */
+	JTextArea jta = null;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	public NotePad()
+	{
+		jta = new JTextArea();
+		this.add(jta);
+		
+	}
+}

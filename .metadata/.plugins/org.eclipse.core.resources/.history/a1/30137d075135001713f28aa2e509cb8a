@@ -1,0 +1,7 @@
+package com.cassie.tankegame2;
+
+public class Shot {
+	int x;
+	int y;
+	
+}
