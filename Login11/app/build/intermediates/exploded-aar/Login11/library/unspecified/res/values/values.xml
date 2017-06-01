@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr format="reference" name="ItemViewAttr"/>
+    <declare-styleable name="ItemView"><attr format="string" name="left_text"/><attr format="string" name="right_text"/><attr format="integer" name="left_text_size"/><attr format="integer" name="right_text_size"/><attr format="reference" name="right_img_src"/><attr format="reference" name="left_img_src"/><attr format="color" name="background_color"/><attr format="color" name="left_text_color"/><attr format="color" name="right_text_color"/><attr format="boolean" name="is_divider_visibility"/></declare-styleable>
+    <string name="app_name">Library</string>
+    <style name="ItemViewStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+    </style>
+</resources>

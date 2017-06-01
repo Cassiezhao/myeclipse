@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.multipart.maxSize" value="10000000"/>
+	<package name="chris" extends="struts-default" namespace="/">
+	
+	<action name="ExcelAction" class="chris.action.ExcelAction" method="exportNetworkDeviceList">
+		 <result name="getNetworkDeviceExportList" type="stream">
+		<param name="inputStream">excelStream</param>             
+                <param name="ContentType">application/vnd.ms-excel</param>
+                <param name="contentDisposition">filename=${filename}</param>
+		</result>
+		
+	</action>
+	<action name="ExcelAction2" class="chris.action.ExcelAction" method="returnguide">
+		 <result name="getNetworkDeviceExportList" type="stream">
+		<param name="inputStream">excelStream</param>             
+                <param name="ContentType">application/vnd.ms-excel</param>
+                <param name="contentDisposition">filename=${filename}</param>
+		</result>
+		
+	</action>
+	<action name="ExcelAction3" class="chris.action.ExcelAction" method="daoyoujizhuangtai">
+		 <result name="getNetworkDeviceExportList" type="stream">
+		<param name="inputStream">excelStream</param>             
+                <param name="ContentType">application/vnd.ms-excel</param>
+                <param name="contentDisposition">filename=${filename}</param>
+		</result>
+		
+	</action>
+	
+	<action name="ExcelAction4" class="chris.action.ExcelAction" method="daoyoujizhuangtai">
+		 <result name="getNetworkDeviceExportList" type="stream">
+		<param name="inputStream">excelStream</param>             
+                <param name="ContentType">application/vnd.ms-excel</param>
+                <param name="contentDisposition">filename=${filename}</param>
+		</result>
+		
+	</action>
+	
+	<action name="ExcelAction5" class="chris.action.ExcelAction" method="pingjiaxinxi">
+		 <result name="getNetworkDeviceExportList" type="stream">
+		<param name="inputStream">excelStream</param>             
+                <param name="ContentType">application/vnd.ms-excel</param>
+                <param name="contentDisposition">filename=${filename}</param>
+		</result>
+		
+	</action>
+	<action name="testUpload" 
+			class="chris.action.WavAction" method="uplM">
+			<result name="musicok" type="redirect">findAll_Guide?i=2</result>
+		</action>
+	
+	<action name="AndroidRecord" 
+			class="chris.action.WavAction" method="andup">
+			<result name="musicok" type="redirect">findAll_Guide?i=2</result>
+		</action>
+		<action name="yinpinshangchuan" 
+			class="chris.action.WavAction" method="yinpinshangchuan">
+			
+		</action>
+		
+	<action name="DownLoadAction" class="chris.action.downloadAction" method="upload"> 
+			<result type="stream">
+				<param name="bufferSize">2048</param>
+			</result>
+		</action>
+		
+	</package>
+</struts>    

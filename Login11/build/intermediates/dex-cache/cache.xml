@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\hell_blade\.android\build-cache\c5f9adfedf0f1b858b5fc74e19287ef84f902fe6\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="D:\develop\workspace\Login11\app\build\intermediates\pre-dexed\debug\classes_859653b46a8ce9b70937963e913708b9733271c3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\develop\workspace\Login11\library\build\intermediates\bundles\default\libs\eventbus-3.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="886ad2496dcf45a0ce9c0382013a88992d6e51a0">
+        <dex dex="D:\develop\workspace\Login11\app\build\intermediates\pre-dexed\debug\eventbus-3.0.0_d89231b8f98905dd50c92c5cfebd1d33770d348e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\develop\workspace\Login11\app\libs\okio-1.9.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f824591a0016efbaeddb8300bee54832a1398cfa">
+        <dex dex="D:\develop\workspace\Login11\app\build\intermediates\pre-dexed\debug\okio-1.9.0_71c07261c1606aa360ae90871cada1a3007dcadd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\develop\workspace\Login11\app\libs\okhttp-3.4.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c7c4f9e35c2fd5900da24f9872e3971801f08ce0">
+        <dex dex="D:\develop\workspace\Login11\app\build\intermediates\pre-dexed\debug\okhttp-3.4.1_3a5305f87717eb12aa1324d1a21163d469ff8abf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\develop\workspace\Login11\app\libs\CH34xUARTDriver.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2e912ab37494eb529329380caace77005b88876e">
+        <dex dex="D:\develop\workspace\Login11\app\build\intermediates\pre-dexed\debug\CH34xUARTDriver_d33d791581c0bc5141ce93f55129bc8f9af21b9f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\hell_blade\.android\build-cache\badd6ec686434b1cc7c89cf3fe848867fffa439d\output\jars\libs\internal_impl-23.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="D:\develop\workspace\Login11\app\build\intermediates\pre-dexed\debug\internal_impl-23.4.0_72d8974e8881d19124d85560931fb259ab5e52f7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\hell_blade\.android\build-cache\1dfaa37c0abca99ed371a43bfdd1b79907bdfc64\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="D:\develop\workspace\Login11\app\build\intermediates\pre-dexed\debug\classes_25e8a14375e445409eebfabe1ec08d03287219d6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\hell_blade\.android\build-cache\5b704ec29476da53088f9549294fb2fe6bf4d7bd\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="D:\develop\workspace\Login11\app\build\intermediates\pre-dexed\debug\classes_82302c866b6a37d191d12ea8f8c05c20fb901a87.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="D:\develop\workspace\Login11\app\build\intermediates\pre-dexed\debug\support-annotations-23.4.0_0740e35b1562f687139862cca605a1202e2f94d0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\develop\workspace\Login11\app\libs\gson-2.7.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="D:\develop\workspace\Login11\app\build\intermediates\pre-dexed\debug\gson-2.7_623e0bfd7ada4a7bc68441e7a74c232b86aa1f9c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\hell_blade\.android\build-cache\1635f3730b658233308babdbb9acca844d20f184\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="D:\develop\workspace\Login11\app\build\intermediates\pre-dexed\debug\classes_5ef33b76bbb033cd55bbe9b8893d3e0aaab2de24.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\develop\workspace\Login11\app\libs\okhttputils-2_6_2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0b58ea597d7d7a6ef0ec42ae3994985f7e86553f">
+        <dex dex="D:\develop\workspace\Login11\app\build\intermediates\pre-dexed\debug\okhttputils-2_6_2_df368ed9ad9461d856efd2b24b2c41d442fc3e5c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\develop\workspace\Login11\library\build\intermediates\bundles\default\libs\glide-3.7.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4b4aa93ea9524a36cdd8dc13c1a889a03116f1d7">
+        <dex dex="D:\develop\workspace\Login11\app\build\intermediates\pre-dexed\debug\glide-3.7.0_f48fcbec052729b89856062eda019ffac7f8f2aa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\hell_blade\.android\build-cache\badd6ec686434b1cc7c89cf3fe848867fffa439d\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="D:\develop\workspace\Login11\app\build\intermediates\pre-dexed\debug\classes_65ddd5138fd2bfe621f8e997b5c308ad1db6b7ba.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\hell_blade\.android\build-cache\2ce08d3288e7d55df998ad97c26055e3f2e001d0\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
+        <dex dex="D:\develop\workspace\Login11\app\build\intermediates\pre-dexed\debug\classes_b1743b7b1f4772cb00acf56aeb436b38a09e61fc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\develop\workspace\Login11\library\build\intermediates\bundles\default\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d454d3afe0341c4f2c69e87351eea54f91a83611">
+        <dex dex="D:\develop\workspace\Login11\app\build\intermediates\pre-dexed\debug\classes_43fc275d62815894bd2f68a37468cfe831f54226.jar" />
+    </item>
+
+</items>

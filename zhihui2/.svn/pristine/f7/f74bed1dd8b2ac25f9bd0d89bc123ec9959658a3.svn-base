@@ -1,0 +1,76 @@
+package chris.action;
+
+import java.util.Map;
+
+import javax.annotation.Resource;
+
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.interceptor.SessionAware;
+import org.springframework.stereotype.Controller;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+import chris.pojo.Systemscore;
+import chris.service.BizService;
+
+@Controller
+@Namespace("/")
+public class ChangeScoreAciton  extends ActionSupport implements SessionAware{
+	@Resource(name = "BizService")
+	private BizService bizService;
+	private Map<String, Object> session;
+	private String path;
+	
+	private Systemscore sys;
+	
+	public Systemscore getSys() {
+		return sys;
+	}
+
+	public void setSys(Systemscore sys) {
+		this.sys = sys;
+	}
+
+	public String getPath() {
+		return path;
+	}
+
+	public void setPath(String path) {
+		this.path = path;
+	}
+
+	public Map<String, Object> getSession() {
+		return session;
+	}
+
+	public BizService getBizService() {
+		return bizService;
+	}
+
+	public void setBizService(BizService bizService) {
+		this.bizService = bizService;
+	}
+	@Action(value = "changeScore_ChangeScore", results = { @Result(name = "ok", location = "${path}", type = "redirect") })
+
+	public String  changeScore (){
+		Systemscore syso = bizService.getSysScoreBiz().findAll().get(0);
+		session.put("syso",syso);
+		path="modify/modify.jsp";
+		return "ok"; 
+			
+	}
+
+	public void setSession(Map<String, Object> arg0) {
+		// TODO Auto-generated method stub
+		this.session=arg0;
+	}
+	@Action(value = "update_ChangeScore", results = { @Result(name = "ok", location = "${path}", type = "redirect") })
+	public String update(){
+		System.out.println(sys);
+		bizService.getSysScoreBiz().save(sys);
+		path="changeScore_ChangeScore";
+		return "ok";
+	}
+}

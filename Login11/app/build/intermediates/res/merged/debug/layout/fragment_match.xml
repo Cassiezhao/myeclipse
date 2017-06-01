@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.login1.fragment.MatchFragment"
+    android:background="@drawable/bg12">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="146dp"
+        android:textSize="25dp"
+        android:id="@+id/ceshit"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="停 止"
+        android:textSize="25dp"
+        android:background="@drawable/login_button"
+        android:textColor="@android:color/white"
+        android:id="@+id/tingzhi"
+        android:layout_marginEnd="23dp"
+        android:layout_alignBottom="@+id/peidui"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/peidui" />
+
+    <Button
+        android:id="@+id/fanhui"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="37dp"
+        android:text="返回"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        android:background="@drawable/login_button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/tingzhi" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="配 对"
+        android:textSize="25dp"
+        android:textColor="@android:color/white"
+        android:id="@+id/peidui"
+        android:background="@drawable/login_button"
+        android:layout_marginTop="45dp"
+        android:layout_below="@+id/ceshit"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="26dp" />
+
+</RelativeLayout>

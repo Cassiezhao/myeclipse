@@ -1,0 +1,9 @@
+   .btnright{
+     float:right;
+     margin-right:165px;
+   	}
+   .lableposition{
+	font-size:15px;
+	display:block; 
+	line-height:38px;	
+	}

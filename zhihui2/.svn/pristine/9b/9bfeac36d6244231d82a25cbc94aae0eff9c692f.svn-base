@@ -1,0 +1,73 @@
+package chris.service;
+import javax.annotation.Resource;
+
+import chris.dao.GuideDAO;
+import chris.dao.GuidemDAO;
+import chris.dao.MessageDAO;
+import chris.dao.SessionDAO;
+import chris.dao.TotalDAO;
+import chris.dao.UserDAO;
+import chris.dao.YoukemDAO;
+
+import org.springframework.stereotype.Service;
+
+@Service("DaoService")
+public class DaoService {
+		@Resource(name="GuideDAO")
+		private GuideDAO gdao;
+		@Resource(name="GuidemDAO")
+		private GuidemDAO gmdao;
+		@Resource(name="UserDAO")
+		private UserDAO udao;
+		@Resource(name="YoukemDAO")
+		private YoukemDAO youkeDao;
+		@Resource(name="TotalDAO")
+		private TotalDAO totalDao;
+		@Resource(name="SessionDAO")
+		private SessionDAO sessionDao;
+		@Resource(name="MessageDAO")
+		private MessageDAO messageDao; 
+		
+		public MessageDAO getMessageDao() {
+			return messageDao;
+		}
+		public void setMessageDao(MessageDAO messageDao) {
+			this.messageDao = messageDao;
+		}
+		public SessionDAO getSessionDao() {
+			return sessionDao;
+		}
+		public void setSessionDao(SessionDAO sessionDao) {
+			this.sessionDao = sessionDao;
+		}
+		public TotalDAO getTotalDao() {
+			return totalDao;
+		}
+		public void setTotalDao(TotalDAO totalDao) {
+			this.totalDao = totalDao;
+		}
+		public YoukemDAO getYoukeDao() {
+			return youkeDao;
+		}
+		public void setYoukeDao(YoukemDAO youkeDao) {
+			this.youkeDao = youkeDao;
+		}
+		public GuideDAO getGdao() {
+			return gdao;
+		}
+		public void setGdao(GuideDAO gdao) {
+			this.gdao = gdao;
+		}
+		public GuidemDAO getGmdao() {
+			return gmdao;
+		}
+		public void setGmdao(GuidemDAO gmdao) {
+			this.gmdao = gmdao;
+		}
+		public UserDAO getUdao() {
+			return udao;
+		}
+		public void setUdao(UserDAO udao) {
+			this.udao = udao;
+		}
+}

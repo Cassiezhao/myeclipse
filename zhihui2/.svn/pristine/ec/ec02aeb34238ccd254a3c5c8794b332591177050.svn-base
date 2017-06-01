@@ -1,0 +1,569 @@
+package chris.action;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts2.ServletActionContext;
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.interceptor.SessionAware;
+import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
+
+import chris.bean.PageBean;
+import chris.pojo.Guide;
+import chris.pojo.Guidem;
+import chris.pojo.Youkem;
+import chris.service.BizService;
+
+import com.alibaba.fastjson.JSONObject;
+import com.opensymphony.xwork2.ActionSupport;
+
+@Controller
+@Namespace("/")
+public class GuidemAction extends ActionSupport implements SessionAware {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6299904952266089765L;
+	private Map<String, Object> session;
+	private int page;
+	private int rows;
+	private String path;
+	private int index;
+	private Guidem guidem;
+	private int guidenum;
+	private int i;
+	private int j;
+	private int xuanze;
+	private String shuju;
+	private Date before;
+	private Date after;
+	private int newgunm;
+	private int newmnum;
+	private int youke;
+	private int tt;
+	
+	public int getTt() {
+		return tt;
+	}
+
+	public void setTt(int tt) {
+		this.tt = tt;
+	}
+
+	public int getYouke() {
+		return youke;
+	}
+
+	public void setYouke(int youke) {
+		this.youke = youke;
+	}
+
+	public int getNewgunm() {
+		return newgunm;
+	}
+
+	public void setNewgunm(int newgunm) {
+		this.newgunm = newgunm;
+	}
+
+	public int getNewmnum() {
+		return newmnum;
+	}
+
+	public void setNewmnum(int newmnum) {
+		this.newmnum = newmnum;
+	}
+
+	public int getXuanze() {
+		return xuanze;
+	}
+
+	public void setXuanze(int xuanze) {
+		this.xuanze = xuanze;
+	}
+
+	public String getShuju() {
+		return shuju;
+	}
+
+	public void setShuju(String shuju) {
+		this.shuju = shuju;
+	}
+
+	public Date getBefore() {
+		return before;
+	}
+
+	public void setBefore(Date before) {
+		this.before = before;
+	}
+
+	public Date getAfter() {
+		return after;
+	}
+
+	public void setAfter(Date after) {
+		this.after = after;
+	}
+
+	public int getJ() {
+		return j;
+	}
+
+	public void setJ(int j) {
+		this.j = j;
+	}
+
+	public int getI() {
+		return i;
+	}
+
+	public void setI(int i) {
+		this.i = i;
+	}
+
+	public int getGuidenum() {
+		return guidenum;
+	}
+
+	public void setGuidenum(int guidenum) {
+		this.guidenum = guidenum;
+	}
+
+	public Guidem getGuidem() {
+		return guidem;
+	}
+
+	public void setGuidem(Guidem guidem) {
+		this.guidem = guidem;
+	}
+
+	public int getIndex() {
+		return index;
+	}
+
+	public void setIndex(int index) {
+		this.index = index;
+	}
+
+	public BizService getBizService() {
+		return bizService;
+	}
+
+	public void setBizService(BizService bizService) {
+		this.bizService = bizService;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	@Resource(name = "BizService")
+	private BizService bizService;
+
+	public int getPage() {
+		return page;
+	}
+
+	public void setPage(int page) {
+		this.page = page;
+	}
+
+	public int getRows() {
+		return rows;
+	}
+
+	public void setRows(int rows) {
+		this.rows = rows;
+	}
+
+	public String getPath() {
+		return path;
+	}
+
+	public void setPath(String path) {
+		this.path = path;
+	}
+
+	public Map<String, Object> getSession() {
+		return session;
+	}
+
+	public void setSession(Map<String, Object> arg0) {
+		this.session = arg0;
+
+	}
+
+	@Action(value = "toborrow_Guidem", results = { @Result(name = "ok", location = "${path}", type = "redirect") })
+	public String toborrow() {
+		System.out.println("测试进入");
+		path = "init_Youkem?k=2";
+		return "ok";
+	}
+
+	/**
+	 * 借出导游机
+	 * 
+	 * @return
+	 */
+	@Action(value = "update_Guidem", results = { @Result(name = "ok", location = "${path}", type = "redirect") })
+	public String update() {
+		/**
+		 * 下面是游客机的分配情况
+		 */
+		session.put("err2", "");
+		session.put("err3", "");
+		
+		/**
+		 * 分配导游机，应当将上一次的导游机的信息清零
+		 */
+
+		session.put("heihei", 2);
+		Guidem a = null;
+		try {
+			//根据导游机编号找到导游
+			a = bizService.getGuidemBiz().findById2(guidem.getGuidenum());
+		} catch (Exception e) {
+			
+			throw new RuntimeException("导游机不存在");
+		}
+		//1,可借，2借出，3损坏 4维修
+		if(a==null || a.getGmstate()!=1){
+			session.put("err2", "导游机编号不存在，或已借出");
+			path="toborrow_Guidem";
+			return "ok";
+		}
+		
+		a.setAssignTime(new Date());
+		Guide b = null;
+		try {
+			//根据导游编号查询
+			b = bizService.getGuideBiz().findById2(
+					guidem.getGuide().getGuidenum());
+		} catch (Exception e) {
+			throw new RuntimeException("导游不存在");
+		}
+		if(b==null || b.getState()!=0){
+			session.put("err2","");
+			session.put("err3","导游不存在,或已经派出！");
+			path="toborrow_Guidem";
+			return "ok";
+		}
+		Youkem youke = bizService.getYoukemBiz().findById(1);
+		youke.setYoukeMbr(guidem.getYoukeNum()
+				+ youke.getYoukeMbr());
+		youke.setYoukeMle(youke.getYoukeMle()
+				- guidem.getYoukeNum());
+		youke.setYoukeMboom(youke.getYoukeMboom());
+		bizService.getYoukemBiz().update(youke);
+		session.put("err2","");
+		session.put("err3","");
+		a.setGuide(b);
+		a.setGmstate(2);
+		a.setYoukeNum(guidem.getYoukeNum());
+		a.setRetT(null);
+		a.setBorrow(a.getBorrow() + 1);
+		b.setGuidem(a);
+		bizService.getGuideBiz().update(b);
+		bizService.getGuidemBiz().update(a);
+		path = "findAll_Guidem?i=1";
+		return "ok";
+	}
+
+	@Action(value = "findAll_Guidem", results = { @Result(name = "ok", location = "${path}", type = "redirect") })
+	public String findAll() {
+		PageBean pb2 = (PageBean) session.get("pb2");
+		pb2 = pb2 == null ? new PageBean() : pb2;
+		page = page == 0 ? (pb2.getPage() == 0 ? 1 : pb2.getPage()) : page;
+		rows = rows == 0 ? (pb2.getRows() == 0 ? 10 : pb2.getRows()) : rows;
+		int pagesize=bizService.getGuidemBiz().findAll2().size();
+		List<Guidem> guidems = bizService.getGuidemBiz().findAll(page, rows);
+		pb2.setPagelist(guidems);
+		pb2.setPage(page);
+		pb2.setRows(rows);
+		session.put("rows2", rows);
+		session.put("page2", page);
+		session.put("total2", pagesize);
+		session.put("pb2", pb2);
+		/**
+		 * i=1时，进入已经借出的界面
+		 */
+		if (i == 1) {
+
+			switch (xuanze) {
+			case 1:
+				//按照导游机编号查询
+				 try {
+					guidems = bizService.getGuidemBiz().findByGuidenum(Integer.parseInt(shuju));
+				} catch (NumberFormatException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				 session.put("total2", guidems.size());
+				 pb2.setPagelist(guidems);
+					session.put("pb2", pb2);
+				break;
+			case 2:
+				//按照导游编号查询
+				try {
+					guidems = bizService.getGuidemBiz().findByGnum(Integer.parseInt(shuju));
+				} catch (NumberFormatException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				 pb2.setPagelist(guidems);
+				 session.put("total2", guidems.size());
+					session.put("pb2", pb2);
+				break;
+			case 3:
+				//按照导游姓名查询
+				try {
+					guidems = bizService.getGuidemBiz().findByGname(shuju);
+				} catch (NumberFormatException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				 pb2.setPagelist(guidems);
+				 session.put("total2", guidems.size());
+					session.put("pb2", pb2);
+				
+				break;
+			case 4:
+				SimpleDateFormat sf=new SimpleDateFormat("yyyy-MM-dd");
+				String newbefore=sf.format(before);
+				String newlater=sf.format(after);
+				
+				try {
+					guidems = bizService.getGuidemBiz().onTime(newbefore, newlater);
+				} catch (NumberFormatException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				 pb2.setPagelist(guidems);
+					session.put("pb2", pb2);
+					session.put("total2", guidems.size());
+				break;
+			default:
+				
+				break;
+			}
+			int gals=0;
+			for(Guidem gi:guidems){
+				if(gi.getGmstate()==2){
+					gals++;
+				}
+			}
+			session.put("total2", gals);
+			path = "guidemachine/alreadyBorrow.jsp";
+		} else {
+			path = "guidemachine/useMessage2.jsp";
+		}
+
+		return "ok";
+	}
+	@Action(value = "findById3_Guidem", results = { @Result(name = "ok", location = "${path}", type = "redirect") })
+	public String findById3(){
+		
+			//归还
+			List<Guidem> listg = bizService.getGuidemBiz().findAll2();
+			session.put("BYZ","");
+			int aa=guidem.getGuidenum();
+			int bb=guidem.getGuide().getGuidenum();
+			Youkem youke2 = bizService.getYoukemBiz().findById(1);		
+			for(Guidem gm:listg){
+				if(gm.getGuidenum()==aa&& gm.getGuide().getGuidenum()==bb)
+				{
+					
+					Integer c = gm.getYoukeNum();
+					if(c==null){
+						c=0;
+					}
+					gm.setYoukeNum(0);
+					gm.setRetT(new Date());
+					if(tt==1){
+						gm.setGmstate(1);
+						youke2.setYoukeMbr(youke2.getYoukeMbr() - c);
+						youke2.setYoukeMle(youke2.getYoukeMle() + c);
+						youke2.setYoukeMboom(youke2.getYoukeMboom());
+						session.put("BYZ","归还成功！点击可再次归还");
+					}else if(tt==0){
+						gm.setGmstate(3);
+						gm.setBreakinfo(guidem.getBreakinfo());
+						gm.setBreak_(gm.getBreak_()+1);
+						youke2.setYoukeMbr(youke2.getYoukeMbr() - c);
+						youke2.setYoukeMle(youke2.getYoukeMle() + c-youke);
+						youke2.setYoukeMboom(youke2.getYoukeMboom()+youke);
+						session.put("BYZ","损坏记录完成！点击可再次归还");
+					}
+					
+					bizService.getYoukemBiz().update(youke2);
+					bizService.getGuidemBiz().update(gm);
+					break;
+				}
+				
+		}
+			path="findAll_Guidem?i=1";
+		return "ok";
+	}
+	
+
+	@Action(value = "findById_Guidem", results = { @Result(name = "ok", location = "${path}", type = "redirect") })
+	public String findById() {
+		Guidem a = bizService.getGuidemBiz().findById(index);
+		System.out.println(index+":"+j);
+
+		/**
+		 * 下面是提交,归还
+		 */
+		if (j == 1) {
+			
+			if(newgunm!=0 || newmnum!=0){
+				if(a.getGuidenum()==newmnum || a.getGuide().getGuidenum()==newgunm){
+					a.setGmstate(1);
+					Integer c = a.getYoukeNum();
+					if(c==null){
+						c=0;
+					}
+					a.setYoukeNum(0);
+					//bizService.getGuidemBiz().update(a);
+					Youkem youke = bizService.getYoukemBiz().findById(1);
+					
+					youke.setYoukeMbr(youke.getYoukeMbr() - c);
+					youke.setYoukeMle(youke.getYoukeMle() + c);
+					youke.setYoukeMboom(youke.getYoukeMboom());
+					
+					
+					bizService.getYoukemBiz().update(youke);
+					a.setRetT(new Date());
+					bizService.getGuidemBiz().update(a);
+					// 游客机的标志位,使得进入游客机进入可以刷新
+					session.put("heihei", 2);
+					session.put("BYZ","归还成功！点击可再次归还");
+				}else{
+					session.put("BYZ","核对出现异常，导游编号或导游机编号异常");
+				}
+			
+			}else{
+			session.put("BYZ","输入导游机编号或者导游编号不能为空");
+			
+			}
+			path="findAll_Guidem?i=1";
+			return "ok";
+
+		} else if (j == 2) {
+
+			a.setRetT(new Date());
+			session.put("guidemx", a);
+			path = "guidemachine/guideMachineDestory.jsp";
+			/**
+			 * 查看详情
+			 */
+		} else if (j == 3) {
+			session.put("guidemx2", a);
+			path = "guidemachine/useMessageDetail.jsp";
+			return "ok";
+		} 
+		//损坏的action
+		else if (j == 4) {
+			
+			Guidem a2 = bizService.getGuidemBiz()
+					.findById(guidem.getGuidemid());
+			a2.setBreakinfo(guidem.getBreakinfo());
+			a2.setGmstate(3);
+			a2.setBreak_(a2.getBreak_());
+			//借出的
+			Integer c = a2.getYoukeNum();;
+			if(c==null){
+				c=0;
+			}
+			a2.setYoukeNum(0);
+
+			Youkem youke2 = bizService.getYoukemBiz().findById(1);
+			youke2.setYoukeMbr(youke2.getYoukeMbr() - c);
+			youke2.setYoukeMle(youke2.getYoukeMle() + c-youke);
+			youke2.setYoukeMboom(youke2.getYoukeMboom()+youke);
+			a2.setRetT(new Date());
+			bizService.getYoukemBiz().update(youke2);
+		
+			path = "findAll_Guidem";
+			return "ok";
+			
+		}else if(j == 5){
+			a.setGmstate(1);
+			
+			bizService.getGuidemBiz().update(a);
+			// 游客机的标志位,使得进入游客机进入可以刷新
+			session.put("heihei", 2);
+			path = "findAll_Guidem";
+		}
+		/**
+		 * 正在维修
+		 */
+		else {
+			a.setGmstate(4);
+			path = "findAll_Guidem";
+			a.setRetT(new Date());
+			bizService.getGuidemBiz().update(a);
+
+		}
+
+		return "ok";
+
+	}
+
+	@Action(value = "save_Guidem", results = { @Result(name = "ok", location = "${path}", type = "redirect") })
+	public String save_Guidem() {
+		System.out.println(guidenum);
+		Guidem g = new Guidem();
+		g.setGuidenum(guidenum);
+		g.setGmstate(1);
+		int c=0;
+		boolean a ;
+		List<Guidem> lg = bizService.getGuidemBiz().findAll2();
+		for(Guidem g2s:lg){
+			if(g2s.getGuidenum()==guidenum){
+				c=1;
+			}
+		}
+		if(c==1){
+			a=false;
+			
+		}else{
+			a= bizService.getGuidemBiz().save(g);
+		}
+		String lsempjsonString = null;
+		if (a) {
+			lsempjsonString = JSONObject.toJSONString("添加成功");
+		} else {
+			lsempjsonString = JSONObject.toJSONString("添加失败");
+		}
+		print(lsempjsonString);
+		path = null;
+		return null;
+	}
+
+	public void print(String data) {
+		HttpServletResponse rep = ServletActionContext.getResponse();
+		rep.setCharacterEncoding("utf-8");
+		try {
+			PrintWriter out = rep.getWriter();
+			out.print(data);
+			out.flush();
+			out.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

@@ -1,0 +1,183 @@
+package chris.action;
+
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+import java.util.logging.SimpleFormatter;
+
+import javax.annotation.Resource;
+
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.interceptor.SessionAware;
+import org.springframework.stereotype.Controller;
+
+import chris.pojo.Memory;
+import chris.pojo.User;
+import chris.service.BizService;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+@Controller
+@Namespace("/")
+public class UserAction extends ActionSupport implements SessionAware{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8677933912203748665L;
+	
+	private int userid;
+	public int getUserid() {
+		return userid;
+	}
+
+	public void setUserid(int userid) {
+		this.userid = userid;
+	}
+	private String newpassword;
+	public String getNewpassword() {
+		return newpassword;
+	}
+
+	public void setNewpassword(String newpassword) {
+		this.newpassword = newpassword;
+	}
+	@Resource(name="BizService")
+	private BizService bizService;
+	private User user;
+	private String path;
+	private Map<String, Object> session;
+	public Map<String, Object> getSession() {
+		return session;
+	}
+
+	public String getPath() {
+		return path;
+	}
+
+	public void setPath(String path) {
+		this.path = path;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public BizService getBizService() {
+		return bizService;
+	}
+
+	public void setBizService(BizService bizService) {
+		this.bizService = bizService;
+	}
+	
+	@Action(value="save_User",results={
+			@Result(name="ok",location="${path}",type="redirect")
+	})
+	public String save(){
+		//System.out.println(user.getUsername()+":::::::"+user.getUsernum());
+		List<User> users = bizService.getUserBiz().findAll();
+		for(User uu:users){
+			System.out.println(uu.getUsername()+"::::"+uu.getUsernum());
+			if(uu.getUsernum()==(user.getUsernum())){
+				path="save_User";
+				return "ok";
+			}
+		}
+		try {
+			String ps=user.getTel().trim().substring(user.getTel().length()-6);
+			System.out.println(ps);
+			user.setPassword(ps);
+			bizService.getUserBiz().save(user);
+			jilu("存入新用户"+user.getUsername());
+			System.out.println(user.getUserid());
+			path="findAll_User";
+			return "ok";
+		} catch (Exception e) {
+			path="error.jsp";
+		}
+		return "ok";
+	}
+	@Action(value="findAll_User",results={
+			@Result(name="ok",location="${path}",type="redirect")
+	})
+	public String findAll(){
+		List<User> a=bizService.getUserBiz().findAll();
+		session.put("user", a);
+		path="operatorManagement/operatorDetail.jsp";
+		return "ok";
+	}
+
+	public void setSession(Map<String, Object> session) {
+		this.session=session;
+	}
+	@Action(value="check_User",results={
+			@Result(name="ok",location="${path}",type="redirect")
+	})
+	public String check(){
+		List<User> a = bizService.getUserBiz().findAll();
+//		username;
+//		private Integer usernum;
+//		private Timestamp userlogTime;
+		if(user!=null){
+		for(User u :a){
+			System.out.println(u.getCount()+":"+u.getPassword());
+			System.out.println(user.getCount()+":"+user.getPassword());
+			if(u.getCount().equals(user.getCount())&&u.getPassword().equals(user.getPassword())){
+				Date now=new Date();
+				if(u.getPassword().equals(u.getTel().trim().substring(u.getTel().length()-6))){
+					session.put("change", 1);
+				}else{
+					session.put("change", 2);
+				}
+				String b = new SimpleDateFormat("yyyy年MM月dd日HH时mm分ss秒").format(now);
+				//将业主查出来
+				User user2 = bizService.getUserBiz().findById(u.getUserid());
+				user2.setUserlogTime(b);
+				session.put("nuser", user2);
+				session.put("err", "");
+				path="index.jsp";
+				return "ok";
+			}
+		}}
+		path="login.jsp";
+		session.put("err", "账号或密码错误");
+		return "ok";		
+	}
+	@Action(value="modify_User",results={
+			@Result(name="ok",location="${path}",type="redirect")
+	})
+	public String modify(){
+		User a = bizService.getUserBiz().findById(userid);
+		a.setPassword(newpassword);
+		bizService.getUserBiz().update(a);
+		path="findAll_User";
+		return "ok";
+	}
+	@Action(value="changep_User",results={
+			@Result(name="ok",location="${path}",type="redirect")
+	})
+	public String changep(){
+		User a = bizService.getUserBiz().findById(userid);
+		a.setPassword(a.getTel().trim().substring(a.getTel().length()-6));
+		bizService.getUserBiz().update(a);
+		path="findAll_User";
+		return "ok";
+			
+	}
+	public void jilu(String s){
+		Memory me=new Memory();
+		me.setMessage(s);
+		Timestamp d = new Timestamp(System.currentTimeMillis());
+		me.setMtime(d);
+		bizService.getMemoryBiz().save(me);
+	}
+}

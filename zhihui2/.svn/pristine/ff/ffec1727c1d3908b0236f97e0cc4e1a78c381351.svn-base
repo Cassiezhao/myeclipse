@@ -1,0 +1,16 @@
+package chris.biz;
+
+import java.util.Date;
+import java.util.List;
+
+import chris.pojo.Session;
+
+public interface iSessionBiz {
+	public List<Session> findBygId(int page,int rows,int gid);
+	public int findMaxPage(int rows,int gid);
+	public Session findByid(int sid);
+	public List<Session> findAll();
+	public List<Session> findBygId(int gid);
+	public List<Session> onTime(String before ,String later);
+	public List<Session> upTime(String before ,String later);
+}

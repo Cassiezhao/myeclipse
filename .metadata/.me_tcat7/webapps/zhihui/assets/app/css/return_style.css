@@ -1,0 +1,17 @@
+[genuitec-file-id="wc2-18"],[genuitec-lp-path="/zhihui2/WebRoot/assets/app/css/return_style.css"],[genuitec-lp-enabled=false]{
+  /* for codelive */
+}
+
+	.body{
+		background-color: #ffffff;
+	}
+	.fontstyle{
+		font-size: 20px;
+	}
+	  .right{
+	  	float:right;
+	  }
+	.return{
+	     float:right;
+	     margin-right:30px;
+	}

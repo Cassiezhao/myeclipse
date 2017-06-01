@@ -1,0 +1,237 @@
+package chris.action;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts2.ServletActionContext;
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.interceptor.SessionAware;
+import org.springframework.stereotype.Controller;
+
+import com.alibaba.fastjson.JSON;
+
+import chris.pojo.Guidem;
+import chris.service.BizService;
+
+@Controller
+@Namespace("/")
+public class MylsenAction implements SessionAware{
+	@Resource(name = "BizService")
+	private BizService bizService;
+	private String path;
+	private Map<String,Object>session;
+public Map<String, Object> getSession() {
+		return session;
+	}
+
+private String myid;
+
+
+	public String getMyid() {
+	return myid;
+}
+
+public void setMyid(String myid) {
+	this.myid = myid;
+}
+
+	public String getPath() {
+		return path;
+	}
+
+	public void setPath(String path) {
+		this.path = path;
+	}
+
+	public BizService getBizService() {
+		return bizService;
+	}
+
+	public void setBizService(BizService bizService) {
+		this.bizService = bizService;
+	}
+	
+	
+	/**
+	 * 上传
+	 * @return
+	 */
+	@Action(value = "mylsen_Mylsen", results = { @Result(name = "ok", location = "${path}", type = "redirect") })
+	public String mylsen() {
+		Map<String,Object> map=new HashMap<String, Object>();
+		try {
+			System.out.println("当前"+myid);
+			
+			 Guidem guidem = bizService.getGuidemBiz().findBygid((Integer.parseInt(myid)));
+			Integer dir = guidem.getMkdir();
+			Integer status = guidem.getMkstatus();
+//			if(1==status ){
+//				map.put("success", 2);
+//				map.put("guidemId",myid);
+//			}else{
+			//如果当前没有监听 listennum代表当前监听的人数
+			if(guidem.getListennum()==0){
+				dir++;
+				guidem.setMkdir(dir);
+				guidem.setMkstatus(1);
+				guidem.setListennum(1);
+				guidem.setMydir(dir+"_"+guidem.getGuidemnum().subSequence(0, 4));
+				
+			}else{
+				guidem.setListennum(guidem.getListennum()+1);
+			}
+				
+			bizService.getGuidemBiz().update(guidem);
+				System.out.println(dir+"_"+guidem.getGuidemnum().subSequence(0, 4)+"============================");
+				map.put("success", 1);
+//			}
+			
+			ServletContext servletContext = ServletActionContext.getServletContext();
+			
+		
+		
+			String fristdir=servletContext.getRealPath("/files")+"/"+dir+"_"+guidem.getGuidemnum().subSequence(0, 4)+"/";
+			
+			File myfile=new File(fristdir);
+			System.out.println("当前工作目录"+fristdir+";当前状态"+status);
+			if(!myfile.exists()){
+				myfile.mkdir();
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String lsempjsonString = JSON.toJSONString(map);
+		print(lsempjsonString);
+		//path=null;
+		return null;
+	}
+	
+	
+	/**
+	 * 停止监听模块
+	 * @return
+	 */
+	@Action(value = "mylsop_Mylsen", results = { @Result(name = "ok", location = "${path}", type = "redirect") })
+	public String mylsop() {
+		Map<String,Object> map=new HashMap<String, Object>();
+			System.out.println("当前"+myid);
+			
+			
+			
+			 Guidem guidem = bizService.getGuidemBiz().findBygid((Integer.parseInt(myid)));
+			if(guidem.getListennum()==1){
+			
+				//停止监听
+				guidem.setMkstatus(0);
+				guidem.setListennum(guidem.getListennum()-1);
+				
+			}else{
+				if(guidem.getListennum()>1){
+				guidem.setListennum(guidem.getListennum()-1);
+				}else{
+					guidem.setListennum(0);
+				}
+			}
+			bizService.getGuidemBiz().update(guidem);
+				Integer dir = guidem.getMkdir();
+				Integer status = guidem.getMkstatus();
+				
+				map.put("success", 1);
+			
+			System.out.println("当前工作目录"+dir+";当前状态"+status);
+			
+		String lsempjsonString = JSON.toJSONString(map);
+		print(lsempjsonString);
+		path=null;
+		return null;
+	}
+	/**
+	 * 缓存机制。判断是否有2.MP3
+	 * @return
+	 */
+	@Action(value = "jiance_Mylsen", results = { @Result(name = "ok", location = "${path}", type = "redirect") })
+	public String jiance(){
+		ServletContext servletContext = ServletActionContext
+				.getServletContext();
+		Map<String,Object> map=new HashMap<String, Object>();
+		System.out.println(myid);
+		String mydir=bizService.getGuidemBiz().findBygid(Integer.parseInt(myid)).getMydir();
+		//判断是否存在url
+		String fristdir = servletContext.getRealPath("\\files") + "\\" + mydir
+				+ "\\1.mp3";
+		String myreadir=servletContext.getRealPath("\\files") + "\\" + mydir;
+		File myfile = new File(fristdir);
+		if (myfile.exists()) {
+			
+			map.put("success", mydir);
+			/**
+			 * 判断是否有多人同时监听
+			 */
+			if(bizService.getGuidemBiz().findBygid(Integer.parseInt(myid)).getListennum()>1){
+				try {
+					File myfilelist = new File(myreadir);
+						if(myfilelist.exists()){
+							File[] listFiles = myfilelist.listFiles();
+							int i=listFiles.length-2;
+							if(i<=2){
+								i=2;
+								
+							}
+							map.put("myi", i);
+							System.out.println("这是当前的数据"+i);
+						}
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+			}else{
+				map.put("myi", 1);
+			}
+			System.out.println("该文件存在");
+		}else{
+			//文件不存在的时候就应该将数据重置
+			 Guidem guidem = bizService.getGuidemBiz().findBygid((Integer.parseInt(myid)));
+			 guidem.setMkstatus(0);
+			 guidem.setListennum(0);
+			 bizService.getGuidemBiz().update(guidem);
+			map.put("success", 0);
+			System.out.println("该文件不存在");
+		}
+		String lsempjsonString = JSON.toJSONString(map);
+		print(lsempjsonString);
+		path=null;
+		return null;
+	}
+	
+	public void print(String data) {
+		HttpServletResponse rep = ServletActionContext.getResponse();
+		rep.setCharacterEncoding("utf-8");
+		try {
+			PrintWriter out = rep.getWriter();
+			out.print(data);
+			out.flush();
+			out.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public void setSession(Map<String, Object> arg0) {
+		// TODO Auto-generated method stub
+		this.session=arg0;
+	}
+}

@@ -1,0 +1,24 @@
+[genuitec-file-id="wc2-144"],[genuitec-lp-path="/zhihui2/WebRoot/easyui/themes/metro/combobox.css"],[genuitec-lp-enabled=false]{
+  /* for codelive */
+}
+
+.combobox-item,
+.combobox-group {
+  font-size: 12px;
+  padding: 3px;
+  padding-right: 0px;
+}
+.combobox-gitem {
+  padding-left: 10px;
+}
+.combobox-group {
+  font-weight: bold;
+}
+.combobox-item-hover {
+  background-color: #E6E6E6;
+  color: #444;
+}
+.combobox-item-selected {
+  background-color: #CCE6FF;
+  color: #000;
+}

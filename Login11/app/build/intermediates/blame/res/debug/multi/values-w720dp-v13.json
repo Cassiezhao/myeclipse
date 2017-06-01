@@ -1,0 +1,50 @@
+[
+    {
+        "outputFile": "D:\\develop\\workspace\\Login11\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w720dp-v13\\values-w720dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 76,
+                    "endOffset": 127
+                },
+                "from": {
+                    "file": "C:\\Users\\hell_blade\\.android\\build-cache\\c5f9adfedf0f1b858b5fc74e19287ef84f902fe6\\output\\res\\values-w720dp-v13\\values-w720dp-v13.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 76,
+                        "endOffset": 127
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\hammer\\Desktop\\xiawuyong\\Login11\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w720dp-v13\\values-w720dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 76,
+                    "endOffset": 127
+                },
+                "from": {
+                    "file": "C:\\Users\\hammer\\.android\\build-cache\\f14dea01ea0d27cd88d3ae5ea8c86e6bb8a874df\\output\\res\\values-w720dp-v13\\values-w720dp-v13.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 76,
+                        "endOffset": 127
+                    }
+                }
+            }
+        ]
+    }
+]

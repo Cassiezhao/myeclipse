@@ -1,0 +1,7 @@
+package chris.biz;
+
+import chris.pojo.Memory;
+
+public interface iMemoryBiz {
+	 public void save(Memory mem) ;
+}

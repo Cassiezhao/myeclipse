@@ -1,0 +1,33 @@
+package chris.biz.imp;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
+import chris.biz.iMemoryBiz;
+import chris.pojo.Memory;
+import chris.service.DaoService;
+@Service("MemoryBiz")
+@Transactional(propagation=Propagation.REQUIRED)
+public class MemoryBiz implements iMemoryBiz {
+
+	@Resource(name="DaoService")
+	private DaoService daoService;
+	
+
+	public DaoService getDaoService() {
+		return daoService;
+	}
+
+	public void setDaoService(DaoService daoService) {
+		this.daoService = daoService;
+	}
+	
+	public void save(Memory mem) {
+		daoService.getMemoryDao().save(mem);
+		
+	}
+
+}

@@ -1,0 +1,23 @@
+[genuitec-file-id="wc2-6"],[genuitec-lp-path="/zhihui2/WebRoot/assets/app/css/GuideManage_style.css"],[genuitec-lp-enabled=false]{
+  /* for codelive */
+}
+
+	  .guideinfotitle{
+	     	background-color:#f2f2f2;
+		font-size:13px;
+		color:#707070;
+		
+	   }
+
+	 .fontsize{
+		font-size:13px;
+		}
+
+	 .checkBox{
+	  	text-align:center;
+	  	}
+	  .searchInfo{
+	   	width:270px;
+	 	height:34px;
+	 	 float:right;
+	  	}

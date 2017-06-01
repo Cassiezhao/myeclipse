@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="chris" extends="struts-default" namespace="/">
+	<action name="ExcelAction" class="chris.action.ExcelAction" method="exportNetworkDeviceList">
+		 <result name="getNetworkDeviceExportList" type="stream">
+		<param name="inputStream">excelStream</param>             
+                <param name="ContentType">application/vnd.ms-excel</param>
+                <param name="contentDisposition">filename="NetDevice.xls"</param>
+		</result>
+		
+	</action>
+	<action name="ExcelAction2" class="chris.action.ExcelAction" method="returnguide">
+		 <result name="getNetworkDeviceExportList" type="stream">
+		<param name="inputStream">excelStream</param>             
+                <param name="ContentType">application/vnd.ms-excel</param>
+                <param name="contentDisposition">filename="NetDevice.xls"</param>
+		</result>
+		
+	</action>
+	</package>
+</struts>    

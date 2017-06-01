@@ -1,0 +1,50 @@
+[
+    {
+        "outputFile": "C:\\Users\\hammer\\Desktop\\xiawuyong\\Login11\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w500dp-v13\\values-w500dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 54,
+                    "endOffset": 105
+                },
+                "from": {
+                    "file": "C:\\Users\\hammer\\.android\\build-cache\\f14dea01ea0d27cd88d3ae5ea8c86e6bb8a874df\\output\\res\\values-w500dp-v13\\values-w500dp-v13.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 54,
+                        "endOffset": 105
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "D:\\develop\\workspace\\Login11\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w500dp-v13\\values-w500dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 54,
+                    "endOffset": 105
+                },
+                "from": {
+                    "file": "C:\\Users\\hell_blade\\.android\\build-cache\\c5f9adfedf0f1b858b5fc74e19287ef84f902fe6\\output\\res\\values-w500dp-v13\\values-w500dp-v13.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 54,
+                        "endOffset": 105
+                    }
+                }
+            }
+        ]
+    }
+]

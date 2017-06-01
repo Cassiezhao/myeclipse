@@ -1,0 +1,12 @@
+/**
+ * 对数据库操作的类
+ */
+package com.cassie.stumanage4;
+
+/**
+ * @author cassie
+ *
+ */
+public class sqlHelper {
+
+}

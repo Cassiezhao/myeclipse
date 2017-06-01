@@ -1,0 +1,84 @@
+package chris.pojo;
+
+import java.sql.Timestamp;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+/**
+ * Memory entity. @author MyEclipse Persistence Tools
+ */
+@Entity
+@Table(name="memory"
+    ,catalog="zhineng"
+)
+
+public class Memory  implements java.io.Serializable {
+
+
+    // Fields    
+
+     private Integer mmid;
+     private String message;
+     private Timestamp mtime;
+
+
+    // Constructors
+
+    /** default constructor */
+    public Memory() {
+    }
+
+    
+    /** full constructor */
+    public Memory(String message, Timestamp mtime) {
+        this.message = message;
+        this.mtime = mtime;
+    }
+
+   
+    // Property accessors
+    @Id @GeneratedValue
+    
+    @Column(name="mmid", unique=true, nullable=false)
+
+    public Integer getMmid() {
+        return this.mmid;
+    }
+    
+    public void setMmid(Integer mmid) {
+        this.mmid = mmid;
+    }
+    
+    @Column(name="message", nullable=false, length=50)
+
+    public String getMessage() {
+        return this.message;
+    }
+    
+    public void setMessage(String message) {
+        this.message = message;
+    }
+    
+    @Column(name="mtime", nullable=false, length=19)
+
+    public Timestamp getMtime() {
+        return this.mtime;
+    }
+    
+    public void setMtime(Timestamp mtime) {
+        this.mtime = mtime;
+    }
+   
+
+
+
+
+
+
+
+
+}

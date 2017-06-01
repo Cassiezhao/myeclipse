@@ -1,0 +1,8 @@
+package com.cassie.stumanage2;
+/*
+ * 修改学生信息
+ * */
+
+public class stuUpdDialog {
+
+}

@@ -1,0 +1,208 @@
+package chris.pojo;
+
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+/**
+ * Guidem entity. @author MyEclipse Persistence Tools
+ */
+@Entity
+@Table(name = "guidem", catalog = "zhineng")
+public class Guidem implements java.io.Serializable {
+
+	// Fields
+	
+	private Integer guidemid;
+	private Guide guide;
+	private String guidemnum;
+	private Integer borrow;
+	private Integer break_;
+	private Integer gmstate;
+	private Date assignTime;
+	private String breakinfo;
+	private Date broT;
+	private Date retT;
+	private Integer youkeNum;
+	private String sendmessage;
+	private String ChangeCheck;
+	private String gmtel;
+	@Column(name = "gmtel")
+	public String getGmtel() {
+		return gmtel;
+	}
+
+	public void setGmtel(String gmtel) {
+		this.gmtel = gmtel;
+	}
+
+	@Column(name = "ChangeCheck")
+	public String getChangeCheck() {
+		return ChangeCheck;
+	}
+
+	public void setChangeCheck(String changeCheck) {
+		ChangeCheck = changeCheck;
+	}
+
+	@Column(name = "sendmessage")
+	public String getSendmessage() {
+		return sendmessage;
+	}
+
+	public void setSendmessage(String sendmessage) {
+		this.sendmessage = sendmessage;
+	}
+
+	@Column(name = "youkeNum")
+	public Integer getYoukeNum() {
+		return youkeNum;
+	}
+
+	public void setYoukeNum(Integer youkeNum) {
+		this.youkeNum = youkeNum;
+	}
+
+	private Set<Guide> guides = new HashSet<Guide>(0);
+
+	// Constructors
+
+	/** default constructor */
+	public Guidem() {
+	}
+
+	/** full constructor */
+	public Guidem(Guide guide, String guidemnum, Integer borrow,
+			Integer break_, Integer gmstate, Date assignTime, String breakinfo,
+			Date broT, Date retT, Set<Guide> guides) {
+		this.guide = guide;
+		this.guidemnum = guidemnum;
+		this.borrow = borrow;
+		this.break_ = break_;
+		this.gmstate = gmstate;
+		this.assignTime = assignTime;
+		this.breakinfo = breakinfo;
+		this.broT = broT;
+		this.retT = retT;
+		this.guides = guides;
+	}
+
+	// Property accessors
+	@Id
+	@GeneratedValue
+	@Column(name = "guidemid", unique = true, nullable = false)
+	public Integer getGuidemid() {
+		return this.guidemid;
+	}
+
+	public void setGuidemid(Integer guidemid) {
+		this.guidemid = guidemid;
+	}
+
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "guideid")
+	public Guide getGuide() {
+		return this.guide;
+	}
+
+	public void setGuide(Guide guide) {
+		this.guide = guide;
+	}
+
+	@Column(name = "guidemnum")
+	public String getGuidemnum() {
+		return this.guidemnum;
+	}
+
+	public void setGuidemnum(String guidemnum) {
+		this.guidemnum = guidemnum;
+	}
+
+	@Column(name = "borrow")
+	public Integer getBorrow() {
+		return this.borrow;
+	}
+
+	public void setBorrow(Integer borrow) {
+		this.borrow = borrow;
+	}
+
+	@Column(name = "break")
+	public Integer getBreak_() {
+		return this.break_;
+	}
+
+	public void setBreak_(Integer break_) {
+		this.break_ = break_;
+	}
+
+	@Column(name = "gmstate")
+	public Integer getGmstate() {
+		return this.gmstate;
+	}
+
+	public void setGmstate(Integer gmstate) {
+		this.gmstate = gmstate;
+	}
+
+	@Temporal(TemporalType.DATE)
+	@Column(name = "assignTime", length = 10)
+	public Date getAssignTime() {
+		return this.assignTime;
+	}
+
+	public void setAssignTime(Date assignTime) {
+		this.assignTime = assignTime;
+	}
+
+	@Column(name = "breakinfo", length = 30)
+	public String getBreakinfo() {
+		return this.breakinfo;
+	}
+
+	public void setBreakinfo(String breakinfo) {
+		this.breakinfo = breakinfo;
+	}
+
+	@Temporal(TemporalType.DATE)
+	@Column(name = "broT", length = 10)
+	public Date getBroT() {
+		return this.broT;
+	}
+
+	public void setBroT(Date broT) {
+		this.broT = broT;
+	}
+
+	@Temporal(TemporalType.DATE)
+	@Column(name = "retT", length = 10)
+	public Date getRetT() {
+		return this.retT;
+	}
+
+	public void setRetT(Date retT) {
+		this.retT = retT;
+	}
+
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "guidem")
+	public Set<Guide> getGuides() {
+		return this.guides;
+	}
+
+	public void setGuides(Set<Guide> guides) {
+		this.guides = guides;
+	}
+
+}

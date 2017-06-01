@@ -1,0 +1,20 @@
+[genuitec-file-id="wc2-2"],[genuitec-lp-path="/zhihui2/WebRoot/assets/app/css/Evaluation_style.css"],[genuitec-lp-enabled=false]{
+  /* for codelive */
+}
+
+  .body{
+		background-color: #ffffff;
+	}
+
+.delete{
+	    float:right;
+	    margin-right:30px;
+	 }
+.searchInfo{
+	 width:270px;
+	 height:34px;
+	 float:right;
+	 }
+.checkBox{
+	 text-align:center;
+	 }

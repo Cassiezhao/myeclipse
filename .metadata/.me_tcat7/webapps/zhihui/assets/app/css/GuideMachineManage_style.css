@@ -1,0 +1,19 @@
+[genuitec-file-id="wc2-5"],[genuitec-lp-path="/zhihui2/WebRoot/assets/app/css/GuideMachineManage_style.css"],[genuitec-lp-enabled=false]{
+  /* for codelive */
+}
+
+	body{
+		background-color: #ffffff;
+	}
+	.right{
+	    float:right;
+	  }
+	.guidemachinemanage_table{
+font-size:18px;
+}
+
+.searchInfo{
+width:270px;
+height:50px;
+float:right;
+}

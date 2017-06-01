@@ -1,0 +1,33 @@
+[genuitec-file-id="wc2-10"],[genuitec-lp-path="/zhihui2/WebRoot/assets/app/css/OrderAdd_style.css"],[genuitec-lp-enabled=false]{
+  /* for codelive */
+}
+
+	
+	body{
+		background-color: #ffffff;
+	}
+	.fontstyle{
+		font-size: 20px;
+	}
+	 .title{
+	    width:100%;
+		height:50px;
+		text-align:left;
+		color:white;
+		font-size:20px;
+		line-height:50px;
+		background-color:#00a3d7;
+	  }
+	  .right{
+	  	float:right;
+	  }
+	.orderadd_font_title{
+text-align:center;
+font-size:20px;
+padding-top:5px;
+padding-bottom:5px;
+}
+
+.orderadd_font{
+font-size:15px;
+}

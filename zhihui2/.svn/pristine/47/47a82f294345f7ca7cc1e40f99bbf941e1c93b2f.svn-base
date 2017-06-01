@@ -1,0 +1,100 @@
+package chris.action;
+
+import java.sql.Timestamp;
+import java.util.Map;
+
+import javax.annotation.Resource;
+
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.interceptor.SessionAware;
+import org.springframework.stereotype.Controller;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+import chris.dao.YoukemDAO;
+import chris.pojo.Memory;
+import chris.pojo.Youkem;
+import chris.service.BizService;
+import chris.service.DaoService;
+
+@Controller
+@Namespace("/")
+public class YoukemAction extends ActionSupport implements SessionAware{
+	@Resource(name="BizService")
+	private BizService bizService;
+	private Map<String,Object> session;
+	private String path;
+	private int num;
+	public int getNum() {
+		return num;
+	}
+
+	public void setNum(int num) {
+		this.num = num;
+	}
+
+	private int k;
+	
+ 	public int getK() {
+		return k;
+	}
+
+	public void setK(int k) {
+		this.k = k;
+	}
+
+	public String getPath() {
+		return path;
+	}
+
+	public void setPath(String path) {
+		this.path = path;
+	}
+
+	public BizService getBizService() {
+		return bizService;
+	}
+
+	public void setBizService(BizService bizService) {
+		this.bizService = bizService;
+	}
+	@Action(value="init_Youkem",results={
+			@Result(name="ok",location="${path}",type="redirect")
+	})
+	public String init(){
+		
+		Youkem a = bizService.getYoukemBiz().findById(1);
+		if(k==1){
+			
+			
+			try {
+				a.setYoukeMle(num+a.getYoukeMle());
+				bizService.getYoukemBiz().update(a);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				throw new RuntimeException("输入参数不正确，添加失败");
+			}
+		}
+		session.put("youkem", a);
+		session.put("heihei", 1);
+		 if(k==2){
+			path="guidemachine/canBorrow.jsp";
+		}else{
+			jilu("添加游客机成功");
+		path="touristMachine/touristMachineManage.jsp";}
+		return "ok";
+	}
+	public void jilu(String s){
+		Memory me=new Memory();
+		me.setMessage(s);
+		Timestamp d = new Timestamp(System.currentTimeMillis());
+		me.setMtime(d);
+		bizService.getMemoryBiz().save(me);
+	}
+	public void setSession(Map<String, Object> arg0) {
+		this.session=arg0;
+		
+	}
+}

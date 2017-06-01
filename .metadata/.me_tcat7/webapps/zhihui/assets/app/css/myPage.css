@@ -1,0 +1,24 @@
+[genuitec-file-id="wc2-16"],[genuitec-lp-path="/zhihui2/WebRoot/assets/app/css/myPage.css"],[genuitec-lp-enabled=false]{
+  /* for codelive */
+}
+
+﻿.arrow2
+        {
+            margin: 3px 8px 4px 0;
+            border-left: 5px dashed transparent;
+            border-bottom: 5px dashed transparent;
+            border-top: 5px dashed transparent;
+            border-right: 5px solid #ccc;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .arrow3
+        {
+            margin: 3px 0 4px 8px;
+            border-top: 5px dashed transparent;
+            border-bottom: 5px dashed transparent;
+            border-right: 5px dashed transparent;
+            border-left: 5px solid #ccc;
+            display: inline-block;
+            vertical-align: middle;
+        }

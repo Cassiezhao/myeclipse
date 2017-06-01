@@ -9,7 +9,9 @@
 		<item value="false" key="renameSubpackages"/>
 		<item value="false" key="updateQualifiedNames"/>
 		<item value="*" key="patterns"/>
+		<item value="false" key="updateSimilarElements"/>
 		<item value="false" key="updateTextualMatches"/>
+		<item value="1" key="updateSimilarElementsMatchStrategy"/>
 	</section>
 	<section name="GenerateConstructorUsingFieldsSelectionDialog">
 		<item value="false" key="OmitCallToSuper"/>
@@ -28,6 +30,11 @@
 		<item value="95" key="DIALOG_X_ORIGIN"/>
 		<item value="34" key="DIALOG_Y_ORIGIN"/>
 	</section>
+	<section name="ExtractMethodWizard">
+		<item value="false" key="GenerateJavadoc"/>
+		<item value="1" key="AccessModifier"/>
+		<item value="false" key="ThrowRuntimeExceptions"/>
+	</section>
 	<section name="NewClassWizardPage">
 		<item value="false" key="create_constructor"/>
 		<item value="true" key="create_unimplemented"/>
@@ -41,12 +48,19 @@
 		<item value="1" key="VisibilityModifier"/>
 		<item value="false" key="FinalModifier"/>
 	</section>
+	<section name="DialogBounds_OverrideMethodDialog">
+		<item value="631" key="DIALOG_WIDTH"/>
+		<item value="1|.SF NS Text|14.0|0|COCOA|1|.SFNSText" key="DIALOG_FONT_NAME"/>
+		<item value="504" key="DIALOG_HEIGHT"/>
+		<item value="78" key="DIALOG_X_ORIGIN"/>
+		<item value="-42" key="DIALOG_Y_ORIGIN"/>
+	</section>
 	<section name="DialogBounds_GetterSetterTreeSelectionDialog">
 		<item value="655" key="DIALOG_WIDTH"/>
 		<item value="1|.SF NS Text|14.0|0|COCOA|1|.SFNSText" key="DIALOG_FONT_NAME"/>
 		<item value="761" key="DIALOG_HEIGHT"/>
 		<item value="60" key="DIALOG_X_ORIGIN"/>
-		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="-265" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="DialogBounds_GenerateToStringDialog">
 		<item value="652" key="DIALOG_WIDTH"/>
@@ -75,6 +89,9 @@
 		<item value="false" key="FinalModifier"/>
 		<item value="10" key="LimitValue"/>
 	</section>
+	<section name="OverrideMethodDialog">
+		<item value="true" key="showtypes"/>
+	</section>
 	<section name="NewJspCreationWizardPage">
 		<item value="/struts/WebRoot/WEB-INF/pages" key="filePath"/>
 		<item value="Default JSP template" key="templatezh_CN"/>
@@ -85,6 +102,9 @@
 		<item value="false" key="create_package_info_java"/>
 	</section>
 	<section name="quick_assist_proposal_size">
+	</section>
+	<section name="BuildPathsPropertyPage">
+		<item value="3" key="pageIndex"/>
 	</section>
 	<section name="completion_proposal_size">
 		<item value="347" key="size.y"/>

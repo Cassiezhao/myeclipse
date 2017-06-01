@@ -1,0 +1,305 @@
+package chris.pojo;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+/**
+ * Systemscore entity. @author MyEclipse Persistence Tools
+ */
+@Entity
+@Table(name = "systemscore", catalog = "zhineng")
+public class Systemscore implements java.io.Serializable {
+
+	// Fields
+
+	private Integer id;
+	private Integer workage1;
+	private Integer workage2;
+	private Integer workage3;
+	private Integer putong1;
+	private Integer putong2;
+	private Integer putong3;
+	private Integer yuyan;
+	private Integer zhengshu;
+	private Integer weizhixinxi;
+	private Integer shangxianshijian;
+	private Integer sxdd;
+	private Integer sxcs;
+	private Integer ctjj;
+	private Integer ykpj;
+	private String jws;
+	private String jwx;
+	private String jwz;
+	private String jwy;
+	private String tel;
+	private Integer yuyanzuigao;
+	private Integer jibenzuigao;
+
+	@Column(name = "jibenzuigao")
+	public Integer getJibenzuigao() {
+		return jibenzuigao;
+	}
+
+	public void setJibenzuigao(Integer jibenzuigao) {
+		this.jibenzuigao = jibenzuigao;
+	}
+
+	@Column(name = "yuyanzuigao")
+	public Integer getYuyanzuigao() {
+		return yuyanzuigao;
+	}
+
+	public void setYuyanzuigao(Integer yuyanzuigao) {
+		this.yuyanzuigao = yuyanzuigao;
+	}
+
+	private Integer xueli1;
+	private Integer xueli2;
+	private Integer xueli3;
+
+	// Constructors
+	@Column(name = "xueli1")
+	public Integer getXueli1() {
+		return xueli1;
+	}
+
+	public void setXueli1(Integer xueli1) {
+		this.xueli1 = xueli1;
+	}
+
+	@Column(name = "xueli2")
+	public Integer getXueli2() {
+		return xueli2;
+	}
+
+	public void setXueli2(Integer xueli2) {
+		this.xueli2 = xueli2;
+	}
+
+	@Column(name = "xueli3")
+	public Integer getXueli3() {
+		return xueli3;
+	}
+
+	public void setXueli3(Integer xueli3) {
+		this.xueli3 = xueli3;
+	}
+
+	/** default constructor */
+	public Systemscore() {
+	}
+
+	/** full constructor */
+	public Systemscore(Integer workage1, Integer workage2, Integer workage3,
+			Integer putong1, Integer putong2, Integer putong3, Integer yuyan,
+			Integer zhengshu, Integer weizhixinxi, Integer shangxianshijian,
+			Integer sxdd, Integer sxcs, Integer ctjj, Integer ykpj, String jws,
+			String jwx, String jwz, String jwy, String tel) {
+		this.workage1 = workage1;
+		this.workage2 = workage2;
+		this.workage3 = workage3;
+		this.putong1 = putong1;
+		this.putong2 = putong2;
+		this.putong3 = putong3;
+		this.yuyan = yuyan;
+		this.zhengshu = zhengshu;
+		this.weizhixinxi = weizhixinxi;
+		this.shangxianshijian = shangxianshijian;
+		this.sxdd = sxdd;
+		this.sxcs = sxcs;
+		this.ctjj = ctjj;
+		this.ykpj = ykpj;
+		this.jws = jws;
+		this.jwx = jwx;
+		this.jwz = jwz;
+		this.jwy = jwy;
+		this.tel = tel;
+	}
+
+	// Property accessors
+	@Id
+	@GeneratedValue
+	@Column(name = "id", unique = true, nullable = false)
+	public Integer getId() {
+		return this.id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	@Column(name = "workage1")
+	public Integer getWorkage1() {
+		return this.workage1;
+	}
+
+	public void setWorkage1(Integer workage1) {
+		this.workage1 = workage1;
+	}
+
+	@Column(name = "workage2")
+	public Integer getWorkage2() {
+		return this.workage2;
+	}
+
+	public void setWorkage2(Integer workage2) {
+		this.workage2 = workage2;
+	}
+
+	@Column(name = "workage3")
+	public Integer getWorkage3() {
+		return this.workage3;
+	}
+
+	public void setWorkage3(Integer workage3) {
+		this.workage3 = workage3;
+	}
+
+	@Column(name = "putong1")
+	public Integer getPutong1() {
+		return this.putong1;
+	}
+
+	public void setPutong1(Integer putong1) {
+		this.putong1 = putong1;
+	}
+
+	@Column(name = "putong2")
+	public Integer getPutong2() {
+		return this.putong2;
+	}
+
+	public void setPutong2(Integer putong2) {
+		this.putong2 = putong2;
+	}
+
+	@Column(name = "putong3")
+	public Integer getPutong3() {
+		return this.putong3;
+	}
+
+	public void setPutong3(Integer putong3) {
+		this.putong3 = putong3;
+	}
+
+	@Column(name = "yuyan")
+	public Integer getYuyan() {
+		return this.yuyan;
+	}
+
+	public void setYuyan(Integer yuyan) {
+		this.yuyan = yuyan;
+	}
+
+	@Column(name = "zhengshu")
+	public Integer getZhengshu() {
+		return this.zhengshu;
+	}
+
+	public void setZhengshu(Integer zhengshu) {
+		this.zhengshu = zhengshu;
+	}
+
+	@Column(name = "weizhixinxi")
+	public Integer getWeizhixinxi() {
+		return this.weizhixinxi;
+	}
+
+	public void setWeizhixinxi(Integer weizhixinxi) {
+		this.weizhixinxi = weizhixinxi;
+	}
+
+	@Column(name = "shangxianshijian")
+	public Integer getShangxianshijian() {
+		return this.shangxianshijian;
+	}
+
+	public void setShangxianshijian(Integer shangxianshijian) {
+		this.shangxianshijian = shangxianshijian;
+	}
+
+	@Column(name = "sxdd")
+	public Integer getSxdd() {
+		return this.sxdd;
+	}
+
+	public void setSxdd(Integer sxdd) {
+		this.sxdd = sxdd;
+	}
+
+	@Column(name = "sxcs")
+	public Integer getSxcs() {
+		return this.sxcs;
+	}
+
+	public void setSxcs(Integer sxcs) {
+		this.sxcs = sxcs;
+	}
+
+	@Column(name = "ctjj")
+	public Integer getCtjj() {
+		return this.ctjj;
+	}
+
+	public void setCtjj(Integer ctjj) {
+		this.ctjj = ctjj;
+	}
+
+	@Column(name = "ykpj")
+	public Integer getYkpj() {
+		return this.ykpj;
+	}
+
+	public void setYkpj(Integer ykpj) {
+		this.ykpj = ykpj;
+	}
+
+	@Column(name = "jws", length = 50)
+	public String getJws() {
+		return this.jws;
+	}
+
+	public void setJws(String jws) {
+		this.jws = jws;
+	}
+
+	@Column(name = "jwx", length = 50)
+	public String getJwx() {
+		return this.jwx;
+	}
+
+	public void setJwx(String jwx) {
+		this.jwx = jwx;
+	}
+
+	@Column(name = "jwz", length = 50)
+	public String getJwz() {
+		return this.jwz;
+	}
+
+	public void setJwz(String jwz) {
+		this.jwz = jwz;
+	}
+
+	@Column(name = "jwy", length = 50)
+	public String getJwy() {
+		return this.jwy;
+	}
+
+	public void setJwy(String jwy) {
+		this.jwy = jwy;
+	}
+
+	@Column(name = "tel", length = 50)
+	public String getTel() {
+		return this.tel;
+	}
+
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
+
+}

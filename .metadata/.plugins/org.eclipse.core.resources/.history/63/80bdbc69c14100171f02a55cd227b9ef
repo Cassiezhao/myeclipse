@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+package caom.cassie.stumanage;
+
+import javax.swing.JDialog;
+
+/**
+ * @author cassie
+ *
+ */
+public class stuAddDialog extends JDialog{
+
+}

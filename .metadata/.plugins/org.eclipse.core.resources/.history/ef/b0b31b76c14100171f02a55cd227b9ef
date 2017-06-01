@@ -1,0 +1,41 @@
+/**
+ * 
+ */
+package caom.cassie.stumanage;
+
+import java.awt.Frame;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import com.mysql.jdbc.log.Jdk14Logger;
+
+/**
+ * @author cassie
+ *
+ */
+public class stuAddDialog extends JDialog{
+	JLabel jl1,jl2,jl3,jl4,jl5;
+	JButton jb1,jb2;
+	JTextField jtf1,jtf2,jtf3,jtf4,jtf5Field;
+	JPanel jp1,jp2,jp3;
+	
+	public stuAddDialog(Frame owner,String title,boolean modal) {
+		// TODO Auto-generated constructor stub
+		super(owner,title,modal);
+		jl1 = new JLabel("学号");
+		jl2 = new JLabel("姓名");
+		jl3 = new JLabel("性别");
+		jl4 = new JLabel("生日");
+		jl5 = new JLabel("记过次数");
+		
+		jtf1 = new JTextField();
+		jtf2 = new JTextField();
+		jtf3 = new JTextField();	
+		jtf4 = new JTextField();
+		jtf5 = new JTextField();
+	}
+}

@@ -1,0 +1,20 @@
+[genuitec-file-id="wc2-9"],[genuitec-lp-path="/zhihui2/WebRoot/assets/app/css/Monitor_style.css"],[genuitec-lp-enabled=false]{
+  /* for codelive */
+}
+
+	body{
+		background-color: #ffffff;
+	}
+	.right{
+	    float:right;
+	  }
+	  
+	  	.monitor_table{
+font-size:18px;
+}
+	  
+.searchInfo{
+width:270px;
+height:50px;
+float:right;
+}

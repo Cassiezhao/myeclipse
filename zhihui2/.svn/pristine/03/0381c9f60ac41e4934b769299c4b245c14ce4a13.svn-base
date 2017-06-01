@@ -1,0 +1,281 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8" contentType="text/html;charset=UTF-8"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>	
+	<meta charset="utf-8"/>
+    <title>主页</title>
+		<script type="text/javascript" src="../assets/js/jquery-2.0.3.min.js"></script>
+		<script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" />
+		<link rel="stylesheet" href="../assets/css/font-awesome.min.css" />
+
+		<link rel="stylesheet" href="../assets/app/css/common.css" >
+		<script type="text/javascript" src="../assets/app/js/common.js"></script>	
+		<link rel="stylesheet" href="../assets/app/css/GuideManage_style.css"/>
+		
+		<script type="text/javascript" src="../assets/app/js/search.js"></script>	
+		<link rel="stylesheet" href="../assets/app/css/search.css" />	
+		<script src="~/Content/bootstrapValidator/js/bootstrapValidator.min.js"></script>
+    <link href="~/Content/bootstrapValidator/css/bootstrapValidator.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="../easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../easyui/jquery.js"></script>
+<script type="text/javascript" src="../easyui/easyloader.js"></script>
+<script type="text/javascript"
+	src="../easyui/locale/easyui-lang-zh_CN.js"></script>
+<link rel="stylesheet" href="../easyui/themes/default/easyui.css"
+	type="text/css"></link><link rel="stylesheet"
+	href="../easyui/themes/icon.css" type="text/css"></link>
+    
+</head>	
+
+<body>	
+	<div class="naver navbar-default" role="navigation">
+		
+		 <div class="container-fluid">
+			<div class="navbar-header pull-left">
+				<a class="navbar-brand" href="#">
+					<small style="color:#fff;font-size:20px;">
+							 导游机管理系统
+					</small>
+				</a>
+			</div>
+			
+			<div class="navbar-header pull-right" role="navigation">
+					 <ul class="nav navbar-nav navbar-right">
+						
+						<li class="loginphoto">							
+									<img class="img-circle" src="../assets/app/images/user.jpg" alt="这是张三的照片" style="padding-left:10px;padding-right:5px;">
+									<small style="padding-right:5px">您好！${nuser.username }</small>							
+							</li>	
+						
+						<li class="dropdown grey">
+							<a href="../login.jsp" style="color:#fff">
+								<span class="glyphicon glyphicon-remove" style="margin-right:2px;"></span>
+									退出
+							</a>
+							
+						</li>
+					</ul>
+			</div>
+		</div>
+	</div>
+  <!-- nav end -->
+  <div class="main-container" class="main-container">
+		<div class="main-container-inner">
+			<!--row start-->
+			<div class="row">
+				<!--slide bar start-->
+				<div class="sidebar col-md-2" id="sidebar" style="padding-right:0px;">
+					<ul class="nav nav-list tree">
+						<li  class=" submenu" id="menu1" style="border-bottom: 1px solid #e5e5e5;border-right:1px solid #e5e5e5;">
+								<a href="../index.jsp">
+								<span class="glyphicon glyphicon-home" style="padding-right:5px"></span>
+								登录信息
+							</a>
+						</li>
+						<li class="submenu" id="menu2" style="border-bottom: 1px solid #e5e5e5;border-right:1px solid #e5e5e5;">
+							<a  class="dropdown-toggle">
+								<span class="glyphicon glyphicon-phone" style="padding-right:5px"></span>
+								导游机管理	
+								<span class="glyphicon glyphicon-menu-down" style="float:right;line-height:38px;"></span>
+							</a>
+							<div id="list2"  style="display:none;margin:0px">
+								<ul  style="list-style:none;" class="menuitem">
+									<li style="">
+										<a href="../toborrow_Guidem" >
+											指派导游机
+										</a>
+									</li>
+									<li style="">
+										<a href="../guidemachine/alreadyBorrow.jsp" >
+											归还导游机
+										</a>
+									</li>
+									<li style="">
+										<a href="../guidemachine/logGuideMachine.jsp" >
+											导游机录入
+										</a>
+									</li>
+									<li style="">
+										<a href="../guidemachine/useMessage2.jsp" >
+											使用情况
+										</a>
+									</li>
+								</ul>
+							</div>
+
+						</li>
+						<li class="submenu" id="menu3"  style="border-bottom: 1px solid #e5e5e5;border-right:1px solid #e5e5e5;">
+							<a href="#" class="dropdown-toggle">
+								<span class="glyphicon glyphicon-user" style="padding-right:5px"></span>
+								导游管理	
+								<span class="glyphicon glyphicon-menu-down" style="float:right;line-height:38px;"></span>
+							</a>
+							<div id="list3"  style="display:none;margin:0px">
+								<ul  class="menuitem" style="list-style:none;" >
+									<li>
+										<a href="../guidemanage/guideMessage1.jsp">导游信息</a>
+									</li>
+									<li>
+										<a href="../guidemanage/guideNew1.jsp">新增导游</a>
+									</li>
+									<li>
+										<a href="../guidemanage/guideOnline.jsp">在线导游</a>
+									</li>
+									</li>
+									<li>
+										<a href="../guidemanage/guideOnlineMessage.jsp">上下线详情</a>
+									</li>
+								</ul>
+							</div>
+							
+						</li>
+						<li id="menu4" style="border-bottom: 1px solid #e5e5e5;border-right:1px solid #e5e5e5;">
+							<a href="../findAll_Guide?i=4">
+								<span class="glyphicon glyphicon-star" style="padding-right:5px"></span>
+								评价信息
+							</a>
+						</li>
+						<li class="submenu" id="menu5" style="border-bottom: 1px solid #e5e5e5;border-right:1px solid #e5e5e5;">
+								<a href="../jiangcheng_Pingfen">
+								<span class="glyphicon glyphicon-heart-empty" style="padding-right:5px"></span>
+								奖惩信息
+							</a>
+						</li>
+						<li class="submenu"id="menu6"  style="border-bottom: 1px solid #e5e5e5;border-right:1px solid #e5e5e5;">
+                                    <a href="#" class="dropdown-toggle">
+                                    <span class="glyphicon glyphicon-eye-open" style="padding-right:5px"></span>
+                                    	操作员管理
+									<span class="glyphicon glyphicon-menu-down" style="float:right;line-height:38px;"></span>
+                                    </a>
+                                    <div id="list6"  style="margin:0px;">
+                                        <ul  class="menuitem" style="list-style:none;display:block;" >
+                                            <li class="active">
+                                                <a href="../operatorManagement/operatorAdd1.jsp">人员录入</a>
+                                            </li>
+                                            <li >
+                                                <a href="../operatorManagement/operatorDetail.jsp">信息详情</a>
+                                            </li>
+                                        </ul>
+                                    </div>	
+                                </li>
+						
+						<li id="menu7" style="border-bottom: 1px solid #e5e5e5;border-right:1px solid #e5e5e5;">
+								<a href="../touristMachine/touristMachineManage.jsp">
+								<span class="glyphicon glyphicon-phone" style="padding-right:5px"></span>
+								游客机管理
+							</a>
+						</li>
+						<li id="menu8" style="border-bottom: 1px solid #e5e5e5;border-right:1px solid #e5e5e5;">
+								<a href="modify/modify.jsp">
+								<span class="glyphicon glyphicon-pencil" style="padding-right:5px"></span>
+								系统设置
+							</a>
+						</li>
+						
+					</ul>
+				</div>
+				<!--slide bar end-->
+				
+				<!--main content start-->
+				<div id="main-content" class="main-content col-md-10" style="border:1px solid #f2e1e8;border-width:0 0 0 1px;padding-left:0px;background-color:#ffffff;">
+					<div class="main-content-title" >
+												
+						<ul class="breadcrumb" >
+							<li><span class="glyphicon glyphicon-home"></span><a href="../index.jsp" style="padding-left:10px;">首页</a></li>			  			  
+							<li>
+								操作员信息录入
+							</li>
+						</ul>
+						
+					</div>
+		
+					<div class="page-content" >
+						<div class="page-header" style="margin-top:10px;margin-left:20px;margin-right:20px;">
+							<font style="font-size:24px;padding-top:-10px;color:#2679b5;">
+								人员录入
+							</font>
+							<font style="color:#8089a0;font-size:14px">
+									<span class="glyphicon glyphicon-hand-right" style="margin-right:8px"></span>
+									填写信息
+							</font>
+							
+						</div>
+						<!-- /.page-header -->
+						
+			<div class="row" style="">
+				<div style="margin-left:20px;margin-right:20px;">
+					<div class="col-md-3"></div>
+					<div class="col-md-6">			
+						<div class="tab-content" style="">
+													
+							<form action="../save_User" method="post">					   		
+							      	<table style="margin:auto">
+										<tr style="height:43px;">
+						    				<td><label for="guideMachineNumber" class="lableposition">姓名</label></td>
+						    				<td><input  type="text" class="form-control" 
+											 id="guideMachineNumber" style="border-radius:0 0 0 0;" name="user.username"/> </td>
+						    			</tr>
+										<tr style="height:43px;">
+						    				<td><label for="companyNumber" class="lableposition">性别</label></td>
+						    				<td>
+												<input type="radio"  value="0" id="male" name="user.sex" style="margin-left:60px" checked="checked"/>男
+						   				     	<input type="radio"  value="1" id="female" name="user.sex" style="margin-left:50px" />女
+											</td>
+						    			</tr>	
+						    			
+						    			<tr style="height:43px;">
+						    				<td style="padding-right:70px;"><label for="guideName" class="lableposition">联系方式</label></td>
+						    				<td style="width:270px"><input   type="text" class="form-control easyui-validatebox"  id="guideName" 
+						    				validtype="mobile" required="true" missingMessage="必须为手机号且不为空" style="border-radius:0 0 0 0;"
+						    				name="user.tel"
+						    				/> </td>
+						    			</tr>	
+						    			
+						    			<tr style="height:43px;">
+						    				<td><label for="guestMachineNumber" class="lableposition">编号</label></td>
+						    				<td><input type="text" class="form-control"  id="guestMachineNumber" style="border-radius:0 0 0 0;"
+						    				name="user.usernum"
+						    				/> </td>
+						    			</tr>
+							      	</table>
+						      		<div  style="padding-top:8px;float:right;">
+						   		      <button  class="btn btn-primary btn-sm btn_submit" type="button" onclick="this.form.submit()">
+						   		      	<span class="glyphicon glyphicon-ok" aria-hidden="true" ></span>
+						   		      	提交
+						   		      </button>
+									  <button class="btn btn-primary btn-sm btn_reset" type="button">
+						   		      	<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+						   		      	重置
+						   		      </button>
+						    		</div>							
+						     </form> 
+							
+						</div>
+						<!-- table end -->
+					</div>
+					<div class="col-md-3"></div>
+					<!--col 12 end-->
+				</div>
+			</div>	
+		<!--row end-->						
+		
+		</div>
+	</div>
+		<!--row end-->						
+		</div>
+	</div >
+	
+	
+
+	
+	
+	<script type="text/javascript" src="assets/app/js/common.js"></script>
+	<script type="text/javascript">
+	
+	</script>
+</body>
+
+</html>

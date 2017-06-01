@@ -1,0 +1,12 @@
+[genuitec-file-id="wc2-86"],[genuitec-lp-path="/zhihui2/WebRoot/easyui/themes/bootstrap/validatebox.css"],[genuitec-lp-enabled=false]{
+  /* for codelive */
+}
+
+.validatebox-invalid {
+  background-image: url('images/validatebox_warning.png');
+  background-repeat: no-repeat;
+  background-position: right center;
+  border-color: #ffa8a8;
+  background-color: #fff3f3;
+  color: #000;
+}

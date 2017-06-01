@@ -16,8 +16,11 @@ class Mypanel extends JPanel implements KeyListener,Runnable
 {
 	//定义一个我的坦克
 	Hero hero = null;
+	//判断是继续上局还是新游戏
+//	String flag = "newGame";
 	//定义敌人的坦克组
 	Vector<EnemyTank> ets = new Vector<EnemyTank>();
+	Vector<Node> nodes = new Vector<Node>();
 	int enSize = 3;
 	
 	//定义一个炸弹集合
@@ -29,32 +32,61 @@ class Mypanel extends JPanel implements KeyListener,Runnable
 	Image image2 = null;
 	Image image3 = null;
 	
-	public Mypanel()
+	public Mypanel(String flag)
 	{
+		//恢复记录
+		new Recoders().getRecording();
+
 		hero = new Hero(200, 300);
-		
-		for (int i = 0; i < enSize; i++) 
-		{
-			//创建一个敌人的坦克，并加入
-			EnemyTank et = new EnemyTank((i+1) * 50, 0);
-			et.setColor(1);
-			et.setDirect(2);
-			
-			//将Mypanel的敌人坦克向量交给该敌人坦克
-			et.setEts(ets);
-			
-			//启动敌人的坦克
-			Thread t = new Thread(et);
-			t.start();
-			
-			//给敌人的坦克添加一个子弹
-			Shot s = new Shot(et.x + 10, et.y + 30, 2);
-			et.ss.add(s);
-			
-			Thread t2 = new Thread(s);
-			t2.start();
-			ets.add(et);
+
+		if (flag.equals("newGame")) {
+
+			for (int i = 0; i < enSize; i++) {
+				//创建一个敌人的坦克，并加入
+				EnemyTank et = new EnemyTank((i + 1) * 50, 0);
+				et.setColor(1);
+				et.setDirect(2);
+
+				//将Mypanel的敌人坦克向量交给该敌人坦克
+				et.setEts(ets);
+
+				//启动敌人的坦克
+				Thread t = new Thread(et);
+				t.start();
+
+				//给敌人的坦克添加一个子弹
+				Shot s = new Shot(et.x + 10, et.y + 30, 2);
+				et.ss.add(s);
+
+				Thread t2 = new Thread(s);
+				t2.start();
+				ets.add(et);
+			}
+		}else{
+
+			System.out.print("continue");
+			nodes = new Recoders().getNodesAndEnNums();
+			for (int i = 0; i < nodes.size(); i++) {
+				Node node = nodes.get(i);
+				EnemyTank et = new EnemyTank(node.x, node.y);
+				et.setColor(1);
+				et.setDirect(node.direct);
+				et.setEts(ets);
+				//启动敌人的坦克
+				Thread t = new Thread(et);
+				t.start();
+
+				//给敌人的坦克添加一个子弹
+				Shot s = new Shot(et.x + 10, et.y + 30, 2);
+				et.ss.add(s);
+
+				Thread t2 = new Thread(s);
+				t2.start();
+				ets.add(et);
+			}
 		}
+		AePlayWave apw = new AePlayWave("/Users/cassie/Desktop/myeclipse/GUI/src/7301.wav");
+		apw.start();
 		//初始化图片
 //		image1 = Toolkit.getDefaultToolkit().
 //					getImage(Panel.class.getResource("/6.jpg"));
@@ -147,7 +179,7 @@ class Mypanel extends JPanel implements KeyListener,Runnable
 
 	//画出提示信息
 	public void showinfo(Graphics g){
-		//画出提示信息坦克（该坦克不参与战斗）
+			//画出提示信息坦克（该坦克不参与战斗）
 		this.drawTank(80,420,g,0,0);
 		g.setColor(Color.black);
 		g.drawString( Recoders.getEnNum() + "",110,440);
@@ -309,8 +341,9 @@ class Mypanel extends JPanel implements KeyListener,Runnable
 	}
 
 	//判断子弹是否击中敌人坦克
-	public void hitTank(Shot s, Tank et)
+	public boolean hitTank(Shot s, Tank et)
 	{
+		boolean flag  =false;
 		//判断该坦克的方向
 		switch (et.direct)
 		{
@@ -325,10 +358,11 @@ class Mypanel extends JPanel implements KeyListener,Runnable
 					s.isLive = false;
 					//敌人坦克死亡
 					et.isLive = false;
-					//减少敌人数量
-					Recoders.reduceEnNum();
-					//增加我的数量
-					Recoders.addEnNumRec();
+					flag = true;
+//					//减少敌人数量
+//					Recoders.reduceEnNum();
+//					//增加我的记录
+//					Recoders.addEnNumRec();
 					//创建一颗炸弹
 					Bomb b = new Bomb(et.x, et.y);
 					//放入Vector
@@ -345,10 +379,11 @@ class Mypanel extends JPanel implements KeyListener,Runnable
 					s.isLive = false;
 					//敌人坦克死亡
 					et.isLive = false;
-					//减少敌人数量
-					Recoders.reduceEnNum();
-					//增加我的数量
-					Recoders.addEnNumRec();
+					flag = true;
+//					//减少敌人数量
+//					Recoders.reduceEnNum();
+//					//增加我的记录
+//					Recoders.addEnNumRec();
 					//创建一颗炸弹
 					Bomb b = new Bomb(et.x, et.y);
 					//放入Vector
@@ -356,6 +391,7 @@ class Mypanel extends JPanel implements KeyListener,Runnable
 				}
 
 		}
+		return flag;
 	}
 
 	//判断敌人的子弹是否击中我
@@ -370,7 +406,10 @@ class Mypanel extends JPanel implements KeyListener,Runnable
 			{
 				Shot enemyShot = et.ss.get(j);
 				if (hero.isLive) {
-					this.hitTank(enemyShot, hero);
+					if (this.hitTank(enemyShot, hero)){
+						//敌人坦克击中了我
+					}
+
 				}
 			}
 		}
@@ -391,11 +430,15 @@ class Mypanel extends JPanel implements KeyListener,Runnable
 				for (int j = 0; j < ets.size(); j++) 
 				{
 					EnemyTank et = ets.get(j);
-					if (et.isLive) 
-					{
-						this.hitTank(myShot, et);
+					if (et.isLive) {
+						if (this.hitTank(myShot, et)) {
+							//我的坦克击中了敌人
+							//减少敌人数量
+							Recoders.reduceEnNum();
+							//增加我的记录
+							Recoders.addEnNumRec();
+						}
 					}
-						
 				}
 			}
 		}

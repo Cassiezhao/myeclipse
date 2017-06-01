@@ -1,628 +1,10 @@
-!SESSION 2017-05-10 14:44:49.014 -----------------------------------------------
-eclipse.buildId=14.0.1.CI-007
-java.version=1.8.0_66
-java.vendor=Oracle Corporation
-BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=zh_CN
-Framework arguments:  -keyring /Users/cassie/.eclipse_keyring -showlocation
-Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -keyring /Users/cassie/.eclipse_keyring -showlocation
 
-!ENTRY org.eclipse.wst.common.project.facet.core 4 0 2017-05-10 14:44:54.287
-!MESSAGE Project facet grails.app has not been defined. It is used in plugin com.vmware.vfabric.ide.eclipse.tcserver.core.
-
-!ENTRY org.eclipse.jface 2 0 2017-05-10 14:44:59.335
-!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
-!SUBENTRY 1 org.eclipse.jface 2 0 2017-05-10 14:44:59.335
-!MESSAGE A conflict occurred for COMMAND+SHIFT+Z:
-Binding(COMMAND+SHIFT+Z,
-	ParameterizedCommand(Command(org.eclipse.angularjs.ui.navigate.open.angular.element,Open Angular Element,
-		Opens an Angular Element in a JavaScript editor,
-		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2449dff5,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.contexts.window,,,system)
-Binding(COMMAND+SHIFT+Z,
-	ParameterizedCommand(Command(org.skyway.core.ui.generate,Generate,
-		Generate with Skyway,
-		Category(org.skyway.core.ui.category.views,Window,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4d2068ea,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.contexts.window,,,system)
-Binding(COMMAND+SHIFT+Z,
-	ParameterizedCommand(Command(org.eclipse.ui.edit.redo,Redo,
-		Redo the last operation,
-		Category(org.eclipse.ui.category.edit,Edit,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@65a42136,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.contexts.dialogAndWindow,,cocoa,system)
-
-!ENTRY org.eclipse.osgi 2 0 2017-05-10 14:45:13.247
-!MESSAGE While loading class "tern.eclipse.ide.ui.utils.LineOfOffsetProvider", thread "Thread[Worker-5,5,main]" timed out waiting (5436ms) for thread "Thread[Worker-3,5,main]" to finish starting bundle "tern.eclipse.ide.core_1.2.0.201609221542 [1474]". To avoid deadlock, thread "Thread[Worker-5,5,main]" is proceeding but "tern.eclipse.ide.ui.utils.LineOfOffsetProvider" may not be fully initialized.
-!STACK 0
-org.osgi.framework.BundleException: Unable to acquire the state change lock for the module: osgi.identity; osgi.identity="tern.eclipse.ide.core"; type="osgi.bundle"; version:Version="1.2.0.201609221542"; singleton:="true" [id=1474] STARTED [STARTED]
-	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:329)
-	at org.eclipse.osgi.container.Module.start(Module.java:389)
-	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
-	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
-	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:327)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:402)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:352)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:344)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at tern.eclipse.ide.ui.TernUIPlugin.start(TernUIPlugin.java:56)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:764)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:721)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:941)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:318)
-	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
-	at org.eclipse.osgi.container.Module.start(Module.java:439)
-	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
-	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
-	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:327)
-	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:398)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:352)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:344)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at tern.eclipse.ide.jsdt.internal.ui.JSDTTernUIPlugin.start(JSDTTernUIPlugin.java:57)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:764)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:721)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:941)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:318)
-	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
-	at org.eclipse.osgi.container.Module.start(Module.java:439)
-	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
-	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
-	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:327)
-	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:398)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:352)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:344)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at java.lang.Class.getDeclaredConstructors0(Native Method)
-	at java.lang.Class.privateGetDeclaredConstructors(Class.java:2671)
-	at java.lang.Class.getConstructor0(Class.java:3075)
-	at java.lang.Class.newInstance(Class.java:412)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:755)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:706)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:941)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:318)
-	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
-	at org.eclipse.osgi.container.Module.start(Module.java:439)
-	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
-	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
-	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:327)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:402)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:352)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:344)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:573)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.ui.internal.WorkbenchPlugin$1.run(WorkbenchPlugin.java:293)
-	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:52)
-	at org.eclipse.ui.internal.WorkbenchPlugin.createExtension(WorkbenchPlugin.java:288)
-	at org.eclipse.ui.internal.EarlyStartupRunnable.getExecutableExtension(EarlyStartupRunnable.java:120)
-	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:68)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.ui.internal.Workbench$56.run(Workbench.java:2812)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-
-!ENTRY org.eclipse.osgi 2 0 2017-05-10 14:45:13.251
-!MESSAGE While loading class "com.genuitec.eclipse.javascript.tern.MyEclipseResourcesManager", thread "Thread[Worker-3,5,main]" timed out waiting (5488ms) for thread "Thread[Worker-5,5,main]" to finish starting bundle "com.genuitec.eclipse.javascript.tern_13.0.0.201609221542 [49]". To avoid deadlock, thread "Thread[Worker-3,5,main]" is proceeding but "com.genuitec.eclipse.javascript.tern.MyEclipseResourcesManager" may not be fully initialized.
-!STACK 0
-org.osgi.framework.BundleException: Unable to acquire the state change lock for the module: osgi.identity; osgi.identity="com.genuitec.eclipse.javascript.tern"; type="osgi.bundle"; version:Version="13.0.0.201609221542"; singleton:="true" [id=49] STARTED [STARTED]
-	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:329)
-	at org.eclipse.osgi.container.Module.start(Module.java:389)
-	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
-	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
-	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:327)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:402)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:352)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:344)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:573)
-	at tern.eclipse.ide.core.TernCorePlugin.start(TernCorePlugin.java:88)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:764)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:721)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:941)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:318)
-	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
-	at org.eclipse.osgi.container.Module.start(Module.java:439)
-	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
-	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
-	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:327)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:402)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:352)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:344)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:573)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at com.genuitec.eclipse.monitor.internal.MetricsManager.<init>(MetricsManager.java:80)
-	at com.genuitec.eclipse.monitor.internal.MetricsManager.getInstance(MetricsManager.java:133)
-	at com.genuitec.eclipse.monitor.internal.MonitorPlugin$1.run(MonitorPlugin.java:50)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-
-!ENTRY org.eclipse.osgi 2 0 2017-05-10 14:45:18.254
-!MESSAGE While loading class "tern.eclipse.ide.core.utils.FileUtils", thread "Thread[Worker-5,5,main]" timed out waiting (5001ms) for thread "Thread[Worker-3,5,main]" to finish starting bundle "tern.eclipse.ide.core_1.2.0.201609221542 [1474]". To avoid deadlock, thread "Thread[Worker-5,5,main]" is proceeding but "tern.eclipse.ide.core.utils.FileUtils" may not be fully initialized.
-!STACK 0
-org.osgi.framework.BundleException: Unable to acquire the state change lock for the module: osgi.identity; osgi.identity="tern.eclipse.ide.core"; type="osgi.bundle"; version:Version="1.2.0.201609221542"; singleton:="true" [id=1474] STARTED [STARTED]
-	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:329)
-	at org.eclipse.osgi.container.Module.start(Module.java:389)
-	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
-	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
-	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:327)
-	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:398)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:352)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:344)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at tern.eclipse.ide.ui.TernUIPlugin.start(TernUIPlugin.java:56)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:764)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:721)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:941)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:318)
-	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
-	at org.eclipse.osgi.container.Module.start(Module.java:439)
-	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
-	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
-	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:327)
-	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:398)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:352)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:344)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at tern.eclipse.ide.jsdt.internal.ui.JSDTTernUIPlugin.start(JSDTTernUIPlugin.java:57)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:764)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:721)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:941)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:318)
-	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
-	at org.eclipse.osgi.container.Module.start(Module.java:439)
-	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
-	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
-	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:327)
-	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:398)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:352)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:344)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at java.lang.Class.getDeclaredConstructors0(Native Method)
-	at java.lang.Class.privateGetDeclaredConstructors(Class.java:2671)
-	at java.lang.Class.getConstructor0(Class.java:3075)
-	at java.lang.Class.newInstance(Class.java:412)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:755)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:706)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:941)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:318)
-	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
-	at org.eclipse.osgi.container.Module.start(Module.java:439)
-	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
-	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
-	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:327)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:402)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:352)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:344)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:573)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.ui.internal.WorkbenchPlugin$1.run(WorkbenchPlugin.java:293)
-	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:52)
-	at org.eclipse.ui.internal.WorkbenchPlugin.createExtension(WorkbenchPlugin.java:288)
-	at org.eclipse.ui.internal.EarlyStartupRunnable.getExecutableExtension(EarlyStartupRunnable.java:120)
-	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:68)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.ui.internal.Workbench$56.run(Workbench.java:2812)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-
-!ENTRY org.eclipse.m2e.logback.appender 4 0 2017-05-10 14:45:32.573
-!MESSAGE Unable to update index for central|https://repo.maven.apache.org/maven2: no segments* file found in org.apache.lucene.store.FSDirectory@/private/var/folders/18/mrhqj5594t17ptgyt7w541140000gn/T/nexus-index4070313173043229225.dir: files:
-!STACK 0
-java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@/private/var/folders/18/mrhqj5594t17ptgyt7w541140000gn/T/nexus-index4070313173043229225.dir: files:
-	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604)
-	at org.apache.lucene.index.DirectoryIndexReader.open(DirectoryIndexReader.java:115)
-	at org.apache.lucene.index.IndexReader.open(IndexReader.java:316)
-	at org.apache.lucene.index.IndexReader.open(IndexReader.java:227)
-	at org.apache.maven.index.updater.DefaultIndexUpdater.copyUpdatedDocuments(DefaultIndexUpdater.java:352)
-	at org.apache.maven.index.updater.DefaultIndexUpdater.unpackIndexArchive(DefaultIndexUpdater.java:288)
-	at org.apache.maven.index.updater.DefaultIndexUpdater.loadIndexDirectory(DefaultIndexUpdater.java:218)
-	at org.apache.maven.index.updater.DefaultIndexUpdater.access$300(DefaultIndexUpdater.java:75)
-	at org.apache.maven.index.updater.DefaultIndexUpdater$LuceneIndexAdaptor.setIndexFile(DefaultIndexUpdater.java:645)
-	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:844)
-	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:156)
-	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateRemoteIndex(NexusIndexManager.java:1251)
-	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateIndex(NexusIndexManager.java:1193)
-	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager$1.run(NexusIndexManager.java:703)
-	at org.eclipse.m2e.core.internal.index.nexus.IndexUpdaterJob.run(IndexUpdaterJob.java:72)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-
-!ENTRY org.eclipse.jface 2 0 2017-05-10 14:45:35.911
-!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
-!SUBENTRY 1 org.eclipse.jface 2 0 2017-05-10 14:45:35.911
-!MESSAGE A conflict occurred for ALT+COMMAND+/:
-Binding(ALT+COMMAND+/,
-	ParameterizedCommand(Command(io.emmet.eclipse.commands.toggle_comment,Toggle Comment,
-		,
-		Category(io.emmet.eclipse.commands.category,Emmet,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1af6ad68,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.textEditorScope,,,system)
-Binding(ALT+COMMAND+/,
-	ParameterizedCommand(Command(org.eclipse.ui.edit.text.hippieCompletion,Word Completion,
-		Context insensitive completion,
-		Category(org.eclipse.ui.category.edit,Edit,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@730325d9,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.textEditorScope,zh,,system)
-
-!ENTRY org.eclipse.ui 4 0 2017-05-10 15:54:08.410
-!MESSAGE Unhandled event loop exception
-!STACK 0
-java.lang.NullPointerException
-	at org.eclipse.swt.widgets.Control.internal_new_GC(Control.java:2124)
-	at org.eclipse.swt.graphics.GC.cocoa_new(GC.java:210)
-	at org.eclipse.swt.widgets.Tree.sendMeasureItem(Tree.java:2596)
-	at org.eclipse.swt.widgets.Tree.cellSize(Tree.java:288)
-	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5582)
-	at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper_stret(Native Method)
-	at org.eclipse.swt.widgets.Widget.expansionFrameWithFrame_inView(Widget.java:814)
-	at org.eclipse.swt.widgets.Tree.expansionFrameWithFrame_inView(Tree.java:1274)
-	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5961)
-	at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
-	at org.eclipse.swt.widgets.Display.applicationNextEventMatchingMask(Display.java:5051)
-	at org.eclipse.swt.widgets.Display.applicationProc(Display.java:5432)
-	at org.eclipse.swt.internal.cocoa.OS.objc_msgSend(Native Method)
-	at org.eclipse.swt.internal.cocoa.NSApplication.nextEventMatchingMask(NSApplication.java:94)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3692)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1127)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
-	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:654)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:598)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
-!SESSION 2017-05-11 13:34:49.518 -----------------------------------------------
-eclipse.buildId=14.0.1.CI-007
-java.version=1.8.0_66
-java.vendor=Oracle Corporation
-BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=zh_CN
-Framework arguments:  -keyring /Users/cassie/.eclipse_keyring -showlocation
-Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -keyring /Users/cassie/.eclipse_keyring -showlocation
-
-!ENTRY org.eclipse.wst.common.project.facet.core 4 0 2017-05-11 13:34:55.232
-!MESSAGE Project facet grails.app has not been defined. It is used in plugin com.vmware.vfabric.ide.eclipse.tcserver.core.
-
-!ENTRY org.eclipse.jface 2 0 2017-05-11 13:35:00.665
-!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
-!SUBENTRY 1 org.eclipse.jface 2 0 2017-05-11 13:35:00.665
-!MESSAGE A conflict occurred for COMMAND+SHIFT+Z:
-Binding(COMMAND+SHIFT+Z,
-	ParameterizedCommand(Command(org.eclipse.angularjs.ui.navigate.open.angular.element,Open Angular Element,
-		Opens an Angular Element in a JavaScript editor,
-		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5796ae15,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.contexts.window,,,system)
-Binding(COMMAND+SHIFT+Z,
-	ParameterizedCommand(Command(org.skyway.core.ui.generate,Generate,
-		Generate with Skyway,
-		Category(org.skyway.core.ui.category.views,Window,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@123372f4,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.contexts.window,,,system)
-Binding(COMMAND+SHIFT+Z,
-	ParameterizedCommand(Command(org.eclipse.ui.edit.redo,Redo,
-		Redo the last operation,
-		Category(org.eclipse.ui.category.edit,Edit,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@37846cc2,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.contexts.dialogAndWindow,,cocoa,system)
-
-!ENTRY org.eclipse.m2e.logback.appender 4 0 2017-05-11 13:35:27.530
-!MESSAGE Unable to update index for central|https://repo.maven.apache.org/maven2: no segments* file found in org.apache.lucene.store.FSDirectory@/private/var/folders/18/mrhqj5594t17ptgyt7w541140000gn/T/nexus-index8019561501583394741.dir: files:
-!STACK 0
-java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@/private/var/folders/18/mrhqj5594t17ptgyt7w541140000gn/T/nexus-index8019561501583394741.dir: files:
-	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604)
-	at org.apache.lucene.index.DirectoryIndexReader.open(DirectoryIndexReader.java:115)
-	at org.apache.lucene.index.IndexReader.open(IndexReader.java:316)
-	at org.apache.lucene.index.IndexReader.open(IndexReader.java:227)
-	at org.apache.maven.index.updater.DefaultIndexUpdater.copyUpdatedDocuments(DefaultIndexUpdater.java:352)
-	at org.apache.maven.index.updater.DefaultIndexUpdater.unpackIndexArchive(DefaultIndexUpdater.java:288)
-	at org.apache.maven.index.updater.DefaultIndexUpdater.loadIndexDirectory(DefaultIndexUpdater.java:218)
-	at org.apache.maven.index.updater.DefaultIndexUpdater.access$300(DefaultIndexUpdater.java:75)
-	at org.apache.maven.index.updater.DefaultIndexUpdater$LuceneIndexAdaptor.setIndexFile(DefaultIndexUpdater.java:645)
-	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:844)
-	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:156)
-	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateRemoteIndex(NexusIndexManager.java:1251)
-	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateIndex(NexusIndexManager.java:1193)
-	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager$1.run(NexusIndexManager.java:703)
-	at org.eclipse.m2e.core.internal.index.nexus.IndexUpdaterJob.run(IndexUpdaterJob.java:72)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-
-!ENTRY org.eclipse.jface 2 0 2017-05-11 13:37:45.283
-!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
-!SUBENTRY 1 org.eclipse.jface 2 0 2017-05-11 13:37:45.283
-!MESSAGE A conflict occurred for ALT+COMMAND+/:
-Binding(ALT+COMMAND+/,
-	ParameterizedCommand(Command(io.emmet.eclipse.commands.toggle_comment,Toggle Comment,
-		,
-		Category(io.emmet.eclipse.commands.category,Emmet,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@630d7bce,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.textEditorScope,,,system)
-Binding(ALT+COMMAND+/,
-	ParameterizedCommand(Command(org.eclipse.ui.edit.text.hippieCompletion,Word Completion,
-		Context insensitive completion,
-		Category(org.eclipse.ui.category.edit,Edit,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@277cf420,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.textEditorScope,zh,,system)
-
-!ENTRY org.eclipse.ui 4 0 2017-05-11 15:17:57.027
-!MESSAGE Unhandled event loop exception
-!STACK 0
-java.lang.NullPointerException
-	at org.eclipse.swt.widgets.Control.internal_new_GC(Control.java:2124)
-	at org.eclipse.swt.graphics.GC.cocoa_new(GC.java:210)
-	at org.eclipse.swt.widgets.Tree.sendMeasureItem(Tree.java:2596)
-	at org.eclipse.swt.widgets.Tree.cellSize(Tree.java:288)
-	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5582)
-	at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper_stret(Native Method)
-	at org.eclipse.swt.widgets.Widget.expansionFrameWithFrame_inView(Widget.java:814)
-	at org.eclipse.swt.widgets.Tree.expansionFrameWithFrame_inView(Tree.java:1274)
-	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5961)
-	at org.eclipse.swt.internal.cocoa.OS.objc_msgSend_bool(Native Method)
-	at org.eclipse.swt.internal.cocoa.NSRunLoop.runMode(NSRunLoop.java:42)
-	at org.eclipse.swt.widgets.Display.sleep(Display.java:4740)
-	at org.eclipse.ui.application.WorkbenchAdvisor.eventLoopIdle(WorkbenchAdvisor.java:368)
-	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.eventLoopIdle(IDEWorkbenchAdvisor.java:858)
-	at org.eclipse.ui.internal.Workbench$3.eventLoopIdle(Workbench.java:517)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1132)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
-	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:654)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:598)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
-
-!ENTRY org.eclipse.ui 4 0 2017-05-11 16:31:47.217
+!ENTRY org.eclipse.ui 4 0 2017-05-26 10:40:41.535
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException
 
-!ENTRY org.eclipse.ui 4 0 2017-05-11 16:31:57.496
-!MESSAGE Unhandled event loop exception
-!STACK 0
-java.lang.NullPointerException
-
-!ENTRY org.eclipse.ui 4 0 2017-05-11 16:42:37.898
-!MESSAGE Unhandled event loop exception
-!STACK 0
-java.lang.NullPointerException
-
-!ENTRY org.eclipse.ui 4 0 2017-05-11 20:38:44.887
-!MESSAGE Unhandled event loop exception
-!STACK 0
-java.lang.NullPointerException
-!SESSION 2017-05-12 09:47:54.517 -----------------------------------------------
-eclipse.buildId=14.0.1.CI-007
-java.version=1.8.0_66
-java.vendor=Oracle Corporation
-BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=zh_CN
-Framework arguments:  -keyring /Users/cassie/.eclipse_keyring -showlocation
-Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -keyring /Users/cassie/.eclipse_keyring -showlocation
-
-!ENTRY org.eclipse.wst.common.project.facet.core 4 0 2017-05-12 09:47:59.933
-!MESSAGE Project facet grails.app has not been defined. It is used in plugin com.vmware.vfabric.ide.eclipse.tcserver.core.
-
-!ENTRY org.eclipse.jface 2 0 2017-05-12 09:48:05.933
-!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
-!SUBENTRY 1 org.eclipse.jface 2 0 2017-05-12 09:48:05.933
-!MESSAGE A conflict occurred for COMMAND+SHIFT+Z:
-Binding(COMMAND+SHIFT+Z,
-	ParameterizedCommand(Command(org.eclipse.angularjs.ui.navigate.open.angular.element,Open Angular Element,
-		Opens an Angular Element in a JavaScript editor,
-		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4e0dec0c,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.contexts.window,,,system)
-Binding(COMMAND+SHIFT+Z,
-	ParameterizedCommand(Command(org.skyway.core.ui.generate,Generate,
-		Generate with Skyway,
-		Category(org.skyway.core.ui.category.views,Window,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3dd4f91d,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.contexts.window,,,system)
-Binding(COMMAND+SHIFT+Z,
-	ParameterizedCommand(Command(org.eclipse.ui.edit.redo,Redo,
-		Redo the last operation,
-		Category(org.eclipse.ui.category.edit,Edit,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4a65ce06,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.contexts.dialogAndWindow,,cocoa,system)
-
-!ENTRY org.eclipse.jface 2 0 2017-05-12 09:48:15.776
-!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
-!SUBENTRY 1 org.eclipse.jface 2 0 2017-05-12 09:48:15.777
-!MESSAGE A conflict occurred for ALT+COMMAND+/:
-Binding(ALT+COMMAND+/,
-	ParameterizedCommand(Command(io.emmet.eclipse.commands.toggle_comment,Toggle Comment,
-		,
-		Category(io.emmet.eclipse.commands.category,Emmet,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@dd909bb,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.textEditorScope,,,system)
-Binding(ALT+COMMAND+/,
-	ParameterizedCommand(Command(org.eclipse.ui.edit.text.hippieCompletion,Word Completion,
-		Context insensitive completion,
-		Category(org.eclipse.ui.category.edit,Edit,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@31d29626,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.textEditorScope,zh,,system)
-
-!ENTRY org.eclipse.m2e.logback.appender 4 0 2017-05-12 09:48:37.123
-!MESSAGE Unable to update index for central|https://repo.maven.apache.org/maven2: no segments* file found in org.apache.lucene.store.FSDirectory@/private/var/folders/18/mrhqj5594t17ptgyt7w541140000gn/T/nexus-index9136887945902541256.dir: files:
-!STACK 0
-java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@/private/var/folders/18/mrhqj5594t17ptgyt7w541140000gn/T/nexus-index9136887945902541256.dir: files:
-	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604)
-	at org.apache.lucene.index.DirectoryIndexReader.open(DirectoryIndexReader.java:115)
-	at org.apache.lucene.index.IndexReader.open(IndexReader.java:316)
-	at org.apache.lucene.index.IndexReader.open(IndexReader.java:227)
-	at org.apache.maven.index.updater.DefaultIndexUpdater.copyUpdatedDocuments(DefaultIndexUpdater.java:352)
-	at org.apache.maven.index.updater.DefaultIndexUpdater.unpackIndexArchive(DefaultIndexUpdater.java:288)
-	at org.apache.maven.index.updater.DefaultIndexUpdater.loadIndexDirectory(DefaultIndexUpdater.java:218)
-	at org.apache.maven.index.updater.DefaultIndexUpdater.access$300(DefaultIndexUpdater.java:75)
-	at org.apache.maven.index.updater.DefaultIndexUpdater$LuceneIndexAdaptor.setIndexFile(DefaultIndexUpdater.java:645)
-	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:844)
-	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:156)
-	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateRemoteIndex(NexusIndexManager.java:1251)
-	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateIndex(NexusIndexManager.java:1193)
-	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager$1.run(NexusIndexManager.java:703)
-	at org.eclipse.m2e.core.internal.index.nexus.IndexUpdaterJob.run(IndexUpdaterJob.java:72)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-
-!ENTRY org.eclipse.ui 4 0 2017-05-12 10:20:09.359
-!MESSAGE Unhandled event loop exception
-!STACK 0
-java.lang.NullPointerException
-	at org.eclipse.swt.widgets.Control.internal_new_GC(Control.java:2124)
-	at org.eclipse.swt.graphics.GC.cocoa_new(GC.java:210)
-	at org.eclipse.swt.widgets.Tree.sendMeasureItem(Tree.java:2596)
-	at org.eclipse.swt.widgets.Tree.cellSize(Tree.java:288)
-	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5582)
-	at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper_stret(Native Method)
-	at org.eclipse.swt.widgets.Widget.expansionFrameWithFrame_inView(Widget.java:814)
-	at org.eclipse.swt.widgets.Tree.expansionFrameWithFrame_inView(Tree.java:1274)
-	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5961)
-	at org.eclipse.swt.internal.cocoa.OS.objc_msgSend_bool(Native Method)
-	at org.eclipse.swt.internal.cocoa.NSRunLoop.runMode(NSRunLoop.java:42)
-	at org.eclipse.swt.widgets.Display.sleep(Display.java:4740)
-	at org.eclipse.ui.application.WorkbenchAdvisor.eventLoopIdle(WorkbenchAdvisor.java:368)
-	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.eventLoopIdle(IDEWorkbenchAdvisor.java:858)
-	at org.eclipse.ui.internal.Workbench$3.eventLoopIdle(Workbench.java:517)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1132)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
-	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:654)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:598)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
-
-!ENTRY org.eclipse.ui 4 0 2017-05-12 15:08:33.651
-!MESSAGE Unhandled event loop exception
-!STACK 0
-java.lang.NullPointerException
-
-!ENTRY org.eclipse.ui 4 0 2017-05-12 17:19:24.072
+!ENTRY org.eclipse.ui 4 0 2017-05-26 11:22:09.479
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException
@@ -662,7 +44,7 @@ java.lang.NullPointerException
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
-!SESSION 2017-05-15 09:14:13.746 -----------------------------------------------
+!SESSION 2017-06-01 09:34:34.385 -----------------------------------------------
 eclipse.buildId=14.0.1.CI-007
 java.version=1.8.0_66
 java.vendor=Oracle Corporation
@@ -670,18 +52,18 @@ BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=zh_CN
 Framework arguments:  -keyring /Users/cassie/.eclipse_keyring -showlocation
 Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -keyring /Users/cassie/.eclipse_keyring -showlocation
 
-!ENTRY org.eclipse.wst.common.project.facet.core 4 0 2017-05-15 09:14:19.467
+!ENTRY org.eclipse.wst.common.project.facet.core 4 0 2017-06-01 09:34:41.797
 !MESSAGE Project facet grails.app has not been defined. It is used in plugin com.vmware.vfabric.ide.eclipse.tcserver.core.
 
-!ENTRY org.eclipse.jface 2 0 2017-05-15 09:14:25.271
+!ENTRY org.eclipse.jface 2 0 2017-06-01 09:34:46.703
 !MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
-!SUBENTRY 1 org.eclipse.jface 2 0 2017-05-15 09:14:25.271
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-06-01 09:34:46.704
 !MESSAGE A conflict occurred for COMMAND+SHIFT+Z:
 Binding(COMMAND+SHIFT+Z,
 	ParameterizedCommand(Command(org.eclipse.angularjs.ui.navigate.open.angular.element,Open Angular Element,
 		Opens an Angular Element in a JavaScript editor,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7c689379,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@622be81d,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
@@ -689,7 +71,7 @@ Binding(COMMAND+SHIFT+Z,
 	ParameterizedCommand(Command(org.skyway.core.ui.generate,Generate,
 		Generate with Skyway,
 		Category(org.skyway.core.ui.category.views,Window,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@8fa4647,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3c28cd9a,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
@@ -697,53 +79,154 @@ Binding(COMMAND+SHIFT+Z,
 	ParameterizedCommand(Command(org.eclipse.ui.edit.redo,Redo,
 		Redo the last operation,
 		Category(org.eclipse.ui.category.edit,Edit,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@53a2dbf2,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@94047a4,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.dialogAndWindow,,cocoa,system)
 
-!ENTRY org.eclipse.ui 4 0 2017-05-15 09:14:38.808
+!ENTRY org.eclipse.jface 2 0 2017-06-01 09:34:55.365
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-06-01 09:34:55.365
+!MESSAGE A conflict occurred for ALT+COMMAND+/:
+Binding(ALT+COMMAND+/,
+	ParameterizedCommand(Command(io.emmet.eclipse.commands.toggle_comment,Toggle Comment,
+		,
+		Category(io.emmet.eclipse.commands.category,Emmet,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@18723aac,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(ALT+COMMAND+/,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.hippieCompletion,Word Completion,
+		Context insensitive completion,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4d0ad526,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,zh,,system)
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2017-06-01 09:35:30.939
+!MESSAGE Unable to update index for central|https://repo.maven.apache.org/maven2: no segments* file found in org.apache.lucene.store.FSDirectory@/private/var/folders/18/mrhqj5594t17ptgyt7w541140000gn/T/nexus-index7238080244351628268.dir: files:
+!STACK 0
+java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@/private/var/folders/18/mrhqj5594t17ptgyt7w541140000gn/T/nexus-index7238080244351628268.dir: files:
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604)
+	at org.apache.lucene.index.DirectoryIndexReader.open(DirectoryIndexReader.java:115)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:316)
+	at org.apache.lucene.index.IndexReader.open(IndexReader.java:227)
+	at org.apache.maven.index.updater.DefaultIndexUpdater.copyUpdatedDocuments(DefaultIndexUpdater.java:352)
+	at org.apache.maven.index.updater.DefaultIndexUpdater.unpackIndexArchive(DefaultIndexUpdater.java:288)
+	at org.apache.maven.index.updater.DefaultIndexUpdater.loadIndexDirectory(DefaultIndexUpdater.java:218)
+	at org.apache.maven.index.updater.DefaultIndexUpdater.access$300(DefaultIndexUpdater.java:75)
+	at org.apache.maven.index.updater.DefaultIndexUpdater$LuceneIndexAdaptor.setIndexFile(DefaultIndexUpdater.java:645)
+	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:844)
+	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:156)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateRemoteIndex(NexusIndexManager.java:1251)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateIndex(NexusIndexManager.java:1193)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager$1.run(NexusIndexManager.java:703)
+	at org.eclipse.m2e.core.internal.index.nexus.IndexUpdaterJob.run(IndexUpdaterJob.java:72)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.ui 4 0 2017-06-01 09:43:05.255
 !MESSAGE Unhandled event loop exception
 !STACK 0
-java.util.ConcurrentModificationException
-	at java.util.HashMap$HashIterator.nextNode(HashMap.java:1429)
-	at java.util.HashMap$ValueIterator.next(HashMap.java:1458)
-	at org.eclipse.ui.internal.services.ServiceLocator.dispose(ServiceLocator.java:136)
-	at org.eclipse.ui.internal.Workbench.shutdown(Workbench.java:3171)
-	at org.eclipse.ui.internal.Workbench.busyClose(Workbench.java:1161)
-	at org.eclipse.ui.internal.Workbench.access$21(Workbench.java:1073)
-	at org.eclipse.ui.internal.Workbench$19.run(Workbench.java:1414)
-	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
-	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1411)
-	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1384)
-	at org.eclipse.ui.internal.WorkbenchWindow.busyClose(WorkbenchWindow.java:1571)
-	at org.eclipse.ui.internal.WorkbenchWindow.access$16(WorkbenchWindow.java:1542)
-	at org.eclipse.ui.internal.WorkbenchWindow$11.run(WorkbenchWindow.java:1603)
-	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
-	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:1600)
-	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:1614)
-	at org.eclipse.ui.internal.WorkbenchWindow$6.close(WorkbenchWindow.java:523)
-	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer$7.shellClosed(WBWRenderer.java:518)
-	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:98)
-	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
-	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4230)
-	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1491)
-	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1514)
-	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1499)
-	at org.eclipse.swt.widgets.Shell.closeWidget(Shell.java:612)
-	at org.eclipse.swt.widgets.Shell.windowShouldClose(Shell.java:2367)
-	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5690)
+java.lang.NullPointerException
+	at org.eclipse.swt.widgets.Control.internal_new_GC(Control.java:2124)
+	at org.eclipse.swt.graphics.GC.cocoa_new(GC.java:210)
+	at org.eclipse.swt.widgets.Tree.sendMeasureItem(Tree.java:2596)
+	at org.eclipse.swt.widgets.Tree.cellSize(Tree.java:288)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5582)
+	at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper_stret(Native Method)
+	at org.eclipse.swt.widgets.Widget.expansionFrameWithFrame_inView(Widget.java:814)
+	at org.eclipse.swt.widgets.Tree.expansionFrameWithFrame_inView(Tree.java:1274)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5961)
+	at org.eclipse.swt.internal.cocoa.OS.objc_msgSend_bool(Native Method)
+	at org.eclipse.swt.internal.cocoa.NSRunLoop.runMode(NSRunLoop.java:42)
+	at org.eclipse.swt.widgets.Display.sleep(Display.java:4740)
+	at org.eclipse.ui.application.WorkbenchAdvisor.eventLoopIdle(WorkbenchAdvisor.java:368)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.eventLoopIdle(IDEWorkbenchAdvisor.java:858)
+	at org.eclipse.ui.internal.Workbench$3.eventLoopIdle(Workbench.java:517)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1132)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:654)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:598)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+
+!ENTRY org.eclipse.ui 4 0 2017-06-01 09:44:28.640
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.swt.widgets.Control.internal_new_GC(Control.java:2124)
+	at org.eclipse.swt.graphics.GC.cocoa_new(GC.java:210)
+	at org.eclipse.swt.widgets.Tree.sendMeasureItem(Tree.java:2596)
+	at org.eclipse.swt.widgets.Tree.cellSize(Tree.java:288)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5582)
+	at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper_stret(Native Method)
+	at org.eclipse.swt.widgets.Widget.expansionFrameWithFrame_inView(Widget.java:814)
+	at org.eclipse.swt.widgets.Tree.expansionFrameWithFrame_inView(Tree.java:1274)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5961)
+	at org.eclipse.swt.internal.cocoa.OS.objc_msgSend_bool(Native Method)
+	at org.eclipse.swt.internal.cocoa.NSRunLoop.runMode(NSRunLoop.java:42)
+	at org.eclipse.swt.widgets.Display.sleep(Display.java:4740)
+	at org.eclipse.ui.application.WorkbenchAdvisor.eventLoopIdle(WorkbenchAdvisor.java:368)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.eventLoopIdle(IDEWorkbenchAdvisor.java:858)
+	at org.eclipse.ui.internal.Workbench$3.eventLoopIdle(Workbench.java:517)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1132)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:654)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:598)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+
+!ENTRY org.eclipse.ui 4 0 2017-06-01 09:44:28.712
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.swt.widgets.Control.internal_new_GC(Control.java:2124)
+	at org.eclipse.swt.graphics.GC.cocoa_new(GC.java:210)
+	at org.eclipse.swt.widgets.Tree.sendMeasureItem(Tree.java:2596)
+	at org.eclipse.swt.widgets.Tree.cellSize(Tree.java:288)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5582)
+	at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper_stret(Native Method)
+	at org.eclipse.swt.widgets.Widget.expansionFrameWithFrame_inView(Widget.java:814)
+	at org.eclipse.swt.widgets.Tree.expansionFrameWithFrame_inView(Tree.java:1274)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5961)
 	at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
-	at org.eclipse.swt.widgets.Widget.callSuper(Widget.java:227)
-	at org.eclipse.swt.widgets.Widget.windowSendEvent(Widget.java:2130)
-	at org.eclipse.swt.widgets.Shell.windowSendEvent(Shell.java:2337)
-	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5756)
-	at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
-	at org.eclipse.swt.widgets.Display.applicationSendEvent(Display.java:5193)
-	at org.eclipse.swt.widgets.Display.applicationProc(Display.java:5342)
+	at org.eclipse.swt.widgets.Display.applicationNextEventMatchingMask(Display.java:5051)
+	at org.eclipse.swt.widgets.Display.applicationProc(Display.java:5432)
 	at org.eclipse.swt.internal.cocoa.OS.objc_msgSend(Native Method)
-	at org.eclipse.swt.internal.cocoa.NSApplication.sendEvent(NSApplication.java:128)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3695)
+	at org.eclipse.swt.internal.cocoa.NSApplication.nextEventMatchingMask(NSApplication.java:94)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3692)
 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1127)
 	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
@@ -766,286 +249,89 @@ java.util.ConcurrentModificationException
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
 
-!ENTRY com.skyway.integration.service.webservice 4 0 2017-05-15 09:14:39.020
-!MESSAGE FrameworkEvent ERROR
-!STACK 0
-org.eclipse.swt.SWTException: Invalid thread access
-	at org.eclipse.swt.SWT.error(SWT.java:4491)
-	at org.eclipse.swt.SWT.error(SWT.java:4406)
-	at org.eclipse.swt.SWT.error(SWT.java:4377)
-	at org.eclipse.swt.widgets.Display.error(Display.java:1097)
-	at org.eclipse.swt.widgets.Display.createDisplay(Display.java:848)
-	at org.eclipse.swt.widgets.Display.create(Display.java:831)
-	at org.eclipse.swt.graphics.Device.<init>(Device.java:130)
-	at org.eclipse.swt.widgets.Display.<init>(Display.java:721)
-	at org.eclipse.swt.widgets.Display.<init>(Display.java:712)
-	at org.eclipse.swt.widgets.Display.getDefault(Display.java:1427)
-	at org.eclipse.ui.plugin.AbstractUIPlugin.refreshPluginActions(AbstractUIPlugin.java:492)
-	at org.eclipse.ui.plugin.AbstractUIPlugin$2.bundleChanged(AbstractUIPlugin.java:618)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.dispatchEvent(BundleContextImpl.java:902)
-	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
-	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
-
-!ENTRY org.eclipse.ui.workbench 4 0 2017-05-15 09:14:39.105
-!MESSAGE FrameworkEvent ERROR
+!ENTRY org.eclipse.ui 4 0 2017-06-01 09:44:28.788
+!MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException
-	at org.eclipse.ui.internal.AbstractWorkingSetManager.bundleChanged(AbstractWorkingSetManager.java:671)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.dispatchEvent(BundleContextImpl.java:902)
-	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
-	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+	at org.eclipse.swt.widgets.Control.internal_new_GC(Control.java:2124)
+	at org.eclipse.swt.graphics.GC.cocoa_new(GC.java:210)
+	at org.eclipse.swt.widgets.Tree.sendMeasureItem(Tree.java:2596)
+	at org.eclipse.swt.widgets.Tree.cellSize(Tree.java:288)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5582)
+	at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper_stret(Native Method)
+	at org.eclipse.swt.widgets.Widget.expansionFrameWithFrame_inView(Widget.java:814)
+	at org.eclipse.swt.widgets.Tree.expansionFrameWithFrame_inView(Tree.java:1274)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5961)
+	at org.eclipse.swt.internal.cocoa.OS.objc_msgSend_bool(Native Method)
+	at org.eclipse.swt.internal.cocoa.NSRunLoop.runMode(NSRunLoop.java:42)
+	at org.eclipse.swt.widgets.Display.sleep(Display.java:4740)
+	at org.eclipse.ui.application.WorkbenchAdvisor.eventLoopIdle(WorkbenchAdvisor.java:368)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.eventLoopIdle(IDEWorkbenchAdvisor.java:858)
+	at org.eclipse.ui.internal.Workbench$3.eventLoopIdle(Workbench.java:517)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1132)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:654)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:598)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
 
-!ENTRY org.eclipse.ui.workbench 4 0 2017-05-15 09:14:39.156
-!MESSAGE FrameworkEvent ERROR
+!ENTRY org.eclipse.ui 4 0 2017-06-01 09:44:28.941
+!MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException
-	at org.eclipse.ui.internal.AbstractWorkingSetManager.bundleChanged(AbstractWorkingSetManager.java:671)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.dispatchEvent(BundleContextImpl.java:902)
-	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
-	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+	at org.eclipse.swt.widgets.Control.internal_new_GC(Control.java:2124)
+	at org.eclipse.swt.graphics.GC.cocoa_new(GC.java:210)
+	at org.eclipse.swt.widgets.Tree.sendMeasureItem(Tree.java:2596)
+	at org.eclipse.swt.widgets.Tree.cellSize(Tree.java:288)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5582)
+	at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper_stret(Native Method)
+	at org.eclipse.swt.widgets.Widget.expansionFrameWithFrame_inView(Widget.java:814)
+	at org.eclipse.swt.widgets.Tree.expansionFrameWithFrame_inView(Tree.java:1274)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5961)
+	at org.eclipse.swt.internal.cocoa.OS.objc_msgSend_bool(Native Method)
+	at org.eclipse.swt.internal.cocoa.NSRunLoop.runMode(NSRunLoop.java:42)
+	at org.eclipse.swt.widgets.Display.sleep(Display.java:4740)
+	at org.eclipse.ui.application.WorkbenchAdvisor.eventLoopIdle(WorkbenchAdvisor.java:368)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.eventLoopIdle(IDEWorkbenchAdvisor.java:858)
+	at org.eclipse.ui.internal.Workbench$3.eventLoopIdle(Workbench.java:517)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1132)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:654)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:598)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
 
-!ENTRY org.eclipse.core.jobs 4 2 2017-05-15 09:14:39.637
-!MESSAGE An internal error occurred during: "Init AllInOneWorkbenchListener".
-!STACK 0
-org.eclipse.swt.SWTException: Device is disposed
-	at org.eclipse.swt.SWT.error(SWT.java:4491)
-	at org.eclipse.swt.SWT.error(SWT.java:4406)
-	at org.eclipse.swt.SWT.error(SWT.java:4377)
-	at org.eclipse.swt.widgets.Display.error(Display.java:1097)
-	at org.eclipse.swt.widgets.Display.asyncExec(Display.java:593)
-	at com.genuitec.eclipse.core.ui.util.AllInOneWorkbenchListener$1.run(AllInOneWorkbenchListener.java:32)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-
-!ENTRY org.eclipse.ui 4 0 2017-05-15 09:14:39.640
-!MESSAGE Error occurred during status handling
-!STACK 0
-org.eclipse.swt.SWTException: Invalid thread access
-	at org.eclipse.swt.SWT.error(SWT.java:4491)
-	at org.eclipse.swt.SWT.error(SWT.java:4406)
-	at org.eclipse.swt.SWT.error(SWT.java:4377)
-	at org.eclipse.swt.widgets.Display.error(Display.java:1097)
-	at org.eclipse.swt.widgets.Display.createDisplay(Display.java:848)
-	at org.eclipse.swt.widgets.Display.create(Display.java:831)
-	at org.eclipse.swt.graphics.Device.<init>(Device.java:130)
-	at org.eclipse.swt.widgets.Display.<init>(Display.java:721)
-	at org.eclipse.swt.widgets.Display.<init>(Display.java:712)
-	at org.eclipse.swt.widgets.Display.getDefault(Display.java:1427)
-	at org.eclipse.ui.statushandlers.WorkbenchErrorHandler.handle(WorkbenchErrorHandler.java:61)
-	at org.eclipse.ui.internal.ide.IDEWorkbenchErrorHandler.handle(IDEWorkbenchErrorHandler.java:103)
-	at org.eclipse.ui.internal.WorkbenchErrorHandlerProxy.handle(WorkbenchErrorHandlerProxy.java:31)
-	at org.eclipse.ui.statushandlers.StatusManager.handle(StatusManager.java:189)
-	at org.eclipse.ui.internal.progress.ProgressManager$2.done(ProgressManager.java:496)
-	at org.eclipse.core.internal.jobs.JobListeners$3.notify(JobListeners.java:42)
-	at org.eclipse.core.internal.jobs.JobListeners.doNotify(JobListeners.java:102)
-	at org.eclipse.core.internal.jobs.JobListeners.done(JobListeners.java:151)
-	at org.eclipse.core.internal.jobs.JobManager.endJob(JobManager.java:694)
-	at org.eclipse.core.internal.jobs.WorkerPool.endJob(WorkerPool.java:105)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:72)
-
-!ENTRY org.eclipse.core.jobs 4 2 2017-05-15 09:14:39.642
-!MESSAGE An internal error occurred during: "Init AllInOneWorkbenchListener".
-!STACK 0
-org.eclipse.swt.SWTException: Device is disposed
-	at org.eclipse.swt.SWT.error(SWT.java:4491)
-	at org.eclipse.swt.SWT.error(SWT.java:4406)
-	at org.eclipse.swt.SWT.error(SWT.java:4377)
-	at org.eclipse.swt.widgets.Display.error(Display.java:1097)
-	at org.eclipse.swt.widgets.Display.asyncExec(Display.java:593)
-	at com.genuitec.eclipse.core.ui.util.AllInOneWorkbenchListener$1.run(AllInOneWorkbenchListener.java:32)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-
-!ENTRY org.eclipse.mylyn.tasks.ui 4 0 2017-05-15 09:14:39.916
-!MESSAGE FrameworkEvent ERROR
-!STACK 0
-org.osgi.framework.BundleException: Exception in org.eclipse.mylyn.internal.tasks.ui.TasksUiPlugin.stop() of bundle org.eclipse.mylyn.tasks.ui.
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:847)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:955)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:323)
-	at org.eclipse.osgi.container.Module.doStop(Module.java:626)
-	at org.eclipse.osgi.container.Module.stop(Module.java:488)
-	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1623)
-	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1542)
-	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:248)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:144)
-	at org.eclipse.osgi.container.Module.doStop(Module.java:626)
-	at org.eclipse.osgi.container.Module.stop(Module.java:488)
-	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:186)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:159)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: java.lang.ExceptionInInitializerError
-	at org.eclipse.mylyn.internal.tasks.ui.TasksUiPlugin.stop(TasksUiPlugin.java:838)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:827)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:820)
-	... 13 more
-Caused by: org.eclipse.swt.SWTException: Invalid thread access
-	at org.eclipse.swt.SWT.error(SWT.java:4491)
-	at org.eclipse.swt.SWT.error(SWT.java:4406)
-	at org.eclipse.swt.SWT.error(SWT.java:4377)
-	at org.eclipse.swt.widgets.Display.error(Display.java:1097)
-	at org.eclipse.swt.widgets.Display.createDisplay(Display.java:848)
-	at org.eclipse.swt.widgets.Display.create(Display.java:831)
-	at org.eclipse.swt.graphics.Device.<init>(Device.java:130)
-	at org.eclipse.swt.widgets.Display.<init>(Display.java:721)
-	at org.eclipse.swt.widgets.Display.<init>(Display.java:712)
-	at org.eclipse.swt.widgets.Display.getDefault(Display.java:1427)
-	at org.eclipse.mylyn.commons.ui.compatibility.CommonColors.<clinit>(CommonColors.java:28)
-	... 18 more
-Root exception:
-java.lang.ExceptionInInitializerError
-	at org.eclipse.mylyn.internal.tasks.ui.TasksUiPlugin.stop(TasksUiPlugin.java:838)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:827)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:820)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:955)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:323)
-	at org.eclipse.osgi.container.Module.doStop(Module.java:626)
-	at org.eclipse.osgi.container.Module.stop(Module.java:488)
-	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1623)
-	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1542)
-	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:248)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:144)
-	at org.eclipse.osgi.container.Module.doStop(Module.java:626)
-	at org.eclipse.osgi.container.Module.stop(Module.java:488)
-	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:186)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:159)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: org.eclipse.swt.SWTException: Invalid thread access
-	at org.eclipse.swt.SWT.error(SWT.java:4491)
-	at org.eclipse.swt.SWT.error(SWT.java:4406)
-	at org.eclipse.swt.SWT.error(SWT.java:4377)
-	at org.eclipse.swt.widgets.Display.error(Display.java:1097)
-	at org.eclipse.swt.widgets.Display.createDisplay(Display.java:848)
-	at org.eclipse.swt.widgets.Display.create(Display.java:831)
-	at org.eclipse.swt.graphics.Device.<init>(Device.java:130)
-	at org.eclipse.swt.widgets.Display.<init>(Display.java:721)
-	at org.eclipse.swt.widgets.Display.<init>(Display.java:712)
-	at org.eclipse.swt.widgets.Display.getDefault(Display.java:1427)
-	at org.eclipse.mylyn.commons.ui.compatibility.CommonColors.<clinit>(CommonColors.java:28)
-	... 18 more
-!SESSION 2017-05-15 09:15:28.024 -----------------------------------------------
-eclipse.buildId=14.0.1.CI-007
-java.version=1.8.0_66
-java.vendor=Oracle Corporation
-BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=zh_CN
-Framework arguments:  -keyring /Users/cassie/.eclipse_keyring -showlocation
-Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -keyring /Users/cassie/.eclipse_keyring -showlocation
-
-!ENTRY org.eclipse.wst.common.project.facet.core 4 0 2017-05-15 09:15:32.926
-!MESSAGE Project facet grails.app has not been defined. It is used in plugin com.vmware.vfabric.ide.eclipse.tcserver.core.
-
-!ENTRY org.eclipse.jface 2 0 2017-05-15 09:15:36.709
-!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
-!SUBENTRY 1 org.eclipse.jface 2 0 2017-05-15 09:15:36.709
-!MESSAGE A conflict occurred for COMMAND+SHIFT+Z:
-Binding(COMMAND+SHIFT+Z,
-	ParameterizedCommand(Command(org.eclipse.angularjs.ui.navigate.open.angular.element,Open Angular Element,
-		Opens an Angular Element in a JavaScript editor,
-		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@78002333,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.contexts.window,,,system)
-Binding(COMMAND+SHIFT+Z,
-	ParameterizedCommand(Command(org.skyway.core.ui.generate,Generate,
-		Generate with Skyway,
-		Category(org.skyway.core.ui.category.views,Window,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2dba6013,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.contexts.window,,,system)
-Binding(COMMAND+SHIFT+Z,
-	ParameterizedCommand(Command(org.eclipse.ui.edit.redo,Redo,
-		Redo the last operation,
-		Category(org.eclipse.ui.category.edit,Edit,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@69b2ed81,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.contexts.dialogAndWindow,,cocoa,system)
-
-!ENTRY com.genuitec.eclipse.struts2 4 0 2017-05-15 09:15:59.251
-!MESSAGE <null>
-!STACK 0
-java.lang.NullPointerException
-	at com.genuitec.eclipse.struts2.model.Struts2Project.findPackageModels(Struts2Project.java:435)
-	at com.genuitec.eclipse.struts2.model.Struts2Project.getAllPackageModels(Struts2Project.java:368)
-	at com.genuitec.eclipse.struts2.model.Struts2XMLFile.getAllPackages(Struts2XMLFile.java:116)
-	at com.genuitec.eclipse.struts2.editor.source.validator.Struts2PackageSourceValidator.validatePackageDuplicaiton(Struts2PackageSourceValidator.java:64)
-	at com.genuitec.eclipse.struts2.editor.source.validator.Struts2PackageSourceValidator.validatePackagesDefinedIn(Struts2PackageSourceValidator.java:126)
-	at com.genuitec.eclipse.struts2.editor.source.validator.Struts2EditorSourceValidator.validatePackages(Struts2EditorSourceValidator.java:31)
-	at com.genuitec.eclipse.struts2.editor.source.validator.Struts2EditorSourceValidator.performValidationOn(Struts2EditorSourceValidator.java:45)
-	at com.genuitec.eclipse.struts2.editor.source.validator.Struts2SourceValidator.performValidationOn(Struts2SourceValidator.java:189)
-	at com.genuitec.eclipse.struts2.editor.source.validator.Struts2SourceValidator.validate(Struts2SourceValidator.java:256)
-	at org.eclipse.wst.validation.Validator$V2.validate(Validator.java:1159)
-	at org.eclipse.wst.validation.internal.ValManager.validate(ValManager.java:739)
-	at org.eclipse.wst.validation.internal.ValManager$1.visit(ValManager.java:699)
-	at org.eclipse.wst.validation.internal.ValManager.accept(ValManager.java:845)
-	at org.eclipse.wst.validation.internal.ValManager.validate(ValManager.java:703)
-	at org.eclipse.wst.validation.internal.ValBuilderJob$Visitor.visit(ValBuilderJob.java:301)
-	at org.eclipse.core.internal.resources.Resource$2.visit(Resource.java:119)
-	at org.eclipse.core.internal.resources.Resource$1.visitElement(Resource.java:83)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:82)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:87)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:87)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:87)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:87)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:87)
-	at org.eclipse.core.internal.watson.ElementTreeIterator.iterate(ElementTreeIterator.java:129)
-	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:93)
-	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:51)
-	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:116)
-	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:104)
-	at org.eclipse.wst.validation.internal.ValBuilderJob.fullBuild(ValBuilderJob.java:219)
-	at org.eclipse.wst.validation.internal.ValBuilderJob.run(ValBuilderJob.java:178)
-	at org.eclipse.wst.validation.internal.ValBuilderJob.runInWorkspace(ValBuilderJob.java:126)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-
-!ENTRY org.eclipse.m2e.logback.appender 4 0 2017-05-15 09:16:08.213
-!MESSAGE Unable to update index for central|https://repo.maven.apache.org/maven2: no segments* file found in org.apache.lucene.store.FSDirectory@/private/var/folders/18/mrhqj5594t17ptgyt7w541140000gn/T/nexus-index6254560021723494902.dir: files:
-!STACK 0
-java.io.FileNotFoundException: no segments* file found in org.apache.lucene.store.FSDirectory@/private/var/folders/18/mrhqj5594t17ptgyt7w541140000gn/T/nexus-index6254560021723494902.dir: files:
-	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:604)
-	at org.apache.lucene.index.DirectoryIndexReader.open(DirectoryIndexReader.java:115)
-	at org.apache.lucene.index.IndexReader.open(IndexReader.java:316)
-	at org.apache.lucene.index.IndexReader.open(IndexReader.java:227)
-	at org.apache.maven.index.updater.DefaultIndexUpdater.copyUpdatedDocuments(DefaultIndexUpdater.java:352)
-	at org.apache.maven.index.updater.DefaultIndexUpdater.unpackIndexArchive(DefaultIndexUpdater.java:288)
-	at org.apache.maven.index.updater.DefaultIndexUpdater.loadIndexDirectory(DefaultIndexUpdater.java:218)
-	at org.apache.maven.index.updater.DefaultIndexUpdater.access$300(DefaultIndexUpdater.java:75)
-	at org.apache.maven.index.updater.DefaultIndexUpdater$LuceneIndexAdaptor.setIndexFile(DefaultIndexUpdater.java:645)
-	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:844)
-	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:156)
-	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateRemoteIndex(NexusIndexManager.java:1251)
-	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateIndex(NexusIndexManager.java:1193)
-	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager$1.run(NexusIndexManager.java:703)
-	at org.eclipse.m2e.core.internal.index.nexus.IndexUpdaterJob.run(IndexUpdaterJob.java:72)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-
-!ENTRY org.eclipse.jface 2 0 2017-05-15 09:17:05.021
-!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
-!SUBENTRY 1 org.eclipse.jface 2 0 2017-05-15 09:17:05.021
-!MESSAGE A conflict occurred for ALT+COMMAND+/:
-Binding(ALT+COMMAND+/,
-	ParameterizedCommand(Command(io.emmet.eclipse.commands.toggle_comment,Toggle Comment,
-		,
-		Category(io.emmet.eclipse.commands.category,Emmet,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4f9a0139,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.textEditorScope,,,system)
-Binding(ALT+COMMAND+/,
-	ParameterizedCommand(Command(org.eclipse.ui.edit.text.hippieCompletion,Word Completion,
-		Context insensitive completion,
-		Category(org.eclipse.ui.category.edit,Edit,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@38f183e9,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.textEditorScope,zh,,system)
-
-!ENTRY org.eclipse.ui 4 0 2017-05-15 11:49:21.900
+!ENTRY org.eclipse.ui 4 0 2017-06-01 15:13:23.439
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException

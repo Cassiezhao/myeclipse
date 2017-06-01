@@ -1,0 +1,42 @@
+package chris.biz.imp;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
+import chris.biz.iTotalBiz;
+import chris.pojo.Total;
+import chris.service.DaoService;
+@Service("TotalBiz")
+@Transactional(propagation=Propagation.REQUIRED)
+public class TotalBiz  implements iTotalBiz{
+	@Resource(name="DaoService")
+	private DaoService daoService;
+	
+	public DaoService getDaoService() {
+		return daoService;
+	}
+
+	public void setDaoService(DaoService daoService) {
+		this.daoService = daoService;
+	}
+
+	public List<Total> findBygId(int page, int rows, int gid, int sessionId) {
+		return daoService.getTotalDao().findBygId(page, rows, gid, sessionId);
+		
+	}
+
+	public int findMaxPage(int rows, int gid, int sessionId) {
+		return daoService.getTotalDao().findMaxPage(rows, gid, sessionId);
+		 
+	}
+
+	public List<Total> findBygId(int gid, int sessionId) {
+		return daoService.getTotalDao().findBygId(gid, sessionId);
+	} 
+
+}

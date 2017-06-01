@@ -1,0 +1,237 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"
+	contentType="text/html;charset=UTF-8"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta charset="utf-8" />
+<title>导游机录入</title>
+<script type="text/javascript" src="../assets/js/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" />
+<link rel="stylesheet" href="../assets/css/font-awesome.min.css" />
+
+<link rel="stylesheet" href="../assets/app/css/common.css">
+<script type="text/javascript" src="../assets/app/js/common.js"></script>
+<link rel="stylesheet" href="../assets/app/css/GuideInfo_style.css" />
+
+<script type="text/javascript" src="../assets/app/js/search.js"></script>
+<link rel="stylesheet" href="../assets/app/css/search.css" />
+</head>
+
+<body>
+	<div class="naver navbar-default" role="navigation">
+
+		<div class="container-fluid">
+			<div class="navbar-header pull-left">
+				<a class="navbar-brand" href="#"> <small
+					style="color:#fff;font-size:20px;"> 导游机管理系统 </small> </a>
+			</div>
+
+			<div class="navbar-header pull-right" role="navigation">
+				<ul class="nav navbar-nav navbar-right">
+
+					<li class="loginphoto"><img class="img-circle"
+						src="../assets/app/images/user.jpg" alt="这是张三的照片"
+						style="padding-left:10px;padding-right:5px;"> <small
+						style="padding-right:5px">您好！${nuser.username }</small></li>
+
+					<li class="dropdown grey"><a href="../login.jsp"
+						style="color:#fff"> <span class="glyphicon glyphicon-remove"
+							style="margin-right:2px;"></span> 退出 </a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- nav end -->
+	<div class="main-container" class="main-container">
+		<div class="main-container-inner">
+			<!--row start-->
+			<div class="row">
+				<!--slide bar start-->
+				<div class="sidebar col-md-2" id="sidebar"
+					style="padding-right:0px;">
+					<ul class="nav nav-list tree">
+						<li class=" submenu" id="menu1"
+							style="border-bottom: 1px solid #e5e5e5;border-right:1px solid #e5e5e5;">
+							<a href="../index.jsp"> <span
+								class="glyphicon glyphicon-home" style="padding-right:5px"></span>
+								登录信息 </a></li>
+						<li class=" submenu" id="menu2"
+							style="border-bottom: 1px solid #e5e5e5;border-right:1px solid #e5e5e5;">
+							<a  class="dropdown-toggle"> <span
+								class="glyphicon glyphicon-phone" style="padding-right:5px"></span>
+								导游机管理 <span class="glyphicon glyphicon-menu-down"
+								style="float:right;line-height:38px;"></span> </a>
+							<div id="list2" style="margin:0px;">
+								<ul style="list-style:none;display:block;" class="menuitem">
+									<li style="">
+										<a href="../toborrow_Guidem"> 
+										指派导游机 </a>
+									</li>
+									<li style="">
+										<a href="../findAll_Guidem?i=1"> 
+										归还导游机 </a>
+									</li>
+									<li style="" class="active">
+										<a href="../guidemachine/logGuideMachine.jsp">
+											导游机录入 </a>
+									</li>
+									<li style=""><a href="../findAll_Guidem?i=2"> 使用情况 </a></li>
+								</ul>
+							</div></li>
+						<li class="submenu" id="menu3"
+							style="border-bottom: 1px solid #e5e5e5;border-right:1px solid #e5e5e5;">
+							<a href="#" class="dropdown-toggle"> <span
+								class="glyphicon glyphicon-user" style="padding-right:5px"></span>
+								导游管理 <span class="glyphicon glyphicon-menu-down"
+								style="float:right;line-height:38px;"></span> </a>
+							<div id="list3" style="margin:0px;display:none;">
+								<ul class="menuitem" style="list-style:none;">
+									<li><a href="../findAll_Guide?i=1">导游信息</a></li>
+									<li><a href="../guidemanage/guideNew1.jsp">新增导游</a></li>
+									<li><a href="../findAll_Guide?i=2">在线导游</a></li>
+						</li>
+						<li><a href="../findAll_Guide?i=3">上下线详情</a>
+						</li>
+					</ul>
+				</div>
+
+				</li>
+				<li id="menu4"
+					style="border-bottom: 1px solid #e5e5e5;border-right:1px solid #e5e5e5;">
+					<a href="../findAll_Guide?i=4"> <span
+						class="glyphicon glyphicon-star" style="padding-right:5px"></span>
+						评价信息 </a></li>
+				<li class="submenu" id="menu5" style="border-bottom: 1px solid #e5e5e5;border-right:1px solid #e5e5e5;">
+						<a href="../jiangcheng_Pingfen">
+						<span class="glyphicon glyphicon-heart-empty" style="padding-right:5px"></span>
+						奖惩信息
+					</a>
+				</li>
+				<li class="submenu" id="menu6"
+					style="border-bottom: 1px solid #e5e5e5;border-right:1px solid #e5e5e5;">
+					<a href="#" class="dropdown-toggle"> <span
+						class="glyphicon glyphicon-eye-open" style="padding-right:5px"></span>
+						操作员管理
+						<span class="glyphicon glyphicon-menu-down"
+						style="float:right;line-height:38px;"></span> </a>
+					<div id="list6" style="margin:0px;display:none;">
+						<ul class="menuitem" style="list-style:none;">
+							<li><a href="../operatorManagement/operatorAdd1.jsp">人员录入</a>
+							</li>
+							<li><a href="../findAll_User">信息详情</a>
+							</li>
+						</ul>
+					</div></li>
+				<li id="menu7"
+					style="border-bottom: 1px solid #e5e5e5;border-right:1px solid #e5e5e5;">
+					<a href="../init_Youkem"> <span
+						class="glyphicon glyphicon-phone" style="padding-right:5px"></span>
+						游客机管理 </a></li>
+					<li id="menu8" style="border-bottom: 1px solid #e5e5e5;border-right:1px solid #e5e5e5;">
+								<a href="../modify/modify.jsp">
+								<span class="glyphicon glyphicon-pencil" style="padding-right:5px"></span>
+								系统设置
+							</a>
+						</li>
+				
+				</ul>
+			</div>
+			<!--slide bar end-->
+
+
+			<!-- main start-->
+			<div id="main-content" class="main-content col-md-10"
+				style="border:1px solid #f2e1e8;border-width:0 0 0 1px;padding-left:0px;background-color:#ffffff;">
+				<div class="main-content-title">
+
+					<ul class="breadcrumb">
+						<li><span class="glyphicon glyphicon-home"></span><a
+							href="../index.jsp" style="padding-left:10px;">首页</a>
+						</li>
+						<li>导游机录入</li>
+					</ul>
+
+				</div>
+
+				<div class="page-content">
+					<div class="page-header"
+						style="margin-top:10px;margin-left:20px;margin-right:20px;">
+						<font style="font-size:24px;padding-top:-10px;color:#2679b5;">
+							导游机录入 </font> <font style="color:#8089a0;font-size:14px"> <span
+							class="glyphicon glyphicon-hand-right" style="margin-right:8px"></span>
+							详情 </font>
+
+					</div>
+					<!-- /.page-header -->
+
+					<div class="row" style="">
+						<div style="margin-left:20px;margin-right:20px;">
+							<div class="col-md-12">
+								<div class="tab-content" style="">
+
+									<form action="../save_Guidem" id="form1">
+										<table style="margin:auto">
+											<tr>
+												<td><label for="guideMachineNumber"
+													class="lableposition">导游机编号</label>
+												</td>
+												<td style="padding-left:6px;"><input
+													name="guidenum" type="text" class="form-control"
+													placeholder="导游机编号" id="guideMachineNumber"
+													style="border-radius:0 0 0 0;" /></td>
+											</tr>
+											<tr>
+												<td colspan="2" align="center" style="padding-top:15px;">
+													<button class="btn btn-primary btn-sm btn_submit"
+														type="button" id="bt1">
+														<span class="glyphicon glyphicon-ok" aria-hidden="true" ></span>
+														提交
+													</button>
+													<button class="btn btn-primary btn-sm btn_reset"
+														type="button">
+														<span class="glyphicon glyphicon-remove"
+															aria-hidden="true"></span> 重置
+													</button></td>
+
+											</tr>
+
+										</table>
+									</form>
+
+								</div>
+								<!-- table end -->
+							</div>
+							<!--col 12 end-->
+						</div>
+					</div>
+					<!--row end-->
+
+				</div>
+			</div>
+			
+			<script type="text/javascript">
+				$(function() {
+					$("#bt1").click(function() {
+						$.ajax({
+  						url:'../save_Guidem',
+  						cathe:false,
+  						type:"POST",
+  						data:$('#form1').serialize(),
+  						dataType:'json',
+  						success:function(data){
+  						if(data!=null){
+  						
+  						alert(data);
+  						  $("input[name='guidenum']").val("").focus();
+  						}
+                    }
+  					});
+					});
+
+				});
+			</script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+[genuitec-file-id="wc2-12"],[genuitec-lp-path="/zhihui2/WebRoot/assets/app/css/common.css"],[genuitec-lp-enabled=false]{
+  /* for codelive */
+}
+
+body{
+	background-color: #e4e6e9;
+}
+
+li.active{
+background-color: #ffffff;	
+color:#2b7dbc;
+font-weight: bold;
+font-size: 13px;
+}
+
+
+.nav-list li a {
+display: block;
+height: 38px;
+line-height: 36px;
+padding: 0 16px 0 7px;
+background-color: #f9f9f9;
+color: #585858;
+text-shadow: none !important;
+font-size: 13px;
+text-decoration: none;
+}
+
+.main-content{
+	padding-left:0px;
+}
+
+.main-content-title{
+height:38px;
+background:#f9f9f9;
+line-height:38px;
+padding-left:15px;
+}
+.naver{
+	background:#438eb9;
+	border-radius:0px;
+}
+
+.grey{
+	
+	border-left:1px solid #DDD;
+	margin-right:20px;
+}
+
+.grey{
+background-color: #757575;
+}
+
+.loginphoto {
+	background-color: #62a8d1;
+	height:50px;
+	padding-right:5px;
+	font-size:18px;
+	line-height:50px;
+}
+
+.breadcrumb{
+	padding:0 0 ;
+	background-color: #f9f9f9;
+}
+
+.tree .submenu .menuitem li a:before{
+			content: "\b";
+		    display:inline-block;
+		    position: absolute;
+		    z-index: 1;
+		    left: 18px;
+		    width: 1px;
+		    border: 1px dotted #9dbdd6;
+		    border-width: 0 0 0 1px;
+}
+.tree .submenu .menuitem li:before{
+		    content: "\b";
+		    display: inline-block;
+		    position: absolute;
+		    width: 22px;
+		    left: 18px; 
+		    margin-top: 19px;
+		    border-top: 1px dotted #9dbdd6;
+		    z-index: 2;
+}
+.tree .submenu .menuitem li a{
+			border-top: 1px dotted #9dbdd6;
+			padding-left: 40px; 
+}
+.tree .submenu .menuitem{
+			margin: 0px;
+			padding: 0px;
+			background-color: #ffffff;
+}

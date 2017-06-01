@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/menu_home"
+        android:icon="@drawable/android_selector"
+        android:title="主页" />
+
+    <item
+        android:id="@+id/menu_fav"
+        android:icon="@drawable/fav_selector"
+        android:title="QQ吉凶预测" />
+
+    <item
+        android:id="@+id/menu_more"
+        android:icon="@drawable/more_selector"
+        android:title="关于我" />
+
+</menu>

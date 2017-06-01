@@ -1,0 +1,339 @@
+
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"
+	contentType="text/html;charset=UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<s:if test="#session.jiangcheng==null">
+	<c:redirect url="../jiangcheng_Pingfen"></c:redirect>
+</s:if>
+
+<head>
+<meta charset="utf-8" />
+<title>奖惩信息</title>
+<script type="text/javascript" src="../assets/js/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" />
+<link rel="stylesheet" href="../assets/css/font-awesome.min.css" />
+
+<link rel="stylesheet" href="../assets/app/css/common.css">
+<script type="text/javascript" src="../assets/app/js/common.js"></script>
+<link rel="stylesheet" href="../assets/app/css/GuideManage_style.css" />
+
+
+<script type="text/javascript" src="../assets/app/js/search.js"></script>
+<link rel="stylesheet" href="../assets/app/css/search.css" />
+
+<script type="text/javascript" src="../easyui/jquery.easyui.min.js"></script><script
+	type="text/javascript" src="../easyui/locale/easyui-lang-zh_CN.js"></script>
+<link rel="stylesheet" href="../easyui/themes/default/easyui.css" type="text/css"></link>
+
+</head>
+
+<body>
+	<div class="naver navbar-default" role="navigation">
+
+		<div class="container-fluid">
+			<div class="navbar-header pull-left">
+				<a class="navbar-brand" href="#"> <small
+					style="color:#fff;font-size:20px;"> 导游机管理系统 </small> </a>
+			</div>
+
+			<div class="navbar-header pull-right" role="navigation">
+				<ul class="nav navbar-nav navbar-right">
+
+					<li class="loginphoto"><img class="img-circle"
+						src="../assets/app/images/user.jpg" alt="这是张三的照片"
+						style="padding-left:10px;padding-right:5px;"> <small
+						style="padding-right:5px">您好！${nuser.username }</small>
+					</li>
+
+					<li class="dropdown grey"><a href="../login.jsp"
+						style="color:#fff"> <span class="glyphicon glyphicon-remove"
+							style="margin-right:2px;"></span> 退出 </a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- nav end -->
+	<!--slide bar start-->
+
+	<div class="main-container" class="main-container">
+		<div class="main-container-inner">
+			<!--row start-->
+			<div class="row">
+				<!--slide bar start-->
+				<div class="sidebar col-md-2" id="sidebar"
+					style="padding-right:0px;">
+					<ul class="nav nav-list tree">
+						<li class="submenu" id="menu1"
+							style="border-bottom: 1px solid #e5e5e5;border-right:1px solid #e5e5e5;">
+							<a href="../index.jsp"> <span
+								class="glyphicon glyphicon-home" style="padding-right:5px"></span>
+								登录信息 </a>
+						</li>
+						<li class="submenu" id="menu2"
+							style="border-bottom: 1px solid #e5e5e5;border-right:1px solid #e5e5e5;">
+							<a  class="dropdown-toggle"> <span
+								class="glyphicon glyphicon-phone" style="padding-right:5px"></span>
+								导游机管理 <span class="glyphicon glyphicon-menu-down"
+								style="float:right;line-height:38px;"></span> </a>
+							<div id="list2" style="display:none;margin:0px">
+								<ul style="list-style:none;" class="menuitem">
+									<li style=""><a href="../toborrow_Guidem">
+											指派导游机 </a>
+									</li>
+									<li style=""><a href="../findAll_Guidem?i=1">
+											归还导游机 </a>
+									</li>
+									<li style=""><a href="../guidemachine/logGuideMachine.jsp">
+											导游机录入 </a>
+									</li>
+									<li style=""><a href="../findAll_Guidem?i=2">
+											使用情况 </a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="submenu" id="menu3"
+							style="border-bottom: 1px solid #e5e5e5;border-right:1px solid #e5e5e5;">
+							<a href="#" class="dropdown-toggle"> <span
+								class="glyphicon glyphicon-user" style="padding-right:5px"></span>
+								导游管理 <span class="glyphicon glyphicon-menu-down"
+								style="float:right;line-height:38px;"></span> </a>
+							<div id="list3" style="display:none;margin:0px">
+								<ul class="menuitem" style="list-style:none;">
+									<li><a href="../findAll_Guide?i=1">导游信息</a>
+									</li>
+									<li><a href="../guidemanage/guideNew1.jsp">新增导游</a>
+									</li>
+									<li><a href="../findAll_Guide?i=2">在线导游</a>
+									</li>
+						</li>
+						<li><a href="../findAll_Guide?i=3">上下线详情</a>
+						</li>
+					</ul>
+				</div>
+
+				</li>
+				<li id="menu4"
+					style="border-bottom: 1px solid #e5e5e5;border-right:1px solid #e5e5e5;"
+					class="submenu"><a href="../findAll_Guide?i=4"> <span
+						class="glyphicon glyphicon-star" style="padding-right:5px"></span>
+						评价信息 </a>
+				</li>
+				<li class="active" id="menu5"
+					style="border-bottom: 1px solid #e5e5e5;border-right:1px solid #e5e5e5;">
+					<a href="../jiangcheng_Pingfen"> <span
+						class="glyphicon glyphicon-heart-empty" style="padding-right:5px"></span>
+						奖惩信息 </a>
+				</li>
+				<li class="submenu" id="menu6"
+					style="border-bottom: 1px solid #e5e5e5;border-right:1px solid #e5e5e5;">
+					<a href="#" class="dropdown-toggle"> <span
+						class="glyphicon glyphicon-eye-open" style="padding-right:5px"></span>
+						操作员管理 <span class="glyphicon glyphicon-menu-down"
+						style="float:right;line-height:38px;"></span> </a>
+					<div id="list6" style="margin:0px;display:none;">
+						<ul class="menuitem" style="list-style:none;">
+							<li><a href="../operatorManagement/operatorAdd1.jsp">人员录入</a>
+							</li>
+							<li><a href="../findAll_User">信息详情</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+
+				<li id="menu7"
+					style="border-bottom: 1px solid #e5e5e5;border-right:1px solid #e5e5e5;"
+					class="submenu"><a
+					href="../init_Youkem"> <span
+						class="glyphicon glyphicon-phone" style="padding-right:5px"></span>
+						游客机管理 </a>
+				</li>
+				<li id="menu8" style="border-bottom: 1px solid #e5e5e5;border-right:1px solid #e5e5e5;">
+								<a href="../modify/modify.jsp">
+								<span class="glyphicon glyphicon-pencil" style="padding-right:5px"></span>
+								系统设置
+							</a>
+						</li>
+
+				</ul>
+			</div>
+			<!--slide bar end-->
+			<!-- main start-->
+			<div id="main-content" class="main-content col-md-10"
+				style="border:1px solid #f2e1e8;border-width:0 0 0 1px;padding-left:0px;background-color:#ffffff;">
+				<div class="main-content-title">
+
+					<ul class="breadcrumb">
+						<li><span class="glyphicon glyphicon-home"></span><a
+							href="../index.jsp" style="padding-left:10px;">首页</a></li>
+
+						<li>奖惩信息</li>
+					</ul>
+
+				</div>
+
+				<div class="page-content">
+					<div class="page-header"
+						style="margin-top:10px;margin-left:20px;margin-right:20px;">
+						<font style="font-size:24px;padding-top:-10px;color:#2679b5;">
+							奖惩信息 </font> <font style="color:#8089a0;font-size:14px"> <span
+							class="glyphicon glyphicon-hand-right" style="margin-right:8px"></span>查看
+						</font>
+
+					</div>
+					<!-- /.page-header -->
+					<div class="row">
+						<div style="margin-left:20px;margin-right:20px;">
+							<div class="col-md-12">
+								<form action="../jiangcheng_Pingfen" class="form-inline"
+									role="form" method="post">
+									<div class="form-group" style="padding-bottom:10px;">
+										<select name="sousuo" style="font-size:12px;height:20px;">
+											<option value="4">选择</option>
+											<option value="1">按导游编号查询</option>
+											<option value="2">按导游姓名查询</option>
+										</select> <input name="xuanze" style="height:20px;padding-left:10px"
+											id="js-in"> <span
+											style="font-size:20px;line-height:20px; position: absolute; margin-left:-20px; cursor: pointer"
+											onclick="clearInput1()">×</span>
+										<button class="glyphicon glyphicon-search"
+											onclick="this.form.submit()"></button>
+
+										<!-- 日期选择器 -->
+
+
+
+									</div>
+									<input type="button" value="导出" style="float:right"
+										class="btn-info">
+								</form>
+
+							</div>
+						</div>
+					</div>
+					<div class="row" style="">
+						<div style="margin-left:20px;margin-right:20px;">
+							<div class="col-md-12">
+								<table class="table table-bordered table-hover fontsize">
+									<tr class="guideinfotitle" style="border-bottom-width: 2px;">
+
+										<th>导游姓名</th>
+										<th>导游编号</th>
+										<th>初始评分</th>
+										<th>评价</th>
+										<th></th>
+										<th></th>
+									</tr>
+									<s:iterator value="#session.jiangcheng.pagelist" var="pp">
+										<tr style="border-bottom-width: 2px;">
+											<td>${pp.guidename}</td>
+											<td>${pp.guidenum }</td>
+											<td><a href="../evaluationMessage/initialevaluation.jsp">${pp.score}分</a>
+											</td>
+											<td><a href="../findBysid_Paths?sid=${pp.guideid }">星级</a>
+											</td>
+											<td><a href="../jiangli_Pingfen?sid=${pp.guideid }">
+													<button type="button" class="btn-primary">奖励</button> </a>
+											</td>
+											<td>
+											<a href="../koufen_Pingfen?sid=${ guide.guideid}" onclick="return dodel()">
+													<button type="button" class="btn-danger"  >扣分</button></a>
+												(一次扣除5分)
+											</td>
+										</tr>
+
+
+									</s:iterator>
+
+								</table>
+								<!-- 点击扣分按钮-->
+								<div class="modal fade bs-example-modal-sm6" tabindex="-1"
+									role="dialog" aria-labelledby="mySmallModalLabel"
+									aria-hidden="true">
+									<div class="modal-dialog modal-sm">
+										<div class="modal-content" style="padding-left:10px">
+											<h5>抽听讲解扣分次数</h5>
+											<form action="../modify_Pingfen" method="post">
+												<input type="text" style="width:200px;margin-right:5px;"
+													name="yuyan">次 <input type="hidden" name="myid"
+													value="${jl.guideid }" /> <input type="hidden" name="i"
+													value="1" />
+												<div style="margin-top:10px;margin-bottom:5px;width:260px">
+													<button type="button" class="btn-info"
+														onclick="this.form.submit()">确定</button>
+
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+
+
+								<!--点击按钮结束-->
+
+								<!--col 12 end-->
+							</div>
+						</div>
+						<!--row end-->
+						<div align="center">
+						<div  id="pp" class="easyui-pagination" style="border:1px solid #ccc" data-options="
+						total: <%=session.getAttribute("total3") %>,pageSize:5
+						">
+						</div>
+						</div>
+					
+					</div>
+					</div>
+				</div>
+</body>
+<script type="text/javascript">
+$('#pp').pagination({
+	    total:<%=session.getAttribute("total3") %>,
+	    pageNumber:<%=session.getAttribute("page3") %>,
+	    pageSize:<%=session.getAttribute("rows3") %>,
+	     pageList: [5, 10, 15, 20],
+    	onSelectPage:function(pageNumber, pageSize){
+    		$(this).pagination('loading');
+    		$(this).pagination('loaded');
+    		window.location = "../jiangcheng_Pingfen?page=" + pageNumber+"&rows="+pageSize;
+    	}
+    });
+	function dodel(){
+		return window.confirm("是否真的扣分！");
+	}
+	
+	function dorows() {
+		var rows = document.form1.rows.value;
+		if (isNaN(rows)) {
+			alert("请输入正确的数字！");
+			document.form1.rows.value = $
+			{
+				pb.rows
+			}
+			;
+			return;
+		}
+		window.location = "../jiangcheng_Pingfen?rows=" + rows;
+	}
+	function dopage() {
+		var page = document.form1.page.value;
+		if (isNaN(page)) {
+			alert("请输入正确的数字！");
+			document.form1.page.value = $
+			{
+				pb.page
+			}
+			;
+			return;
+		}
+		window.location = "../jiangcheng_Pingfen?page=" + page;
+	}
+</script>
+</html>

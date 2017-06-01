@@ -1,0 +1,75 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/beijing"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <TextView
+        android:text="请选择你所需要的功率大小："
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/textView"
+        android:textSize="20dp"
+        android:textColor="@android:color/black"
+        android:layout_gravity="top"/>
+
+    <Button
+        android:id="@+id/gl1"
+        android:text="10米"
+        android:textSize="20dp"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/login_button_selector"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/gl2"
+        android:text="20米"
+        android:textSize="20dp"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/login_button_selector"
+        android:layout_marginTop="5dp"/>
+
+    <Button
+        android:text="30米"
+        android:textSize="20dp"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/gl3"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/login_button_selector"/>
+
+    <Button
+        android:text="40米"
+        android:textSize="20dp"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/gl4"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/login_button_selector"/>
+
+    <Button
+        android:text="50米"
+        android:textSize="20dp"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/gl5"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/login_button_selector"/>
+    <Button
+        android:text="返回"
+        android:textSize="20dp"
+        android:textColor="@android:color/white"
+        android:layout_gravity="right"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/fanhui"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/anniubut"/>
+</LinearLayout>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="EclipseModuleManager">
+    <libelement value="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/mysql-connector-java-5.1.25-bin.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/quartz-all-1.8.6.jar!/" />
+    <conelement value="melibrary.com.genuitec.eclipse.j2eedt.core.MYECLIPSE_JAVAEE_5_CONTAINER" />
+    <conelement value="org.eclipse.jst.j2ee.internal.web.container" />
+    <conelement value="org.eclipse.jst.j2ee.internal.module.container" />
+    <conelement value="melibrary.com.genuitec.eclipse.struts2.MYECLIPSE_STRUTS21_CORE" />
+    <conelement value="melibrary.com.genuitec.eclipse.struts2.MYECLIPSE_STRUTS21_DOJO" />
+    <conelement value="melibrary.com.genuitec.eclipse.struts2.MYECLIPSE_STRUTS21_DWR" />
+    <conelement value="melibrary.com.genuitec.eclipse.struts2.MYECLIPSE_STRUTS21_SPRING" />
+    <conelement value="melibrary.com.genuitec.eclipse.lib.spring3.MYECLIPSE_SPRING30_CORE" />
+    <conelement value="melibrary.com.genuitec.eclipse.lib.spring3.MYECLIPSE_SPRING30_AOP" />
+    <conelement value="melibrary.com.genuitec.eclipse.lib.spring3.MYECLIPSE_SPRING30_Persistence_CORE" />
+    <conelement value="melibrary.com.genuitec.eclipse.lib.spring3.MYECLIPSE_SPRING30_Persistence_JDBC" />
+    <conelement value="melibrary.com.genuitec.eclipse.lib.spring3.MYECLIPSE_SPRING30_Persistence_JDO" />
+    <conelement value="melibrary.com.genuitec.eclipse.lib.spring3.MYECLIPSE_SPRING30_WEB" />
+    <conelement value="melibrary.com.genuitec.eclipse.hibernate.MYECLIPSE_HIBERNATE3_3_EM" />
+    <conelement value="melibrary.com.genuitec.eclipse.hibernate.MYECLIPSE_HIBERNATE3_3_CORE" />
+    <conelement value="melibrary.com.genuitec.eclipse.hibernate.MYECLIPSE_HIBERNATE3_3_EXTRAS" />
+    <src_description expected_position="0">
+      <src_folder value="file://$MODULE_DIR$/src" expected_position="0" />
+    </src_description>
+  </component>
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/WebRoot/WEB-INF/classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="jdk" jdkName="Sun JDK 1.6.0_13" jdkType="JavaSDK" />
+    <orderEntry type="library" name="melibrary.com.genuitec.eclipse.j2eedt.core.MYECLIPSE_JAVAEE_5_CONTAINER" level="application" />
+    <orderEntry type="library" name="org.eclipse.jst.j2ee.internal.web.container" level="application" />
+    <orderEntry type="library" name="org.eclipse.jst.j2ee.internal.module.container" level="application" />
+    <orderEntry type="library" name="melibrary.com.genuitec.eclipse.struts2.MYECLIPSE_STRUTS21_CORE" level="application" />
+    <orderEntry type="library" name="melibrary.com.genuitec.eclipse.struts2.MYECLIPSE_STRUTS21_DOJO" level="application" />
+    <orderEntry type="library" name="melibrary.com.genuitec.eclipse.struts2.MYECLIPSE_STRUTS21_DWR" level="application" />
+    <orderEntry type="library" name="melibrary.com.genuitec.eclipse.struts2.MYECLIPSE_STRUTS21_SPRING" level="application" />
+    <orderEntry type="library" name="melibrary.com.genuitec.eclipse.lib.spring3.MYECLIPSE_SPRING30_CORE" level="application" />
+    <orderEntry type="library" name="melibrary.com.genuitec.eclipse.lib.spring3.MYECLIPSE_SPRING30_AOP" level="application" />
+    <orderEntry type="library" name="melibrary.com.genuitec.eclipse.lib.spring3.MYECLIPSE_SPRING30_Persistence_CORE" level="application" />
+    <orderEntry type="library" name="melibrary.com.genuitec.eclipse.lib.spring3.MYECLIPSE_SPRING30_Persistence_JDBC" level="application" />
+    <orderEntry type="library" name="melibrary.com.genuitec.eclipse.lib.spring3.MYECLIPSE_SPRING30_Persistence_JDO" level="application" />
+    <orderEntry type="library" name="melibrary.com.genuitec.eclipse.lib.spring3.MYECLIPSE_SPRING30_WEB" level="application" />
+    <orderEntry type="library" name="melibrary.com.genuitec.eclipse.hibernate.MYECLIPSE_HIBERNATE3_3_EM" level="application" />
+    <orderEntry type="library" name="melibrary.com.genuitec.eclipse.hibernate.MYECLIPSE_HIBERNATE3_3_CORE" level="application" />
+    <orderEntry type="library" name="melibrary.com.genuitec.eclipse.hibernate.MYECLIPSE_HIBERNATE3_3_EXTRAS" level="application" />
+    <orderEntry type="module-library">
+      <library name="mysql-connector-java-5.1.25-bin.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/mysql-connector-java-5.1.25-bin.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="quartz-all-1.8.6.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/WebRoot/WEB-INF/lib/quartz-all-1.8.6.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+  </component>
+</module>

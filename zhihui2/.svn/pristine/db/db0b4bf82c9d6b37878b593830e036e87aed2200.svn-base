@@ -1,0 +1,329 @@
+package chris.action;
+
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
+
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.interceptor.SessionAware;
+import org.springframework.stereotype.Controller;
+
+import chris.bean.PageBean;
+import chris.pojo.Guide;
+import chris.pojo.Guidem;
+import chris.pojo.Session;
+import chris.pojo.Total;
+import chris.service.BizService;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+@Controller
+@Namespace("/")
+public class PathsAction extends ActionSupport implements SessionAware {
+	private Map<String, Object> session;
+	private int index;
+	private int page;
+	private int rows;
+	private String path;
+	private int sessionid;
+	private int i;
+	private int sid;
+	private int sousuo2;
+	private Date before;
+	private Date later;
+	public Date getBefore() {
+		return before;
+	}
+
+	public void setBefore(Date before) {
+		this.before = before;
+	}
+
+	public Date getLater() {
+		return later;
+	}
+
+	public void setLater(Date later) {
+		this.later = later;
+	}
+
+	public int getSousuo2() {
+		return sousuo2;
+	}
+
+	public void setSousuo2(int sousuo2) {
+		this.sousuo2 = sousuo2;
+	}
+
+	public int getSid() {
+		return sid;
+	}
+
+	public void setSid(int sid) {
+		this.sid = sid;
+	}
+
+	public int getI() {
+		return i;
+	}
+
+	public void setI(int i) {
+		this.i = i;
+	}
+
+	public int getSessionid() {
+		return sessionid;
+	}
+
+	public void setSessionid(int sessionid) {
+		this.sessionid = sessionid;
+	}
+
+	public int getPage() {
+		return page;
+	}
+
+	public void setPage(int page) {
+		this.page = page;
+	}
+
+	public int getRows() {
+		return rows;
+	}
+
+	public void setRows(int rows) {
+		this.rows = rows;
+	}
+
+	public String getPath() {
+		return path;
+	}
+
+	public void setPath(String path) {
+		this.path = path;
+	}
+
+	public int getIndex() {
+		return index;
+	}
+
+	public void setIndex(int index) {
+		this.index = index;
+	}
+
+	@Resource(name = "BizService")
+	private BizService bizService;
+
+	public BizService getBizService() {
+		return bizService;
+	}
+
+	public void setBizService(BizService bizService) {
+		this.bizService = bizService;
+	}
+
+	public Map<String, Object> getSession() {
+		return session;
+	}
+
+	public void setSession(Map<String, Object> arg0) {
+
+		this.session = arg0;
+
+	}
+
+	// TODO Auto-generated method stub
+	@Action(value = "findByGid_Paths", results = { @Result(name = "ok", location = "${path}", type = "redirect") })
+	public String findByGid() {
+		/**
+		 * index 就是导游的id
+		 */
+		List<Session> a = null;
+		PageBean pathpb = (PageBean) session.get("pathpb");
+		pathpb = pathpb == null ? new PageBean() : pathpb;
+		page = page == 0 ? (pathpb.getPage() == 0 ? 1 : pathpb.getPage())
+				: page;
+		rows = rows == 0 ? (pathpb.getRows() == 0 ? 10 : pathpb.getRows())
+				: rows;
+		int maxpage = bizService.getSessionBiz().findMaxPage(rows, index);
+		if (maxpage == 0)
+			maxpage = 1;
+		session.put("total3", bizService.getSessionBiz().findBygId(index).size());
+		switch (sousuo2) {
+		case 1:
+			//按照上线时间搜索
+				SimpleDateFormat sf=new SimpleDateFormat("yyyy-MM-dd");
+				String newbefore=sf.format(before);
+				String newlater=sf.format(later);
+				System.out.println(newbefore+"::"+newlater);
+				
+				a=bizService.getSessionBiz().onTime(newbefore.trim().toString(), newlater.trim().toString());
+				session.put("total3", a.size());
+				System.out.println(a.size());
+			break;
+		case 2:
+			//下线时间
+			SimpleDateFormat sf2=new SimpleDateFormat("yyyy-MM-dd");
+			String newbefore2=sf2.format(before);
+			String newlater2=sf2.format(later);
+			System.out.println(newbefore2+"::"+newlater2);
+			
+			a=bizService.getSessionBiz().upTime(newbefore2.trim().toString(), newlater2.trim().toString());
+			session.put("total3", a.size());
+			System.out.println(a.size());
+			break;
+		case 3:
+			
+			SimpleDateFormat sf3=new SimpleDateFormat("yyyy-MM-dd");
+			String newbefore3=sf3.format(before);
+			String newlater3=sf3.format(later);
+			System.out.println(newbefore3+"::"+newlater3);
+			
+			a=bizService.getSessionBiz().upTime(newbefore3.trim().toString(), newlater3.trim().toString());
+			session.put("total3", a.size());
+			System.out.println(a.size());
+			
+			break;
+		default:
+			 a= bizService.getSessionBiz().findBygId(page, rows,
+					index);
+			
+			
+			break;
+		}
+		pathpb.setMaxpage(maxpage);
+		pathpb.setPagelist(a);
+		pathpb.setPage(page);
+		pathpb.setRows(rows);
+		session.put("page3", page);
+		session.put("rows3", rows);
+		session.put("pathpb", pathpb);
+		
+	
+		/**
+		 * 获取导游的信息
+		 */
+		
+		Guide b = bizService.getGuideBiz().findById(index);
+		session.put("gname", b.getGuidename());
+		session.put("gid", b.getGuideid());
+		if (i == 1) {
+
+			path = "evaluationMessage/evaluationDetail.jsp";
+		} else {
+			
+			
+			path = "guidemanage/guidework.jsp";
+		}
+
+		return "ok";
+	}
+
+	@Action(value = "findByGid2_Paths", results = { @Result(name = "ok", location = "${path}", type = "redirect") })
+	public String findByGid2() {
+		PageBean pathpb2 = (PageBean) session.get("pathpb2");
+		pathpb2 = pathpb2 == null ? new PageBean() : pathpb2;
+		page = page == 0 ? (pathpb2.getPage() == 0 ? 1 : pathpb2.getPage())
+				: page;
+		rows = rows == 0 ? (pathpb2.getRows() == 0 ? 10 : pathpb2.getRows())
+				: rows;
+		int maxpage = bizService.getTotalBiz().findMaxPage(rows, index,
+				sessionid);
+		if (maxpage == 0)
+			maxpage = 1;
+		List<Total> a = bizService.getTotalBiz().findBygId(page, rows, index,
+				sessionid);
+
+		/**
+		 * 百度地图模块
+		 */
+		session.put("jingdu", a.get(0).getJingdu());
+
+		session.put("weidu", a.get(0).getWeidu());
+
+		StringBuffer sb = new StringBuffer();
+		sb.append("[{points:[");
+		for (Total total : a) {
+			sb.append("{\"lng\":" + total.getJingdu() + ",\"lat\":"
+					+ total.getWeidu() + "},");
+
+		}
+		sb.append("]}];");
+		String shuai = sb.toString();
+		System.out.println(shuai);
+		session.put("shuai", shuai);
+
+		int sess = a.get(0).getSession().getSessionId();
+		Integer c = a.get(0).getGuideId();
+		session.put("sess", sess);
+		session.put("daoyouid", c);
+		pathpb2.setMaxpage(maxpage);
+		pathpb2.setPagelist(a);
+		pathpb2.setPage(page);
+		pathpb2.setRows(rows);
+		session.put("pathpb2", pathpb2);
+		path = "guidemanage/guidePathAnalysis.jsp";
+		return "ok";
+	}
+
+	// TODO 这里条跳转至single
+	@Action(value = "findBysid_Paths", results = { @Result(name = "ok", location = "${path}", type = "redirect") })
+	public String findBysid() {
+
+		int sumScore = 0;
+		// Session a = bizService.getSessionBiz().findByid(sid);
+		// 找到这一个人的所有情况
+		Guide smlguide = bizService.getGuideBiz().findById(sid);
+		System.out.println("欢迎" + smlguide.getGuidename());
+		int choue = 0;
+		if (smlguide.getChoutingjiangjie() != null) {
+			choue = smlguide.getChoutingjiangjie() * 5;
+			session.put("choue", choue);
+		}
+		List<Guide> alist = bizService.getGuideBiz().findAll();
+		// 总上线次数
+		int onlineNAver = 0;
+		int onlineT = 0;
+		for (Guide g1 : alist) {
+			if(g1.getonnum()==null){
+				g1.setonnum(0);
+			}
+			onlineNAver += g1.getonnum();
+			onlineT += g1.getOntime();
+		}
+		onlineNAver = onlineNAver / alist.size();
+		onlineT = onlineT / alist.size();
+		System.out.println(onlineNAver + ":::::" + onlineT);
+		if (smlguide.getonnum() > onlineNAver) {
+			sumScore += 5;
+		}
+		if (smlguide.getOntime() > onlineT) {
+			sumScore += 5;
+		}
+		if (smlguide.getWzxx() == 1) {
+			sumScore += 5;
+		}
+		if (smlguide.getSxdd() == 1) {
+			sumScore += 5;
+		}
+		sumScore += Integer.parseInt(smlguide.getScore().trim().toString());
+		sumScore += smlguide.getYoukescore();
+		sumScore -= smlguide.getChoutingjiangjie() * 5;
+		smlguide.setSumscore(sumScore);
+		System.out.println(sumScore + "总分");
+		bizService.getGuideBiz().update(smlguide);
+		session.put("cishu", onlineNAver);
+		session.put("junshi", onlineT);
+		System.out.println(smlguide.getonnum());
+		session.put("onnum", smlguide.getonnum());
+		session.put("single", smlguide);
+		path = "evaluationMessage/evaluationSingle.jsp";
+		return "ok";
+	}
+}

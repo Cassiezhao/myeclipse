@@ -1,3 +1,4 @@
 #Tomcat publish data
-#Thu Apr 20 15:49:31 CST 2017
+#Tue May 23 16:11:03 CST 2017
+org.eclipse.jst.jee.server\:zhihui2=/Users/cassie/Desktop/myeclipse/.metadata/.me_tcat7/webapps/zhihui
 org.eclipse.jst.jee.server\:struts=/Users/cassie/Desktop/myeclipse/.metadata/.me_tcat7/webapps/struts

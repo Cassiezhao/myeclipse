@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/menu_rec"
+        android:title="评论" />
+    <item
+        android:id="@+id/menu_shared"
+        android:title="分享" />
+    <item
+        android:id="@+id/menu_fav"
+        android:title="收藏" />
+
+</menu>

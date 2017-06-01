@@ -1,0 +1,339 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"
+	contentType="text/html;charset=utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="/struts-tags" prefix="s" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<s:if test="#session.youkem==null">
+	<c:redirect url="../init_Youkem?k=2"></c:redirect>
+</s:if>
+<html>
+<head>
+<title>可借导游机</title>
+<script type="text/javascript" src="../assets/js/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" />
+<link rel="stylesheet" href="../assets/css/font-awesome.min.css" />
+
+<link rel="stylesheet" href="../assets/app/css/common.css">
+<script type="text/javascript" src="../assets/app/js/common.js"></script>
+<link rel="stylesheet" href="../assets/app/css/GuideInfo_style.css" />
+
+<script type="text/javascript" src="../assets/app/js/search.js"></script>
+<link rel="stylesheet" href="../assets/app/css/search.css" />
+</head>
+
+<body>
+	<div class="naver navbar-default" role="navigation">
+
+		<div class="container-fluid">
+			<div class="navbar-header pull-left">
+				<a class="navbar-brand" href="#"> <small
+					style="color:#fff;font-size:20px;"> 导游机管理系统 </small> </a>
+			</div>
+
+			<div class="navbar-header pull-right" role="navigation">
+				<ul class="nav navbar-nav navbar-right">
+
+					<li class="loginphoto"><img class="img-circle"
+						src="../assets/app/images/user.jpg" alt="这是张三的照片"
+						style="padding-left:10px;padding-right:5px;">您好！${nuser.username } <small
+						style="padding-right:5px"></small>
+					</li>
+
+					<li class="dropdown grey"><a href="../login.jsp"
+						style="color:#fff"> <span class="glyphicon glyphicon-remove"
+							style="margin-right:2px;"></span> 退出 </a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- nav end -->
+	<div class="main-container" class="main-container">
+		<div class="main-container-inner">
+			<!--row start-->
+			<div class="row">
+				<!--slide bar start-->
+				<div class="sidebar col-md-2" id="sidebar"
+					style="padding-right:0px;">
+					<ul class="nav nav-list tree">
+						<li class=" submenu" id="menu1"
+							style="border-bottom: 1px solid #e5e5e5;border-right:1px solid #e5e5e5;">
+							<a href="../index.jsp"> <span
+								class="glyphicon glyphicon-home" style="padding-right:5px"></span>
+								登录信息 </a>
+						</li>
+						<li class=" submenu" id="menu2"
+							style="border-bottom: 1px solid #e5e5e5;border-right:1px solid #e5e5e5;">
+							<a href="#" class="dropdown-toggle"> <span
+								class="glyphicon glyphicon-phone" style="padding-right:5px"></span>
+								导游机管理 <span class="glyphicon glyphicon-menu-down"
+								style="float:right;line-height:38px;"></span> </a>
+							<div id="list2" style="margin:0px;">
+								<ul style="list-style:none;display:block;" class="menuitem">
+									<li style="" class="active"><a href="../toborrow_Guidem">
+											指派导游机 </a>
+									</li>
+									<li style=""><a href="alreadyBorrow.jsp"> 归还导游机 </a>
+									</li>
+									<li style=""><a href="logGuideMachine.jsp"> 导游机录入 </a>
+									</li>
+									<li style=""><a href="../findAll_Guidem?i=2"> 使用情况 </a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="submenu" id="menu3"
+							style="border-bottom: 1px solid #e5e5e5;border-right:1px solid #e5e5e5;">
+							<a href="#" class="dropdown-toggle"> <span
+								class="glyphicon glyphicon-user" style="padding-right:5px"></span>
+								导游管理 <span class="glyphicon glyphicon-menu-down"
+								style="float:right;line-height:38px;"></span> </a>
+							<div id="list3" style="margin:0px;display:none;">
+								<ul class="menuitem" style="list-style:none;">
+									<li><a href="../guidemanage/guideMessage1.jsp">导游信息</a>
+									</li>
+									<li><a href="../guidemanage/guideNew.jsp1">新增导游</a>
+									</li>
+									<li><a href="../guidemanage/guideOnline.jsp">在线导游</a>
+									</li>
+						</li>
+						<li><a href="../guidemanage/guideOnlineMessage.jsp">上下线详情</a>
+						</li>
+					</ul>
+				</div>
+
+				</li>
+				<li id="menu4"
+					style="border-bottom: 1px solid #e5e5e5;border-right:1px solid #e5e5e5;">
+					<a href="../findAll_Guide?i=4"> <span
+						class="glyphicon glyphicon-star" style="padding-right:5px"></span>
+						评价信息 </a>
+				</li>
+				<li class="submenu" id="menu5" style="border-bottom: 1px solid #e5e5e5;border-right:1px solid #e5e5e5;">
+								<a href="../jiangcheng_Pingfen">
+								<span class="glyphicon glyphicon-heart-empty" style="padding-right:5px"></span>
+								奖惩信息
+							</a>
+						</li>
+				<li class="submenu" id="menu6"
+					style="border-bottom: 1px solid #e5e5e5;border-right:1px solid #e5e5e5;">
+					<a href="#" class="dropdown-toggle"> <span
+						class="glyphicon glyphicon-eye-open" style="padding-right:5px"></span>
+						操作员管理
+						<span class="glyphicon glyphicon-menu-down"
+						style="float:right;line-height:38px;"></span> </a>
+					<div id="list6" style="margin:0px;display:none;">
+						<ul class="menuitem" style="list-style:none;">
+							<li><a href="../operatorManagement/operatorAdd1.jsp">人员录入</a>
+							</li>
+							<li><a href="../operatorManagement/operatorDetail.jsp">信息详情</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li id="menu7"
+					style="border-bottom: 1px solid #e5e5e5;border-right:1px solid #e5e5e5;">
+					<a href="../touristMachine/touristMachineManage.jsp"> <span
+						class="glyphicon glyphicon-phone" style="padding-right:5px"></span>
+						游客机管理 </a>
+				</li>
+				
+				<li id="menu9" style="border-bottom: 1px solid #e5e5e5;border-right:1px solid #e5e5e5;">
+								<a href="../modify/modify.jsp">
+								<span class="glyphicon glyphicon-pencil" style="padding-right:5px"></span>
+								系统设置
+							</a>
+						</li>
+				</ul>
+			</div>
+			<!--slide bar end-->
+
+
+			<!-- main start-->
+			<div id="main-content" class="main-content col-md-10"
+				style="border:1px solid #f2e1e8;border-width:0 0 0 1px;padding-left:0px;background-color:#ffffff;">
+				<div class="main-content-title">
+
+					<ul class="breadcrumb">
+						<li><span class="glyphicon glyphicon-home"></span><a
+							href="../index.jsp" style="padding-left:10px;">首页</a></li>
+						<li>指派导游机</li>
+					</ul>
+
+				</div>
+
+				<div class="page-content">
+					<div class="page-header"
+						style="margin-top:10px;margin-left:20px;margin-right:20px;">
+						<font style="font-size:24px;padding-top:-10px;color:#2679b5;">
+							指派导游机 </font> <font style="color:#8089a0;font-size:14px"> <span
+							class="glyphicon glyphicon-hand-right" style="margin-right:8px"></span>
+							填写信息 </font>
+
+					</div>
+					<!-- /.page-header -->
+
+					<div class="row" style="">
+						<div style="margin-left:20px;margin-right:20px;">
+							<div class="col-md-2"></div>
+							<div class="col-md-8">
+								<div class="tab-content" style="">
+
+									<form action="../update_Guidem" method="post">
+										<table style="margin:auto">
+											<tr>
+												<td><label for="guideMachineNumber"
+													class="lableposition">导游机编号</label></td>
+												<td style="padding-left:10px;width:300px;"><input type="text" class="form-control"
+													placeholder="导游机编号" name="guidem.guidenum" id="guideMachineNumber"
+													style="border-radius:0 0 0 0;" />
+												</td>
+												<td><font color="red" size="2px">${err2 }</font></td>
+											</tr>
+											<tr>
+												<td><label for="companyNumber" class="lableposition">导游编号</label>
+												</td>
+												<td style="padding-left:10px;width:300px;"><input type="text" class="form-control"
+													name="guidem.guide.guidenum" placeholder="导游编号"
+													id="guideNumber" style="border-radius:0 0 0 0;" 
+													 />
+													
+												</td>
+												<td><font color="red" size="5px">${err3 }</font></td>
+											</tr>
+
+
+											<tr>
+												<td><label for="guestMachineNumber"
+													class="lableposition">游客机数量</label></td>
+												<td style="padding-left:10px;width:300px;"><input type="text" class="form-control"
+													placeholder="游客机数量(库存${youkem.youkeMle }个)" name="guidem.youkeNum" id="touristMachineAmount"
+													style="border-radius:0 0 0 0;"  onClick=" this.value ='' "/>
+												</td>
+											</tr>
+										</table>
+										<div class="btnright" style="padding-top:5px;">
+											<button class="btn btn-primary btn-sm btn_submit"
+												type="button" onclick="this.form.submit()">
+												<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+												提交
+											</button>
+											<button class="btn btn-primary btn-sm btn_reset"
+												type="button">
+												<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+												重置
+											</button>
+										</div>
+									</form>
+
+								</div>
+								<!-- table end -->
+							</div>
+							<div class="col-md-2"></div>
+							<!--col 12 end-->
+						</div>
+					</div>
+					<!--row end-->
+
+				</div>
+			</div>
+			
+			<script type="text/javascript">
+				//验证错误，添加错误信息
+function addError(where,what){
+	//获取通过父节点的font子节点数组，如果font数组的长度为0，则创建font标签
+	if(!where.parentNode.getElementsByTagName("font").length){
+		//创建font标签 并添加提示信息
+		var font  = document.createElement("font");
+        //设置font标签的颜色
+		font.setAttribute("color","red");
+        //设置font标签的内容
+		font.innerHTML = what;
+		//将font标签添加到td上
+		where.parentNode.appendChild(font);
+	}
+}
+
+
+//验证正确后，删除错误信息
+function removeError(where){
+	//存在错误信息，获取父节点的子节点数组，此数组只有一个元素，因此font标签为arr[0]
+	var font =  where.parentNode.getElementsByTagName("font")[0];
+    //如果设置错误信息的font标签存在，就删除这个font标签
+	if(font){
+		font.parentNode.removeChild(font);
+	}
+}
+//验证导游机编号
+function checkGuideMachineNumber(){
+	//1 根据验证规则创建正则表达式
+	var gmnumReg =  /^[1-9]\d*$/ ;
+	//2 获得用户填写的用户名，这里可以直接使用document.form来获取表单对象
+	var guidemNum = document.getElementById("guideMachineNumber").value;
+	
+	//3 校验
+	if(gmnumReg.test(guidemNum)){
+    	//调用removeError方法，传入where方法
+		removeError(document.getElementById("guideMachineNumber"));
+		return true;
+	}else{
+    	//调用addError方法，传入where和what对应的实际参数
+		addError(document.getElementById("guideMachineNumber"),"导游机编号必须是数字");
+	return false;
+	}
+}
+//当鼠标移出输入框，即失去输入框焦点时验证输入，调用checkUserName方法
+document.getElementById("guideMachineNumber").onblur =function(){
+	checkGuideMachineNumber();
+}
+
+//验证导游机编号
+function checkGuideNumber(){
+	//1 根据验证规则创建正则表达式
+	var gnumReg =  /^[1-9]\d*$/ ;
+	//2 获得用户填写的用户名，这里可以直接使用document.form来获取表单对象
+	var guideNum = document.getElementById("guideNumber").value;
+	
+	//3 校验
+	if(gnumReg.test(guideNum)){
+    	//调用removeError方法，传入where方法
+		removeError(document.getElementById("guideNumber"));
+		return true;
+	}else{
+    	//调用addError方法，传入where和what对应的实际参数
+		addError(document.getElementById("guideNumber"),"导游编号必须是数字");
+	return false;
+	}
+}
+//当鼠标移出输入框，即失去输入框焦点时验证输入，调用checkUserName方法
+document.getElementById("guideNumber").onblur =function(){
+	checkGuideNumber();
+}
+
+//验证导游机编号
+function checkTouristMachineAmount(){
+	//1 根据验证规则创建正则表达式
+	var amountReg =  /^[1-9]\d*$/ ;
+	//2 获得用户填写的用户名，这里可以直接使用document.form来获取表单对象
+	var tmAmount = document.getElementById("touristMachineAmount").value;
+	
+	//3 校验
+	if(amountReg.test(tmAmount)){
+    	//调用removeError方法，传入where方法
+		removeError(document.getElementById("touristMachineAmount"));
+		return true;
+	}else{
+    	//调用addError方法，传入where和what对应的实际参数
+		addError(document.getElementById("touristMachineAmount"),"游客机数量必须是数字");
+	return false;
+	}
+}
+//当鼠标移出输入框，即失去输入框焦点时验证输入，调用checkUserName方法
+document.getElementById("touristMachineAmount").onblur =function(){
+	checkTouristMachineAmount();
+}
+			</script>
+</body>
+</html>

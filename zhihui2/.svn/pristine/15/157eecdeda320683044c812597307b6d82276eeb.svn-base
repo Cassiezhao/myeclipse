@@ -1,0 +1,46 @@
+package chris.action;
+
+import java.io.InputStream;
+
+import javax.annotation.Resource;
+
+import chris.service.BizService;
+import chris.service2.excelService;
+
+public class ExcelAction {
+	
+	@Resource(name = "BizService")
+	private BizService bizService;
+	public BizService getBizService() {
+		return bizService;
+	}
+
+	public void setBizService(BizService bizService) {
+		this.bizService = bizService;
+	}
+
+	private InputStream inputStream; //（get,set方法省略）定义一个输入流，用于接住在Service类生成的含有EXCEL的输入流
+
+	public InputStream getInputStream() {
+		return inputStream;
+	}
+
+	public void setInputStream(InputStream inputStream) {
+		this.inputStream = inputStream;
+	}
+
+	public String exportNetworkDeviceList() throws Exception {
+	    setInputStream(excelService.exportNetworkDeviceList(bizService.getGuideBiz().findAll()));  
+	        return "getNetworkDeviceExportList";
+	    }
+	
+	public String returnguide() throws Exception {
+	    setInputStream(excelService.exportNetworkDeviceList2(bizService.getGuidemBiz().findAll2()));  
+	        return "getNetworkDeviceExportList";
+	    }
+	public String daoyoujizhuangtai() throws Exception {
+		 setInputStream(excelService.exportNetworkDeviceList3(bizService.getGuidemBiz().findAll2()));
+	        return "getNetworkDeviceExportList";
+	    }	
+	
+}

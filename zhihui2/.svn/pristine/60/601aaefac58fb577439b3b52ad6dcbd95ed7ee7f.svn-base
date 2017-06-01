@@ -1,0 +1,558 @@
+package chris.pojo;
+
+import java.sql.Timestamp;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import com.alibaba.fastjson.annotation.JSONField;
+
+/**
+ * Guide entity. @author MyEclipse Persistence Tools
+ */
+@Entity
+@Table(name = "guide", catalog = "zhineng")
+public class Guide implements java.io.Serializable {
+
+	// Fields
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Integer guideid;
+	private Guidem guidem;
+	private String guidename;
+	private Integer guidenum;
+	private String gsex;
+	private Date birth;
+	private String idcard;
+	private String gtel;
+	private Integer workage;
+	private String level;
+	private String language;
+	private String school;
+	private String experice;
+	private String home;
+	private Integer state;
+	private String nowlocation;
+	private Timestamp onlineT;
+	private Timestamp uplineT;
+	private String onlineP;
+	private String uplineP;
+	private Date getworkT;
+	private String score;
+	private String info;
+	private Integer youkeMnum;
+	private String age;
+	private Integer diseases;
+	private String honor;
+	private String weight;
+	private String blood;
+	private Integer hege;
+	private Integer lianxujiangjie;
+	private Integer choutingjiangjie;
+	private String pinglevel;
+	private String height;
+	private Integer onnum;
+	private Integer ontime;
+	private Integer wzxx;
+	private Integer sxdd;
+	private Integer sumscore;
+	private Integer youkescore;
+	private String gpassword;
+	private Integer sessonid;
+	
+	@Column(name="sessonid")
+	public Integer getSessonid() {
+		return sessonid;
+	}
+
+	public void setSessonid(Integer sessonid) {
+		this.sessonid = sessonid;
+	}
+
+	@Column(name = "gpassword", length = 20)
+	public String getGpassword() {
+		return gpassword;
+	}
+
+	public void setGpassword(String gpassword) {
+		this.gpassword = gpassword;
+	}
+
+	@Column(name = "youkescore", length = 9)
+	public Integer getYoukescore() {
+		return youkescore;
+	}
+
+	public void setYoukescore(Integer youkescore) {
+		this.youkescore = youkescore;
+	}
+
+	@Column(name = "sumscore", length = 9)
+	public Integer getSumscore() {
+		return sumscore;
+	}
+
+	public void setSumscore(Integer sumscore) {
+		this.sumscore = sumscore;
+	}
+
+	
+	@Column(name = "ontime", length = 9)
+	public Integer getOntime() {
+		return ontime;
+	}
+
+	public void setOntime(Integer ontime) {
+		this.ontime = ontime;
+	}
+	@Column(name = "wzxx", length = 9)
+	public Integer getWzxx() {
+		return wzxx;
+	}
+	@Column(name = "onnum", length = 9)
+	public Integer getOnnum() {
+		return onnum;
+	}
+
+	public void setOnnum(Integer onnum) {
+		this.onnum = onnum;
+	}
+
+	
+	
+	
+	public void setWzxx(Integer wzxx) {
+		this.wzxx = wzxx;
+	}
+	@Column(name = "sxdd", length = 9)
+	public Integer getSxdd() {
+		return sxdd;
+	}
+
+	public void setSxdd(Integer sxdd) {
+		this.sxdd = sxdd;
+	}
+
+	@Column(name = "age", length = 10)
+	public String getAge() {
+		return age;
+	}
+
+	public void setAge(String age) {
+		this.age = age;
+	}
+	@Column(name = "diseases", length = 3)
+	public Integer getDiseases() {
+		return diseases;
+	}
+
+	public void setDiseases(Integer diseases) {
+		this.diseases = diseases;
+	}
+	@Column(name = "honor", length =50)
+	public String getHonor() {
+		return honor;
+	}
+	
+	public void setHonor(String honor) {
+		this.honor = honor;
+	}
+	@Column(name = "weight", length =10)
+	public String getWeight() {
+		return weight;
+	}
+
+	public void setWeight(String weight) {
+		this.weight = weight;
+	}
+	@Column(name = "blood", length =10)
+	public String getBlood() {
+		return blood;
+	}
+
+	public void setBlood(String blood) {
+		this.blood = blood;
+	}
+	@Column(name = "hege", length =3)
+	public Integer getHege() {
+		return hege;
+	}
+
+	public void setHege(Integer hege) {
+		this.hege = hege;
+	}
+	@Column(name = "lianxujiangjie", length =3)
+	public Integer getLianxujiangjie() {
+		return lianxujiangjie;
+	}
+
+	public void setLianxujiangjie(Integer lianxujiangjie) {
+		this.lianxujiangjie = lianxujiangjie;
+	}
+	@Column(name = "choutingjiangjie", length =3)
+	public Integer getChoutingjiangjie() {
+		return choutingjiangjie;
+	}
+
+	public void setChoutingjiangjie(Integer choutingjiangjie) {
+		this.choutingjiangjie = choutingjiangjie;
+	}
+	@Column(name = "pinglevel", length =10)
+	public String getPinglevel() {
+		return pinglevel;
+	}
+
+	public void setPinglevel(String pinglevel) {
+		this.pinglevel = pinglevel;
+	}
+	@Column(name = "height", length =10)
+	public String getHeight() {
+		return height;
+	}
+
+	public void setHeight(String height) {
+		this.height = height;
+	}
+
+	@JSONField(name="count")
+	private Integer person;
+	@JSONField(name="lng")
+	private Double jingdu;
+	@JSONField(name="lat")
+	private Double weidu;
+	//默认不会将其序列化
+	private transient Set<Guidem> guidems = new HashSet<Guidem>(0);
+	private transient Set<Session> sessions = new HashSet<Session>(0);
+
+	// Constructors
+
+	/** default constructor */
+	public Guide() {
+	}
+
+	/** minimal constructor */
+	public Guide(String guidename) {
+		this.guidename = guidename;
+	}
+
+	/** full constructor */
+	public Guide(Guidem guidem, String guidename, Integer guidenum,
+			String gsex, Date birth, String idcard, String gtel,
+			Integer workage, String level, String language, String school,
+			String experice, String home, Integer state, String nowlocation,
+			Timestamp onlineT, Timestamp uplineT, String onlineP,
+			String uplineP, Date getworkT, String score, String info,
+			Integer youkeMnum, Integer person, Double jingdu, Double weidu,
+			Set<Guidem> guidems, Set<Session> sessions) {
+		this.guidem = guidem;
+		this.guidename = guidename;
+		this.guidenum = guidenum;
+		this.gsex = gsex;
+		this.birth = birth;
+		this.idcard = idcard;
+		this.gtel = gtel;
+		this.workage = workage;
+		this.level = level;
+		this.language = language;
+		this.school = school;
+		this.experice = experice;
+		this.home = home;
+		this.state = state;
+		this.nowlocation = nowlocation;
+		this.onlineT = onlineT;
+		this.uplineT = uplineT;
+		this.onlineP = onlineP;
+		this.uplineP = uplineP;
+		this.getworkT = getworkT;
+		this.score = score;
+		this.info = info;
+		this.youkeMnum = youkeMnum;
+		this.person = person;
+		this.jingdu = jingdu;
+		this.weidu = weidu;
+		this.guidems = guidems;
+		this.sessions = sessions;
+	}
+
+	// Property accessors
+	@Id
+	@GeneratedValue
+	@Column(name = "guideid", unique = true, nullable = false)
+	public Integer getGuideid() {
+		return this.guideid;
+	}
+
+	public void setGuideid(Integer guideid) {
+		this.guideid = guideid;
+	}
+
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "guideMid")
+	public Guidem getGuidem() {
+		return this.guidem;
+	}
+
+	public void setGuidem(Guidem guidem) {
+		this.guidem = guidem;
+	}
+
+	@Column(name = "guidename", nullable = false, length = 15)
+	public String getGuidename() {
+		return this.guidename;
+	}
+
+	public void setGuidename(String guidename) {
+		this.guidename = guidename;
+	}
+
+	@Column(name = "guidenum")
+	public Integer getGuidenum() {
+		return this.guidenum;
+	}
+
+	public void setGuidenum(Integer guidenum) {
+		this.guidenum = guidenum;
+	}
+
+	@Column(name = "gsex", length = 5)
+	public String getGsex() {
+		return this.gsex;
+	}
+
+	public void setGsex(String gsex) {
+		this.gsex = gsex;
+	}
+	
+	@Temporal(TemporalType.DATE)
+	@Column(name = "birth", length = 10)
+	public Date getBirth() {
+		return this.birth;
+	}
+
+	public void setBirth(Date birth) {
+		this.birth = birth;
+	}
+
+	@Column(name = "idcard", length = 30)
+	public String getIdcard() {
+		return this.idcard;
+	}
+
+	public void setIdcard(String idcard) {
+		this.idcard = idcard;
+	}
+
+	@Column(name = "gtel", length = 30)
+	public String getGtel() {
+		return this.gtel;
+	}
+
+	public void setGtel(String gtel) {
+		this.gtel = gtel;
+	}
+
+	@Column(name = "workage")
+	public Integer getWorkage() {
+		return this.workage;
+	}
+
+	public void setWorkage(Integer workage) {
+		this.workage = workage;
+	}
+
+	@Column(name = "level", length = 20)
+	public String getLevel() {
+		return this.level;
+	}
+
+	public void setLevel(String level) {
+		this.level = level;
+	}
+
+	@Column(name = "language", length = 20)
+	public String getLanguage() {
+		return this.language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+	}
+	
+	public Integer getPerson() {
+		return person;
+	}
+	@Column(name = "person", length = 9)
+	public void setPerson(Integer person) {
+		this.person = person;
+	}
+	
+	@Column(name = "school", length = 10)
+	public String getSchool() {
+		return this.school;
+	}
+
+	public void setSchool(String school) {
+		this.school = school;
+	}
+
+	@Column(name = "experice", length = 50)
+	public String getExperice() {
+		return this.experice;
+	}
+
+	public void setExperice(String experice) {
+		this.experice = experice;
+	}
+
+	@Column(name = "home", length = 50)
+	public String getHome() {
+		return this.home;
+	}
+
+	public void setHome(String home) {
+		this.home = home;
+	}
+
+	@Column(name = "state")
+	public Integer getState() {
+		return this.state;
+	}
+
+	public void setState(Integer state) {
+		this.state = state;
+	}
+
+	@Column(name = "nowlocation", length = 20)
+	public String getNowlocation() {
+		return this.nowlocation;
+	}
+
+	public void setNowlocation(String nowlocation) {
+		this.nowlocation = nowlocation;
+	}
+
+	@Column(name = "onlineT", length = 19)
+	public Timestamp getOnlineT() {
+		return this.onlineT;
+	}
+
+	public void setOnlineT(Timestamp onlineT) {
+		this.onlineT = onlineT;
+	}
+
+	@Column(name = "uplineT", length = 19)
+	public Timestamp getUplineT() {
+		return this.uplineT;
+	}
+
+	public void setUplineT(Timestamp uplineT) {
+		this.uplineT = uplineT;
+	}
+
+	@Column(name = "onlineP", length = 20)
+	public String getOnlineP() {
+		return this.onlineP;
+	}
+
+	public void setOnlineP(String onlineP) {
+		this.onlineP = onlineP;
+	}
+
+	@Column(name = "uplineP", length = 20)
+	public String getUplineP() {
+		return this.uplineP;
+	}
+
+	public void setUplineP(String uplineP) {
+		this.uplineP = uplineP;
+	}
+
+	@Temporal(TemporalType.DATE)
+	@Column(name = "getworkT", length = 10)
+	public Date getGetworkT() {
+		return this.getworkT;
+	}
+
+	public void setGetworkT(Date getworkT) {
+		this.getworkT = getworkT;
+	}
+
+	@Column(name = "score", length = 20)
+	public String getScore() {
+		return this.score;
+	}
+
+	public void setScore(String score) {
+		this.score = score;
+	}
+
+	@Column(name = "info", length = 50)
+	public String getInfo() {
+		return this.info;
+	}
+
+	public void setInfo(String info) {
+		this.info = info;
+	}
+
+	@Column(name = "youkeMnum")
+	public Integer getYoukeMnum() {
+		return this.youkeMnum;
+	}
+
+	public void setYoukeMnum(Integer youkeMnum) {
+		this.youkeMnum = youkeMnum;
+	}
+	
+	@Column(name = "jingdu", precision = 10, scale = 6)
+	public Double getJingdu() {
+		return this.jingdu;
+	}
+
+	public void setJingdu(Double jingdu) {
+		this.jingdu = jingdu;
+	}
+
+	@Column(name = "weidu", precision = 10, scale = 6)
+	public Double getWeidu() {
+		return this.weidu;
+	}
+
+	public void setWeidu(Double weidu) {
+		this.weidu = weidu;
+	}
+	
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "guide")
+	public Set<Guidem> getGuidems() {
+		return this.guidems;
+	}
+
+	public void setGuidems(Set<Guidem> guidems) {
+		this.guidems = guidems;
+	}
+
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "guide")
+	public Set<Session> getSessions() {
+		return this.sessions;
+	}
+
+	public void setSessions(Set<Session> sessions) {
+		this.sessions = sessions;
+	}
+
+}

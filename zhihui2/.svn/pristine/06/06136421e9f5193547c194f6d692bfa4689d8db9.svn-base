@@ -1,0 +1,16 @@
+	body{
+		background-color: #ffffff;
+	}
+	.right{
+	    float:right;
+	  }
+	  
+	  	.monitor_table{
+font-size:18px;
+}
+	  
+.searchInfo{
+width:270px;
+height:50px;
+float:right;
+}

@@ -1,0 +1,30 @@
+[genuitec-file-id="wc2-19"],[genuitec-lp-path="/zhihui2/WebRoot/assets/app/css/search.css"],[genuitec-lp-enabled=false]{
+  /* for codelive */
+}
+
+.search-icon{
+	position:fixed;
+	top:100px;
+	right:0px;
+}
+.search{
+	background-color:#62a8d1;
+	width:40px;
+	height:40px;
+}
+.search-info{
+	display:none;
+	position:fixed;
+	top:100px;
+	right:0px;
+	background-color:#3395e1;
+	height:40px;
+	width:435px;
+	opacity:0.6;
+	right:0px;
+}
+.selectway{
+	height:26px;
+	padding-right:10px;
+	padding-left:10px;
+}
